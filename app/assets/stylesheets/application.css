@@ -74,81 +74,81 @@
  }
 
  .splash-photo {
-   padding: 10px;
-   margin-left: 75px;
+   padding: 15px;
+   margin-left: 100px;
  }
 
  .splash-main.text {
    display: list-item;
    list-style-type: none;
-   padding: 5px;
-   width: 500px;
+   padding: 7.5px;
+   width: 750px;
  }
 
  .splash-main.header {
    font-family: 'Source Serif Pro', serif;
-   font-size: 50px;
+   font-size: 75px;
    font-weight: 500;
    line-height: 1.05;
    color: #323648;
-   padding: 10px;
-   margin: 5px;
+   padding: 15px;
+   margin: 7.5px;
  }
 
  .splash-main.p {
-   padding: 10px;
-   margin: 5px;
-   width: 400px;
+   padding: 15px;
+   margin: 7.5px;
+   width: 600px;
    color: #5b5e6d;
-   font-size: 15px;
+   font-size: 22.5px;
    font-weight: 100;
  }
 
  .splash-main.signup {
   align-items: flex-end;
-  padding: 19px 40px 20px 40px;
+  padding: 30px 60px 30px 60px;
   background-color: #433fcc;
-  border-radius: 5px;
-  margin: 0 5px 0 10px;
+  border-radius: 7.5px;
+  margin: 0 7.5px 0 15px;
   color: white;
  }
 
  .splash-main.login {
-  padding: 10px;
-  margin: 5px;
-  font-size: 15px;
+  padding: 15px;
+  margin: 7.5px;
+  font-size: 22.5px;
  }
 
  .session-nav {
   display: flex;
   justify-content: space-between;
   top: 0;
-  padding: 10px;
+  padding: 15px;
  }
 
  .session-nav.left {
-   margin-left: 50px;
+   margin-left: 75px;
  }
 
 .session-nav.left-left {
   background-color: white;
   border: none;
   outline: none;
-  font-size: 15px;
+  font-size: 22.5px;
   font-weight: 400;
 }
 
 .session-nav.right {
-  margin-right: 50px;
+  margin-right: 75px;
 }
 
 .session-nav.right-right {
   font-family: 'PT Sans', sans-serif;
   color: #323648;
-  width: 90px;
+  width: 100px;
   border-radius: 5px;
   outline: none;
   text-align: justify;
-  line-height: 10px;
-  margin-left: 330px;
+  line-height: 5px;
+  margin-left: 495px;
 }
