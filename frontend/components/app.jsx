@@ -1,17 +1,17 @@
 import React from 'react';
 import { Route } from 'react-router-dom';
+import { AuthRoute, ProtectedRoute } from '../util/auth/route_util';
 import LoginFormContainer from './session/login_form_container';
 import SignupFormContainer from './session/signup_form_container';
-import { AuthRoute } from '../util/auth/route_util';
+import SplashPageContainer from './session/splash_page_container';
+import ChatRoomContainer from './chatrooms/chatrooms_container';
 
 const App = () => (
   <div>
-    <header>
-      <h1>slide</h1>
-    </header>
-
-    <AuthRoute path="/login" component={LoginFormContainer} />
-    <AuthRoute path="/signup" component={SignupFormContainer} />
+    <AuthRoute exact path='/' loggedIn={false} component={SplashPageContainer} />
+    <AuthRoute path="/login" loggedIn={false} component={LoginFormContainer} />
+    <AuthRoute path="/signup" loggedIn={false} component={SignupFormContainer} />
+    <ProtectedRoute path='/chatrooms' component={ChatRoomContainer} />
   </div>
 );
 

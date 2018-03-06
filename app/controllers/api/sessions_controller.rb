@@ -6,7 +6,7 @@ class Api::SessionsController < ApplicationController
       login(@user)
       render 'api/users/show.json.jbuilder'
     else
-      render json: { errors: ['Invalid creds'] }, status: 422
+      render json: { errors: ['Try Again'] }, status: 422
     end
   end
 
