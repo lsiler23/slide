@@ -5,6 +5,8 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+User.destroy_all
+
 User.create!({email_address: 'laurette@fun.org', username: 'smeagol92', real_name: 'Laurette', password: 'hotsauce23'})
 User.create!({email_address: 'jake@fake.com', username: 'tinynails08', password: 'christmastime'})
 User.create!({email_address: 'maurice@maurice.com', username: 'maurice00', password: 'mrkrabs'})
@@ -16,3 +18,4 @@ User.create!({email_address: 'tom@illuminati.net', username: 'gigglemonster93', 
 User.create!({email_address: 'mary@mary.com', username: 'owlgrl39', real_name: 'Mary Seo', password: 'pokequeen'})
 User.create!({email_address: 'sam@github.edu', username: 'partyonsaturday', password: 'iheartbiking'})
 User.create!({email_address: 'whatever@elliot.com', username: 'ramrod', password: 'password'})
+User.create!({email_address: 'asdf', username: 'asdf', password: 'asdfasdf'})

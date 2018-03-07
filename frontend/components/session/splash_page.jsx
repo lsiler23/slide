@@ -1,10 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import NavBar from './nav_bar';
+import NavBarContainer from './nav_bar_container';
 
 const SplashPage = (props) => (
   <div className='splash-page'>
-    <NavBar />
+    <NavBarContainer />
     <div className='splash-main'>
       <div className='splash-photo'>
         <img height='450' width='450' src='https://thegraphicsfairy.com/wp-content/uploads/blogger/_CarNcodpCMA/TQjf9_57QwI/AAAAAAAAKH8/Cd6QpiCk8mQ/s1600/penguin-clipart-graphicsfairy007b.jpg' />
@@ -21,7 +21,7 @@ const SplashPage = (props) => (
             onClick={() => props.history.push('/signup')}
             className='splash-main signup'>GET STARTED</button>
         <div className='splash-main login'>
-          <span>Have an account? <Link to='/login'>Log In</Link></span>
+          <span>Have an account? <Link to='/login'>Log in</Link></span>
         </div>
       </div>
     </div>

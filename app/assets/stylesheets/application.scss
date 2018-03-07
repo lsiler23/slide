@@ -62,75 +62,83 @@
  	border-spacing: 0;
  }
 
- .splash-main {
-   display: flex;
-   justify-content: space-between;
- }
+.splash-main {
+  display: flex;
+  justify-content: space-between;
+}
 
- .splash-page {
-   font-family: 'PT Sans', sans-serif;
-   width: 100%;
- }
+.splash-page {
+  font-family: 'PT Sans', sans-serif;
+  width: 100%;
+}
 
- .splash-photo {
-   padding: 15px;
-   margin-left: 100px;
- }
+.splash-photo {
+  padding: 40px 15px 15px;
+  margin-left: 100px;
+}
 
- .splash-main.text {
-   display: list-item;
-   list-style-type: none;
-   padding: 7.5px;
-   width: 750px;
- }
+.splash-main.text {
+  display: list-item;
+  list-style-type: none;
+  padding: 7.5px;
+  width: 750px;
+}
 
- .splash-main.header {
-   font-family: 'Source Serif Pro', serif;
-   font-size: 75px;
-   font-weight: 500;
-   line-height: 1.05;
-   color: #323648;
-   padding: 15px;
-   margin: 7.5px;
- }
+.splash-main.header {
+  font-family: 'Source Serif Pro', serif;
+  font-size: 75px;
+  font-weight: 500;
+  line-height: 1.05;
+  color: #323648;
+  padding: 15px;
+  margin: 7.5px;
+}
 
- .splash-main.p {
-   padding: 15px;
-   margin: 7.5px;
-   width: 600px;
-   color: #5b5e6d;
-   font-size: 22.5px;
-   font-weight: 100;
- }
+.splash-main.p {
+  padding: 15px;
+  margin: 7.5px;
+  width: 600px;
+  color: #5b5e6d;
+  font-size: 20px;
+  font-weight: 100;
+  line-height: 1.25;
+}
 
- .splash-main.signup {
+.splash-main.signup {
+  cursor: pointer;
   align-items: flex-end;
-  padding: 30px 60px 30px 60px;
+  padding: 30px 60px;
   background-color: #433fcc;
   border-radius: 7.5px;
   font-size: 15px;
   margin: 0 7.5px 0 15px;
   color: white;
- }
+  transition: background 0.3s;
+  -webkit-transition: background 0.3s;
+}
 
- .splash-main.login {
+.splash-main.signup:hover {
+  background-color: #2f2aba;
+}
+
+.splash-main.login {
   padding: 15px;
   margin: 7.5px;
-  font-size: 22.5px;
- }
+  font-size: 20px;
+}
 
- .session-nav {
+.session-nav {
   display: flex;
   justify-content: space-between;
   top: 0;
   padding: 10px;
   border-bottom: 1px solid lightgrey;
- }
+}
 
- .session-nav.left {
-   margin-left: 75px;
-   border: none;
- }
+.session-nav.left {
+  margin-left: 75px;
+  border: none;
+}
 
 .session-nav.left-left {
   background-color: white;
@@ -142,7 +150,7 @@
 
 .session-nav.right {
   margin-right: 75px;
-   border: none;
+  border: none;
 }
 
 .session-nav.right-right {

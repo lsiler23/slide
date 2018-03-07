@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
-import NavBar from './nav_bar';
+import NavBarContainer from './nav_bar_container';
 
 class SessionForm extends React.Component {
   constructor(props) {
@@ -29,14 +29,13 @@ class SessionForm extends React.Component {
 
   render() {
     const type = this.props.formType;
-    const { history } = this.props;
     const otherType = (type === 'Log in' ? '/signup' : '/login');
     const linkText = (type === 'Log in' ? 'sign up' : 'log in');
     const errors = (this.props.errors.length > 0 ? this.props.errors : null);
 
     return (
       <div className='auth-page'>
-        <NavBar history={ history } />
+        <NavBarContainer />
         <div className='auth-form-box'>
           <h3 className='auth-form-title'>{type}</h3>
             <form
