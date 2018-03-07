@@ -18997,3 +18997,235 @@ Processing by Api::SessionsController#create as JSON
 Completed 200 OK in 182ms (Views: 86.4ms | ActiveRecord: 5.8ms)
 
 
+Started GET "/" for 127.0.0.1 at 2018-03-07 18:26:28 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (7.2ms)
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "hj7JO7AUire-hMgwpVfWow"], ["LIMIT", 1]]
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (1.3ms)
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "chatrooms"."id" FROM "chatrooms" INNER JOIN "participations" ON "chatrooms"."id" = "participations"."chatroom_id" WHERE "participations"."participant_id" = $1[0m  [["participant_id", 138]]
+  [1m[36mChatroom Load (0.4ms)[0m  [1m[34mSELECT "chatrooms".* FROM "chatrooms" INNER JOIN "participations" ON "chatrooms"."id" = "participations"."chatroom_id" WHERE "participations"."participant_id" = $1[0m  [["participant_id", 138]]
+  Rendered api/users/show.json.jbuilder (40.1ms)
+Completed 200 OK in 623ms (Views: 596.0ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-07 18:30:35 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.8ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "hj7JO7AUire-hMgwpVfWow"], ["LIMIT", 1]]
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (0.8ms)
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "chatrooms"."id" FROM "chatrooms" INNER JOIN "participations" ON "chatrooms"."id" = "participations"."chatroom_id" WHERE "participations"."participant_id" = $1[0m  [["participant_id", 138]]
+  [1m[36mChatroom Load (0.5ms)[0m  [1m[34mSELECT "chatrooms".* FROM "chatrooms" INNER JOIN "participations" ON "chatrooms"."id" = "participations"."chatroom_id" WHERE "participations"."participant_id" = $1[0m  [["participant_id", 138]]
+  Rendered api/users/show.json.jbuilder (18.7ms)
+Completed 200 OK in 1001ms (Views: 986.5ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-07 18:33:27 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (3.6ms)
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "hj7JO7AUire-hMgwpVfWow"], ["LIMIT", 1]]
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (0.6ms)
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "chatrooms"."id" FROM "chatrooms" INNER JOIN "participations" ON "chatrooms"."id" = "participations"."chatroom_id" WHERE "participations"."participant_id" = $1[0m  [["participant_id", 138]]
+  [1m[36mChatroom Load (0.5ms)[0m  [1m[34mSELECT "chatrooms".* FROM "chatrooms" INNER JOIN "participations" ON "chatrooms"."id" = "participations"."chatroom_id" WHERE "participations"."participant_id" = $1[0m  [["participant_id", 138]]
+  Rendered api/users/show.json.jbuilder (20.3ms)
+Completed 200 OK in 1277ms (Views: 1254.2ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-07 18:34:12 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.7ms)
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "hj7JO7AUire-hMgwpVfWow"], ["LIMIT", 1]]
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (0.7ms)
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "chatrooms"."id" FROM "chatrooms" INNER JOIN "participations" ON "chatrooms"."id" = "participations"."chatroom_id" WHERE "participations"."participant_id" = $1[0m  [["participant_id", 138]]
+  [1m[36mChatroom Load (0.3ms)[0m  [1m[34mSELECT "chatrooms".* FROM "chatrooms" INNER JOIN "participations" ON "chatrooms"."id" = "participations"."chatroom_id" WHERE "participations"."participant_id" = $1[0m  [["participant_id", 138]]
+  Rendered api/users/show.json.jbuilder (17.1ms)
+Completed 200 OK in 354ms (Views: 340.1ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-07 18:38:50 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (5.2ms)
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "hj7JO7AUire-hMgwpVfWow"], ["LIMIT", 1]]
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (1.3ms)
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "chatrooms"."id" FROM "chatrooms" INNER JOIN "participations" ON "chatrooms"."id" = "participations"."chatroom_id" WHERE "participations"."participant_id" = $1[0m  [["participant_id", 138]]
+  [1m[36mChatroom Load (0.5ms)[0m  [1m[34mSELECT "chatrooms".* FROM "chatrooms" INNER JOIN "participations" ON "chatrooms"."id" = "participations"."chatroom_id" WHERE "participations"."participant_id" = $1[0m  [["participant_id", 138]]
+  Rendered api/users/show.json.jbuilder (83.1ms)
+Completed 200 OK in 1062ms (Views: 1039.0ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-07 18:38:58 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.6ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "hj7JO7AUire-hMgwpVfWow"], ["LIMIT", 1]]
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (0.5ms)
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "chatrooms"."id" FROM "chatrooms" INNER JOIN "participations" ON "chatrooms"."id" = "participations"."chatroom_id" WHERE "participations"."participant_id" = $1[0m  [["participant_id", 138]]
+  [1m[36mChatroom Load (0.4ms)[0m  [1m[34mSELECT "chatrooms".* FROM "chatrooms" INNER JOIN "participations" ON "chatrooms"."id" = "participations"."chatroom_id" WHERE "participations"."participant_id" = $1[0m  [["participant_id", 138]]
+  Rendered api/users/show.json.jbuilder (39.4ms)
+Completed 200 OK in 256ms (Views: 252.6ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-07 18:39:23 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.5ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "hj7JO7AUire-hMgwpVfWow"], ["LIMIT", 1]]
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (0.5ms)
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "chatrooms"."id" FROM "chatrooms" INNER JOIN "participations" ON "chatrooms"."id" = "participations"."chatroom_id" WHERE "participations"."participant_id" = $1[0m  [["participant_id", 138]]
+  [1m[36mChatroom Load (0.7ms)[0m  [1m[34mSELECT "chatrooms".* FROM "chatrooms" INNER JOIN "participations" ON "chatrooms"."id" = "participations"."chatroom_id" WHERE "participations"."participant_id" = $1[0m  [["participant_id", 138]]
+  Rendered api/users/show.json.jbuilder (16.5ms)
+Completed 200 OK in 965ms (Views: 950.9ms | ActiveRecord: 2.5ms)
+
+
+Started DELETE "/api/session" for 127.0.0.1 at 2018-03-07 18:40:26 -0500
+Processing by Api::SessionsController#destroy as JSON
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "hj7JO7AUire-hMgwpVfWow"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email_address" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["email_address", "admin2"], ["id", 138], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["username", "admin2"], ["id", 138], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["session_token", "4JH-e9qULR8W_T5_0_s9bg"], ["id", 138], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."password_digest" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["password_digest", "$2a$10$7nJBowFGvLYXvjv/umRIleH3IJx2Ds2EBea/8NR1obt11c6q5IDNW"], ["id", 138], ["LIMIT", 1]]
+  [1m[35mSQL (0.8ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "4JH-e9qULR8W_T5_0_s9bg"], ["updated_at", "2018-03-07 23:40:26.936631"], ["id", 138]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 29ms (Views: 0.9ms | ActiveRecord: 4.5ms)
+
+
+Started POST "/api/users" for 127.0.0.1 at 2018-03-07 18:40:28 -0500
+Processing by Api::UsersController#create as JSON
+  Parameters: {"user"=>{"email_address"=>"17.86786236161746", "username"=>"guest32.597583299960256", "password"=>"[FILTERED]"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email_address" = $1 LIMIT $2[0m  [["email_address", "17.86786236161746"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "guest32.597583299960256"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "hz6QNGHHOH6XFLqWdmT_aw"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."password_digest" = $1 LIMIT $2[0m  [["password_digest", "$2a$10$QzyqniP4zZLWvpeaHf4fAe4CUnyhI98y3fBZLoehNWLa/jiTGIjd."], ["LIMIT", 1]]
+  [1m[35mSQL (32.6ms)[0m  [1m[32mINSERT INTO "users" ("email_address", "username", "session_token", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email_address", "17.86786236161746"], ["username", "guest32.597583299960256"], ["session_token", "hz6QNGHHOH6XFLqWdmT_aw"], ["password_digest", "$2a$10$QzyqniP4zZLWvpeaHf4fAe4CUnyhI98y3fBZLoehNWLa/jiTGIjd."], ["created_at", "2018-03-07 23:40:28.808215"], ["updated_at", "2018-03-07 23:40:28.808215"]]
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "chatrooms"."id" FROM "chatrooms" WHERE (title = 'general')[0m
+  [1m[36mChatroom Load (0.6ms)[0m  [1m[34mSELECT  "chatrooms".* FROM "chatrooms" WHERE "chatrooms"."id" = $1 LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 140], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "participations" ("participant_id", "chatroom_id") VALUES ($1, $2) RETURNING "id"[0m  [["participant_id", 140], ["chatroom_id", 19]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email_address" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["email_address", "17.86786236161746"], ["id", 140], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["username", "guest32.597583299960256"], ["id", 140], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["session_token", "lqnIuvNCe0MZyH5OZe7omg"], ["id", 140], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."password_digest" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["password_digest", "$2a$10$QzyqniP4zZLWvpeaHf4fAe4CUnyhI98y3fBZLoehNWLa/jiTGIjd."], ["id", 140], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "lqnIuvNCe0MZyH5OZe7omg"], ["updated_at", "2018-03-07 23:40:28.862437"], ["id", 140]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  Rendering api/users/show.json.jbuilder
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "lqnIuvNCe0MZyH5OZe7omg"], ["LIMIT", 1]]
+  Rendered api/users/_user.json.jbuilder (1.1ms)
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "chatrooms"."id" FROM "chatrooms" INNER JOIN "participations" ON "chatrooms"."id" = "participations"."chatroom_id" WHERE "participations"."participant_id" = $1[0m  [["participant_id", 140]]
+  [1m[36mChatroom Load (0.5ms)[0m  [1m[34mSELECT "chatrooms".* FROM "chatrooms" INNER JOIN "participations" ON "chatrooms"."id" = "participations"."chatroom_id" WHERE "participations"."participant_id" = $1[0m  [["participant_id", 140]]
+  Rendered api/users/show.json.jbuilder (25.7ms)
+Completed 200 OK in 195ms (Views: 48.1ms | ActiveRecord: 42.8ms)
+
+
+Started DELETE "/api/session" for 127.0.0.1 at 2018-03-07 18:40:38 -0500
+Processing by Api::SessionsController#destroy as JSON
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "lqnIuvNCe0MZyH5OZe7omg"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email_address" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["email_address", "17.86786236161746"], ["id", 140], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["username", "guest32.597583299960256"], ["id", 140], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["session_token", "6DgIFYM8NpPmlmjOWlsv7w"], ["id", 140], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."password_digest" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["password_digest", "$2a$10$QzyqniP4zZLWvpeaHf4fAe4CUnyhI98y3fBZLoehNWLa/jiTGIjd."], ["id", 140], ["LIMIT", 1]]
+  [1m[35mSQL (0.7ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "6DgIFYM8NpPmlmjOWlsv7w"], ["updated_at", "2018-03-07 23:40:38.723506"], ["id", 140]]
+  [1m[35m (4.6ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 18ms (Views: 0.3ms | ActiveRecord: 7.8ms)
+
+
+Started POST "/api/session" for 127.0.0.1 at 2018-03-07 18:40:46 -0500
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"email_address"=>"admin2", "username"=>"admin2", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email_address" = $1 LIMIT $2[0m  [["email_address", "admin2"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email_address" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["email_address", "admin2"], ["id", 138], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["username", "admin2"], ["id", 138], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["session_token", "0L8b_8GENFuiyhcDEzEBHg"], ["id", 138], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."password_digest" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["password_digest", "$2a$10$7nJBowFGvLYXvjv/umRIleH3IJx2Ds2EBea/8NR1obt11c6q5IDNW"], ["id", 138], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "0L8b_8GENFuiyhcDEzEBHg"], ["updated_at", "2018-03-07 23:40:46.530403"], ["id", 138]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  Rendering api/users/show.json.jbuilder
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "0L8b_8GENFuiyhcDEzEBHg"], ["LIMIT", 1]]
+  Rendered api/users/_user.json.jbuilder (0.4ms)
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "chatrooms"."id" FROM "chatrooms" INNER JOIN "participations" ON "chatrooms"."id" = "participations"."chatroom_id" WHERE "participations"."participant_id" = $1[0m  [["participant_id", 138]]
+  [1m[36mChatroom Load (0.3ms)[0m  [1m[34mSELECT "chatrooms".* FROM "chatrooms" INNER JOIN "participations" ON "chatrooms"."id" = "participations"."chatroom_id" WHERE "participations"."participant_id" = $1[0m  [["participant_id", 138]]
+  Rendered api/users/show.json.jbuilder (5.5ms)
+Completed 200 OK in 95ms (Views: 8.6ms | ActiveRecord: 4.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-07 18:41:24 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.5ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "0L8b_8GENFuiyhcDEzEBHg"], ["LIMIT", 1]]
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (0.4ms)
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "chatrooms"."id" FROM "chatrooms" INNER JOIN "participations" ON "chatrooms"."id" = "participations"."chatroom_id" WHERE "participations"."participant_id" = $1[0m  [["participant_id", 138]]
+  [1m[36mChatroom Load (0.5ms)[0m  [1m[34mSELECT "chatrooms".* FROM "chatrooms" INNER JOIN "participations" ON "chatrooms"."id" = "participations"."chatroom_id" WHERE "participations"."participant_id" = $1[0m  [["participant_id", 138]]
+  Rendered api/users/show.json.jbuilder (6.8ms)
+Completed 200 OK in 272ms (Views: 244.5ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-07 18:41:34 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.4ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "0L8b_8GENFuiyhcDEzEBHg"], ["LIMIT", 1]]
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (0.6ms)
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "chatrooms"."id" FROM "chatrooms" INNER JOIN "participations" ON "chatrooms"."id" = "participations"."chatroom_id" WHERE "participations"."participant_id" = $1[0m  [["participant_id", 138]]
+  [1m[36mChatroom Load (0.6ms)[0m  [1m[34mSELECT "chatrooms".* FROM "chatrooms" INNER JOIN "participations" ON "chatrooms"."id" = "participations"."chatroom_id" WHERE "participations"."participant_id" = $1[0m  [["participant_id", 138]]
+  Rendered api/users/show.json.jbuilder (8.6ms)
+Completed 200 OK in 131ms (Views: 128.0ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-07 18:41:45 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.4ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "0L8b_8GENFuiyhcDEzEBHg"], ["LIMIT", 1]]
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (0.7ms)
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "chatrooms"."id" FROM "chatrooms" INNER JOIN "participations" ON "chatrooms"."id" = "participations"."chatroom_id" WHERE "participations"."participant_id" = $1[0m  [["participant_id", 138]]
+  [1m[36mChatroom Load (0.4ms)[0m  [1m[34mSELECT "chatrooms".* FROM "chatrooms" INNER JOIN "participations" ON "chatrooms"."id" = "participations"."chatroom_id" WHERE "participations"."participant_id" = $1[0m  [["participant_id", 138]]
+  Rendered api/users/show.json.jbuilder (9.0ms)
+Completed 200 OK in 151ms (Views: 148.1ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-07 18:41:55 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.4ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "0L8b_8GENFuiyhcDEzEBHg"], ["LIMIT", 1]]
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (0.8ms)
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "chatrooms"."id" FROM "chatrooms" INNER JOIN "participations" ON "chatrooms"."id" = "participations"."chatroom_id" WHERE "participations"."participant_id" = $1[0m  [["participant_id", 138]]
+  [1m[36mChatroom Load (0.5ms)[0m  [1m[34mSELECT "chatrooms".* FROM "chatrooms" INNER JOIN "participations" ON "chatrooms"."id" = "participations"."chatroom_id" WHERE "participations"."participant_id" = $1[0m  [["participant_id", 138]]
+  Rendered api/users/show.json.jbuilder (9.3ms)
+Completed 200 OK in 115ms (Views: 111.7ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-07 18:42:22 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.5ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "0L8b_8GENFuiyhcDEzEBHg"], ["LIMIT", 1]]
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (0.5ms)
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "chatrooms"."id" FROM "chatrooms" INNER JOIN "participations" ON "chatrooms"."id" = "participations"."chatroom_id" WHERE "participations"."participant_id" = $1[0m  [["participant_id", 138]]
+  [1m[36mChatroom Load (0.3ms)[0m  [1m[34mSELECT "chatrooms".* FROM "chatrooms" INNER JOIN "participations" ON "chatrooms"."id" = "participations"."chatroom_id" WHERE "participations"."participant_id" = $1[0m  [["participant_id", 138]]
+  Rendered api/users/show.json.jbuilder (7.4ms)
+Completed 200 OK in 136ms (Views: 132.8ms | ActiveRecord: 1.8ms)
+
+
