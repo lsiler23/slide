@@ -7,6 +7,15 @@ class User < ApplicationRecord
     foreign_key: :creator_id,
     primary_key: :id
 
+  has_many :participations,
+    class_name: :Participation,
+    foreign_key: :participant_id,
+    primary_key: :id
+
+  has_many :subscribed_chatrooms,
+    through: :participations,
+    source: :chatroom
+
   attr_reader :password
 
   after_initialize :ensure_session_token

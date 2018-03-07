@@ -10,6 +10,13 @@
   </head>
 
   <body>
+
+    <% if logged_in? %>
+      <script type="text/javascript">
+        window.currentUser = <%= (render template: 'api/users/show.json.jbuilder').html_safe %>
+      </script>
+    <% end %>
+
     <%= yield %>
   </body>
 </html>

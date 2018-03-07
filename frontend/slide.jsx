@@ -7,13 +7,24 @@ document.addEventListener('DOMContentLoaded', () => {
   let store;
 
   if (window.currentUser) {
-    const preloadedState = { session: { currentUser: window.currentUser }};
+    const {user, chatrooms} = window.currentUser;
+    const preloadedState = {
+      session: {
+        currentUser: user.id
+      },
+      entities: {
+        chatrooms,
+        users: {
+          [user.id]: user
+        }
+      }
+    };
     store = configureStore(preloadedState);
     delete window.currentUser;
   } else {
     store = configureStore();
   }
-  window.store = store
+  window.store = store;
   const root = document.getElementById('root');
   ReactDOM.render(<Root store={store} />, root);
 });

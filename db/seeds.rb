@@ -21,8 +21,12 @@ hanhee = User.create!({email_address: 'asdf', username: 'asdf', password: 'asdfa
 
 Chatroom.destroy_all
 # Channels
-Chatroom.create!({creator_id: me.id, isDM: false, title: 'first ever!'})
-Chatroom.create!({creator_id: me.id, isDM: false, title: 'second ever!'})
-Chatroom.create!({creator_id: jake.id, isDM: false, title: 'third'})
-Chatroom.create!({creator_id: elon.id, isDM: false, title: 'spaceisgood'})
-Chatroom.create!({creator_id: tom.id, isDM: false, title: 'hot singles'})
+first = Chatroom.create!({creator_id: me.id, isDM: false, title: 'first ever!'})
+second = Chatroom.create!({creator_id: me.id, isDM: false, title: 'second ever!'})
+third = Chatroom.create!({creator_id: jake.id, isDM: false, title: 'third'})
+fourth = Chatroom.create!({creator_id: elon.id, isDM: false, title: 'spaceisgood'})
+fifth = Chatroom.create!({creator_id: tom.id, isDM: false, title: 'hot singles'})
+
+Participation.destroy_all
+# Participation associations
+Participation.create!({participant_id: me.id, chatroom_id: first.id})

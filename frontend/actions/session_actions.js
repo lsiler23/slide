@@ -1,13 +1,21 @@
 import * as SessionApiUtil from '../util/auth/session_api_util';
 
 export const RECEIVE_CURRENT_USER = 'RECEIVE_CURRENT_USER';
+export const LOGOUT_CURRENT_USER = 'LOGOUT_CURRENT_USER';
 export const RECEIVE_ERRORS = 'RECEIVE_ERRORS';
 export const CLEAR_ERRORS = 'CLEAR_ERRORS';
 
-export const receiveCurrentUser = (user) => {
+export const receiveCurrentUser = ({ user, chatrooms}) => {
   return {
     type: RECEIVE_CURRENT_USER,
-    user
+    user,
+    chatrooms
+  };
+};
+
+export const logoutCurrentUser = () => {
+  return {
+    type: LOGOUT_CURRENT_USER
   };
 };
 
@@ -24,6 +32,7 @@ export const clearErrors = () => {
   };
 };
 
+
 export const login = (user) => {
   return (dispatch) => {
     return SessionApiUtil.login(user)
@@ -35,7 +44,7 @@ export const login = (user) => {
 export const logout = () => {
   return (dispatch) => {
     return SessionApiUtil.logout()
-    .then(payload => dispatch(receiveCurrentUser(null)));
+    .then(payload => dispatch(logoutCurrentUser()));
   };
 };
 

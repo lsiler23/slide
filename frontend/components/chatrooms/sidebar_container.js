@@ -1,11 +1,12 @@
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
-import ChatRoom from './chatroom';
+import SideBar from './sidebar';
 import { logout } from '../../actions/session_actions';
+import { currentUserSelector } from '../../reducers/selectors';
 
 const msp = (state) => {
   return {
-    currentUser: state.session.currentUser
+    currentUser: currentUserSelector(state)
   };
 };
 
@@ -15,4 +16,4 @@ const mdp = (dispatch) => {
   };
 };
 
-export default withRouter(connect(msp, mdp)(ChatRoom));
+export default withRouter(connect(msp, mdp)(SideBar));
