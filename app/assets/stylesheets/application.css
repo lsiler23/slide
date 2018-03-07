@@ -65,7 +65,6 @@
  .splash-main {
    display: flex;
    justify-content: space-between;
-   border-top: 1px, solid, black;
  }
 
  .splash-page {
@@ -109,6 +108,7 @@
   padding: 30px 60px 30px 60px;
   background-color: #433fcc;
   border-radius: 7.5px;
+  font-size: 15px;
   margin: 0 7.5px 0 15px;
   color: white;
  }
@@ -123,11 +123,13 @@
   display: flex;
   justify-content: space-between;
   top: 0;
-  padding: 15px;
+  padding: 10px;
+  border-bottom: 1px solid lightgrey;
  }
 
  .session-nav.left {
    margin-left: 75px;
+   border: none;
  }
 
 .session-nav.left-left {
@@ -140,12 +142,14 @@
 
 .session-nav.right {
   margin-right: 75px;
+   border: none;
 }
 
 .session-nav.right-right {
   font-family: 'PT Sans', sans-serif;
+  font-size: 15px;
   color: #323648;
-  width: 100px;
+  width: 120px;
   border-radius: 5px;
   outline: none;
   text-align: justify;

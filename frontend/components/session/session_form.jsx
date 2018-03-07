@@ -30,38 +30,52 @@ class SessionForm extends React.Component {
   render() {
     const type = this.props.formType;
     const { history } = this.props;
-    const otherType = (type === 'login' ? '/signup' : '/login');
-    const linkText = (type === 'login' ? 'signup' : 'login');
+    const otherType = (type === 'Log in' ? '/signup' : '/login');
+    const linkText = (type === 'Log in' ? 'sign up' : 'log in');
     const errors = (this.props.errors.length > 0 ? this.props.errors : null);
 
     return (
-      <div>
+      <div className='auth-page'>
         <NavBar history={ history } />
-        <h3>{type}</h3>
-        {
-          errors && errors.map((err, id) => {
-            return <li key={id}>{err}</li>;
-          })
-        }
-        <form onSubmit={this.handleSubmit}>
-          Email:
-          <input
-            onChange={this.handleChange('email_address')}
-            type="text"
-            value={this.state.email_address}/>
-          Username:
-          <input
-            onChange={this.handleChange('username')}
-            type='text'
-            value={this.state.username}/>
-          Password
-          <input
-          onChange={this.handleChange('password')}
-          type="password"
-          value={this.state.password}/>
-        <button>{type} </button>
-        </form>
-        <Link to={otherType}>{linkText}</Link>
+        <div className='auth-form-box'>
+          <h3 className='auth-form-title'>{type}</h3>
+            <form
+              onSubmit={this.handleSubmit}
+              className='auth-form'>
+              <div className='auth-section'>
+                <input
+                  onChange={this.handleChange('email_address')}
+                  type="text"
+                  value={this.state.email_address}
+                  placeholder='you@example.com' />
+              </div>
+              <div className='auth-section'>
+                <input
+                  onChange={this.handleChange('username')}
+                  type='text'
+                  value={this.state.username}
+                  placeholder='username'/>
+              </div>
+              <div className='auth-section'>
+                <input
+                  onChange={this.handleChange('password')}
+                  type="password"
+                  value={this.state.password}
+                  placeholder='password'/>
+              </div>
+              <button className='auth-button'>{type}</button>
+            </form>
+            <div className='auth-redirect'>
+              <span>Need to <Link to={otherType}>{linkText}</Link> instead?</span>
+            </div>
+        </div>
+        <ul>
+          {
+            errors && errors.map((err, id) => {
+              return <li key={id}>{err}</li>;
+              })
+            }
+          </ul>
       </div>
     );
   }
