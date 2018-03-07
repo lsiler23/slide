@@ -1,5 +1,6 @@
 import { Redirect, withRouter, Route } from 'react-router-dom';
 import { connect } from 'react-redux';
+import { generalChatSelector } from '../../reducers/selectors';
 import React from 'react';
 
 const Auth = ({component: Component, path, loggedIn, exact}) => (

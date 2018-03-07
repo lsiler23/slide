@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 import SessionForm from './session_form';
 import { withRouter } from 'react-router-dom';
+import { generalChatSelector } from '../../reducers/selectors';
 import { signup, clearErrors } from '../../actions/session_actions';
 
 const msp = (state, ownProps) => {

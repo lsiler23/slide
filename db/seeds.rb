@@ -21,6 +21,7 @@ hanhee = User.create!({email_address: 'asdf', username: 'asdf', password: 'asdfa
 
 Chatroom.destroy_all
 # Channels
+general = Chatroom.create!({creator_id: me.id, isDM: false, title: 'general'})
 first = Chatroom.create!({creator_id: me.id, isDM: false, title: 'first ever!'})
 second = Chatroom.create!({creator_id: me.id, isDM: false, title: 'second ever!'})
 third = Chatroom.create!({creator_id: jake.id, isDM: false, title: 'third'})
@@ -30,3 +31,15 @@ fifth = Chatroom.create!({creator_id: tom.id, isDM: false, title: 'hot singles'}
 Participation.destroy_all
 # Participation associations
 Participation.create!({participant_id: me.id, chatroom_id: first.id})
+Participation.create!({participant_id: me.id, chatroom_id: general.id})
+Participation.create!({participant_id: jake.id, chatroom_id: general.id})
+Participation.create!({participant_id: maurice.id, chatroom_id: general.id})
+Participation.create!({participant_id: elon.id, chatroom_id: general.id})
+Participation.create!({participant_id: dan.id, chatroom_id: general.id})
+Participation.create!({participant_id: charlie.id, chatroom_id: general.id})
+Participation.create!({participant_id: aislinn.id, chatroom_id: general.id})
+Participation.create!({participant_id: tom.id, chatroom_id: general.id})
+Participation.create!({participant_id: mary.id, chatroom_id: general.id})
+Participation.create!({participant_id: sam.id, chatroom_id: general.id})
+Participation.create!({participant_id: elliot.id, chatroom_id: general.id})
+Participation.create!({participant_id: hanhee.id, chatroom_id: general.id})
