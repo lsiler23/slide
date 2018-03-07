@@ -2,6 +2,11 @@ class User < ApplicationRecord
   validates :email_address, :username, :session_token, :password_digest, presence: true, uniqueness: true
   validates :password, length: { minimum: 6, allow_nil: true}
 
+  has_many :created_chatrooms,
+    class_name: :Chatroom,
+    foreign_key: :creator_id,
+    primary_key: :id
+
   attr_reader :password
 
   after_initialize :ensure_session_token

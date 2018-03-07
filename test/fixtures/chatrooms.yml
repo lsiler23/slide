@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  creator_id: 1
+  isDM: false
+  title: MyString
+
+two:
+  creator_id: 1
+  isDM: false
+  title: MyString

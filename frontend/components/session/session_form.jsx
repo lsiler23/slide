@@ -22,9 +22,12 @@ class SessionForm extends React.Component {
 
   handleChange(field) {
     return (e) => {
-
       this.setState({[field]: e.currentTarget.value});
     };
+  }
+
+  componentWillUnmount() {
+    this.props.clearErrors();
   }
 
   render() {
@@ -44,7 +47,7 @@ class SessionForm extends React.Component {
               <div className='auth-section'>
                 <input
                   onChange={this.handleChange('email_address')}
-                  type="text"
+                  type='text'
                   value={this.state.email_address}
                   placeholder='you@example.com' />
               </div>
@@ -58,7 +61,7 @@ class SessionForm extends React.Component {
               <div className='auth-section'>
                 <input
                   onChange={this.handleChange('password')}
-                  type="password"
+                  type='password'
                   value={this.state.password}
                   placeholder='password'/>
               </div>
@@ -68,7 +71,7 @@ class SessionForm extends React.Component {
               <span>Need to <Link to={otherType}>{linkText}</Link> instead?</span>
             </div>
         </div>
-        <ul>
+        <ul className='auth-errors'>
           {
             errors && errors.map((err, id) => {
               return <li key={id}>{err}</li>;

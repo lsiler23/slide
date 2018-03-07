@@ -60,3 +60,13 @@ input::placeholder {
 .auth-redirect {
   padding: 10px;
 }
+
+.auth-errors li {
+  margin: 0 auto;
+  width: 400px;
+  height: auto;
+  text-align: center;
+  color: red;
+  padding: 2px;
+  border-radius: 2px;
+}
