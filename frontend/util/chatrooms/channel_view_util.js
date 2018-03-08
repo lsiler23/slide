@@ -8,6 +8,6 @@ export const createChannel = (channel) => {
   return $.ajax({
     url: '/api/chatrooms',
     method: 'POST',
-    data: { channel }
+    data: { chatroom: channel }
   });
 };

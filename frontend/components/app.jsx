@@ -1,6 +1,7 @@
 import React from 'react';
+import {connect} from 'react-redux';
 import { Route } from 'react-router-dom';
-import { AuthRoute, ProtectedRoute } from '../util/auth/route_util';
+import { AuthRoute, ProtectedRoute, RedirectToGeneralRoute } from '../util/auth/route_util';
 import { generalChatSelector } from '../reducers/selectors';
 import LoginFormContainer from './session/login_form_container';
 import SignupFormContainer from './session/signup_form_container';
@@ -14,7 +15,8 @@ const App = () => (
     <AuthRoute exact path='/' loggedIn={false} component={SplashPageContainer} />
     <AuthRoute path="/login" loggedIn={false} component={LoginFormContainer} />
     <AuthRoute path="/signup" loggedIn={false} component={SignupFormContainer} />
-    <ProtectedRoute path='/chatrooms' component={WholePage} />
+    <RedirectToGeneralRoute exact path="/chatrooms" />
+    <ProtectedRoute path='/chatrooms/:chatroomId' component={WholePage} />
   </div>
 );
 

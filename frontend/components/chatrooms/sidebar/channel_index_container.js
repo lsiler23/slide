@@ -1,12 +1,10 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { modalOpen, modalClose } from '../../../actions/modal_actions';
-import { createChannel } from '../../../actions/chatrooms_actions';
+import { openModal, closeModal } from '../../../actions/modal_actions';
 import ChannelIndex from './channel_index';
 
 const mdp = (dispatch) => {
   return {
-    createChannel: (channel) => dispatch(createChannel(channel)),
     otherForm: (
       <h4
         onClick={() => dispatch(openModal('channel'))}>

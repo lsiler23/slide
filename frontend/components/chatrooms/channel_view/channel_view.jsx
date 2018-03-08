@@ -8,14 +8,31 @@ export default class ChannelView extends React.Component {
     super(props);
   }
 
+  componentDidMount() {
+    this.props.fetchChannel(this.props.match.params.chatroomId);
+  }
+
+  componentWillReceiveProps(nextProps) {
+    if (this.props.activeView && (this.props.activeView.id !== Number(nextProps.match.params.chatroomId))) {
+      this.props.fetchChannel(nextProps.match.params.chatroomId);
+    }
+  }
+
   render() {
-    const { activeView } = this.props;
-    return (
-      <div className='channel-view'>
-        <ChannelHeader channel={activeView}/>
-        <ChannelBody channel={activeView}/>
-        <ChannelFooter channel={activeView} />
-      </div>
-    );
+    if (this.props.activeView) {
+      return (
+        <div className='channel-view'>
+          <ChannelHeader channel={this.props.activeView}/>
+          <ChannelBody channel={this.props.activeView}/>
+          <ChannelFooter channel={this.props.activeView} />
+        </div>
+      );
+    } else {
+        return (
+          <div>
+
+          </div>
+        );
+    }
   }
 }

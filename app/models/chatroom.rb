@@ -17,5 +17,13 @@ class Chatroom < ApplicationRecord
     through: :participations,
     source: :user
 
+  after_create :subscribe_user_to_chatroom
 
+  def subscribe_user_to_chatroom
+    user = User.find(self.creator_id)
+    Participation.create!({
+      participant_id: user.id,
+      chatroom_id: self.id
+      })
+  end
 end

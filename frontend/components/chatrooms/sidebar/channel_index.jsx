@@ -11,7 +11,7 @@ export default class ChannelIndex extends React.Component {
     const { channels } = this.props;
     return (
       <div className='side-bar channels'>
-        <h4>{this.props.otherForm}</h4>
+        {this.props.otherForm}
         <ul className='side-bar channel-index'>
           {
             channels.map((channel) => {
