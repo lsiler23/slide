@@ -6,7 +6,13 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 User.destroy_all
+Chatroom.destroy_all
+Participation.destroy_all
 me = User.create!({email_address: 'laurette@fun.org', username: 'smeagol92', real_name: 'Laurette', password: 'hotsauce23'})
+general = Chatroom.create!({creator_id: me.id, isDM: false, title: 'general'})
+Participation.create!({participant_id: me.id, chatroom_id: general.id})
+
+
 jake = User.create!({email_address: 'jake@fake.com', username: 'tinynails08', password: 'christmastime'})
 maurice = User.create!({email_address: 'maurice@maurice.com', username: 'maurice00', password: 'mrkrabs'})
 elon = User.create!({email_address: 'elonmusk@spacex.org', username: 'teslaqueen', real_name: 'Elon Musk', password: 'spaceisgood'})
@@ -19,19 +25,15 @@ sam = User.create!({email_address: 'sam@github.edu', username: 'partyonsaturday'
 elliot = User.create!({email_address: 'whatever@elliot.com', username: 'ramrod', password: 'password'})
 hanhee = User.create!({email_address: 'asdf', username: 'asdf', password: 'asdfasdf'})
 
-Chatroom.destroy_all
 # Channels
-general = Chatroom.create!({creator_id: me.id, isDM: false, title: 'general'})
 first = Chatroom.create!({creator_id: me.id, isDM: false, title: 'first ever!'})
 second = Chatroom.create!({creator_id: me.id, isDM: false, title: 'second ever!'})
 third = Chatroom.create!({creator_id: jake.id, isDM: false, title: 'third'})
 fourth = Chatroom.create!({creator_id: elon.id, isDM: false, title: 'spaceisgood'})
 fifth = Chatroom.create!({creator_id: tom.id, isDM: false, title: 'hot singles'})
 
-Participation.destroy_all
 # Participation associations
 Participation.create!({participant_id: me.id, chatroom_id: first.id})
-Participation.create!({participant_id: me.id, chatroom_id: general.id})
 Participation.create!({participant_id: jake.id, chatroom_id: general.id})
 Participation.create!({participant_id: maurice.id, chatroom_id: general.id})
 Participation.create!({participant_id: elon.id, chatroom_id: general.id})

@@ -54,6 +54,6 @@ class User < ApplicationRecord
     Participation.create!({
       participant_id: self.id,
       chatroom_id: general.ids[0]
-      })
+      }) if general
   end
 end
