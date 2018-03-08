@@ -19669,3 +19669,150 @@ Completed 200 OK in 13ms (Views: 0.2ms | ActiveRecord: 3.9ms)
   [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 152], ["LIMIT", 1]]
   [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "participations" ("participant_id", "chatroom_id") VALUES ($1, $2) RETURNING "id"[0m  [["participant_id", 152], ["chatroom_id", 25]]
   [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/" for 127.0.0.1 at 2018-03-07 19:11:00 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (2.1ms)
+  [1m[36mUser Load (3.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 516ms (Views: 486.6ms | ActiveRecord: 3.0ms)
+
+
+Started POST "/api/session" for 127.0.0.1 at 2018-03-07 19:11:17 -0500
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"email_address"=>"jake@fake.com", "username"=>"tinynails08", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email_address" = $1 LIMIT $2[0m  [["email_address", "jake@fake.com"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email_address" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["email_address", "jake@fake.com"], ["id", 142], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["username", "tinynails08"], ["id", 142], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["session_token", "LWS5SXPU34dwOh1xJYwjBg"], ["id", 142], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."password_digest" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["password_digest", "$2a$10$zrtGU4IjdlG1wCDL4ENAPOQvHzKWljJjMK4AfKaSclSGHeRr/XD5i"], ["id", 142], ["LIMIT", 1]]
+  [1m[35mSQL (0.7ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "LWS5SXPU34dwOh1xJYwjBg"], ["updated_at", "2018-03-08 00:11:18.176902"], ["id", 142]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  Rendering api/users/show.json.jbuilder
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "LWS5SXPU34dwOh1xJYwjBg"], ["LIMIT", 1]]
+  Rendered api/users/_user.json.jbuilder (0.7ms)
+  [1m[35m (13.2ms)[0m  [1m[34mSELECT "chatrooms"."id" FROM "chatrooms" INNER JOIN "participations" ON "chatrooms"."id" = "participations"."chatroom_id" WHERE "participations"."participant_id" = $1[0m  [["participant_id", 142]]
+  [1m[36mChatroom Load (0.7ms)[0m  [1m[34mSELECT "chatrooms".* FROM "chatrooms" INNER JOIN "participations" ON "chatrooms"."id" = "participations"."chatroom_id" WHERE "participations"."participant_id" = $1[0m  [["participant_id", 142]]
+  Rendered api/users/show.json.jbuilder (92.9ms)
+Completed 200 OK in 233ms (Views: 108.8ms | ActiveRecord: 19.2ms)
+
+
+Started DELETE "/api/session" for 127.0.0.1 at 2018-03-07 19:11:24 -0500
+Processing by Api::SessionsController#destroy as JSON
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "LWS5SXPU34dwOh1xJYwjBg"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email_address" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["email_address", "jake@fake.com"], ["id", 142], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["username", "tinynails08"], ["id", 142], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["session_token", "2USa6gsnffrnolO0kqq2-g"], ["id", 142], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."password_digest" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["password_digest", "$2a$10$zrtGU4IjdlG1wCDL4ENAPOQvHzKWljJjMK4AfKaSclSGHeRr/XD5i"], ["id", 142], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "2USa6gsnffrnolO0kqq2-g"], ["updated_at", "2018-03-08 00:11:24.646114"], ["id", 142]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 14ms (Views: 0.3ms | ActiveRecord: 4.4ms)
+
+
+Started POST "/api/users" for 127.0.0.1 at 2018-03-07 19:11:26 -0500
+Processing by Api::UsersController#create as JSON
+  Parameters: {"user"=>{"email_address"=>"75.01900274130324", "username"=>"guest93.64394497804058", "password"=>"[FILTERED]"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (1.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email_address" = $1 LIMIT $2[0m  [["email_address", "75.01900274130324"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "guest93.64394497804058"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "YksS2yEJo4Uxna2aXk8Q_A"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."password_digest" = $1 LIMIT $2[0m  [["password_digest", "$2a$10$wDcYxNMQBkXwEsDlq1l9TeY8B9Wzkn2UIjfHLK5Fa4h8TaYp0z452"], ["LIMIT", 1]]
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "users" ("email_address", "username", "session_token", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email_address", "75.01900274130324"], ["username", "guest93.64394497804058"], ["session_token", "YksS2yEJo4Uxna2aXk8Q_A"], ["password_digest", "$2a$10$wDcYxNMQBkXwEsDlq1l9TeY8B9Wzkn2UIjfHLK5Fa4h8TaYp0z452"], ["created_at", "2018-03-08 00:11:26.417215"], ["updated_at", "2018-03-08 00:11:26.417215"]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "chatrooms"."id" FROM "chatrooms" WHERE (title = 'general')[0m
+  [1m[36mChatroom Load (0.4ms)[0m  [1m[34mSELECT  "chatrooms".* FROM "chatrooms" WHERE "chatrooms"."id" = $1 LIMIT $2[0m  [["id", 25], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 153], ["LIMIT", 1]]
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "participations" ("participant_id", "chatroom_id") VALUES ($1, $2) RETURNING "id"[0m  [["participant_id", 153], ["chatroom_id", 25]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email_address" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["email_address", "75.01900274130324"], ["id", 153], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["username", "guest93.64394497804058"], ["id", 153], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["session_token", "9I4oNotjL7fkR6M3iyliWw"], ["id", 153], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."password_digest" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["password_digest", "$2a$10$wDcYxNMQBkXwEsDlq1l9TeY8B9Wzkn2UIjfHLK5Fa4h8TaYp0z452"], ["id", 153], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "9I4oNotjL7fkR6M3iyliWw"], ["updated_at", "2018-03-08 00:11:26.467045"], ["id", 153]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  Rendering api/users/show.json.jbuilder
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "9I4oNotjL7fkR6M3iyliWw"], ["LIMIT", 1]]
+  Rendered api/users/_user.json.jbuilder (0.4ms)
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "chatrooms"."id" FROM "chatrooms" INNER JOIN "participations" ON "chatrooms"."id" = "participations"."chatroom_id" WHERE "participations"."participant_id" = $1[0m  [["participant_id", 153]]
+  [1m[36mChatroom Load (0.7ms)[0m  [1m[34mSELECT "chatrooms".* FROM "chatrooms" INNER JOIN "participations" ON "chatrooms"."id" = "participations"."chatroom_id" WHERE "participations"."participant_id" = $1[0m  [["participant_id", 153]]
+  Rendered api/users/show.json.jbuilder (8.9ms)
+Completed 200 OK in 157ms (Views: 11.8ms | ActiveRecord: 34.8ms)
+
+
+Started DELETE "/api/session" for 127.0.0.1 at 2018-03-07 19:11:32 -0500
+Processing by Api::SessionsController#destroy as JSON
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "9I4oNotjL7fkR6M3iyliWw"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email_address" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["email_address", "75.01900274130324"], ["id", 153], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["username", "guest93.64394497804058"], ["id", 153], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["session_token", "FVLoNOG3jxjgAWvLN9dtBw"], ["id", 153], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."password_digest" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["password_digest", "$2a$10$wDcYxNMQBkXwEsDlq1l9TeY8B9Wzkn2UIjfHLK5Fa4h8TaYp0z452"], ["id", 153], ["LIMIT", 1]]
+  [1m[35mSQL (0.7ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "FVLoNOG3jxjgAWvLN9dtBw"], ["updated_at", "2018-03-08 00:11:32.224200"], ["id", 153]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 21ms (Views: 0.2ms | ActiveRecord: 4.6ms)
+
+
+Started POST "/api/users" for 127.0.0.1 at 2018-03-07 19:13:29 -0500
+Processing by Api::UsersController#create as JSON
+  Parameters: {"user"=>{"email_address"=>"98.09386498190209", "username"=>"guest4.59718302696337", "password"=>"[FILTERED]"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email_address" = $1 LIMIT $2[0m  [["email_address", "98.09386498190209"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "guest4.59718302696337"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "xhUMcTkUTbOMl0gNBnhP5w"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."password_digest" = $1 LIMIT $2[0m  [["password_digest", "$2a$10$Dyqz62B75mC3kCllSDlUmOD82rP5UMK3xHYjqtOe9hNNy65wrdf1W"], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "users" ("email_address", "username", "session_token", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email_address", "98.09386498190209"], ["username", "guest4.59718302696337"], ["session_token", "xhUMcTkUTbOMl0gNBnhP5w"], ["password_digest", "$2a$10$Dyqz62B75mC3kCllSDlUmOD82rP5UMK3xHYjqtOe9hNNy65wrdf1W"], ["created_at", "2018-03-08 00:13:29.455066"], ["updated_at", "2018-03-08 00:13:29.455066"]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "chatrooms"."id" FROM "chatrooms" WHERE (title = 'general')[0m
+  [1m[36mChatroom Load (0.5ms)[0m  [1m[34mSELECT  "chatrooms".* FROM "chatrooms" WHERE "chatrooms"."id" = $1 LIMIT $2[0m  [["id", 25], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 154], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "participations" ("participant_id", "chatroom_id") VALUES ($1, $2) RETURNING "id"[0m  [["participant_id", 154], ["chatroom_id", 25]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email_address" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["email_address", "98.09386498190209"], ["id", 154], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["username", "guest4.59718302696337"], ["id", 154], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["session_token", "lcXwUx2DvJ99w9LQAWLi9g"], ["id", 154], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."password_digest" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["password_digest", "$2a$10$Dyqz62B75mC3kCllSDlUmOD82rP5UMK3xHYjqtOe9hNNy65wrdf1W"], ["id", 154], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "lcXwUx2DvJ99w9LQAWLi9g"], ["updated_at", "2018-03-08 00:13:29.470048"], ["id", 154]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  Rendering api/users/show.json.jbuilder
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "lcXwUx2DvJ99w9LQAWLi9g"], ["LIMIT", 1]]
+  Rendered api/users/_user.json.jbuilder (0.6ms)
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "chatrooms"."id" FROM "chatrooms" INNER JOIN "participations" ON "chatrooms"."id" = "participations"."chatroom_id" WHERE "participations"."participant_id" = $1[0m  [["participant_id", 154]]
+  [1m[36mChatroom Load (0.7ms)[0m  [1m[34mSELECT "chatrooms".* FROM "chatrooms" INNER JOIN "participations" ON "chatrooms"."id" = "participations"."chatroom_id" WHERE "participations"."participant_id" = $1[0m  [["participant_id", 154]]
+  Rendered api/users/show.json.jbuilder (24.5ms)
+Completed 200 OK in 152ms (Views: 47.8ms | ActiveRecord: 10.0ms)
+
+
+Started DELETE "/api/session" for 127.0.0.1 at 2018-03-07 19:15:47 -0500
+Processing by Api::SessionsController#destroy as JSON
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "lcXwUx2DvJ99w9LQAWLi9g"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email_address" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["email_address", "98.09386498190209"], ["id", 154], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["username", "guest4.59718302696337"], ["id", 154], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["session_token", "yQbuj4-P5mFqXSBlDhCgoQ"], ["id", 154], ["LIMIT", 1]]
+  [1m[36mUser Exists (65.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."password_digest" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["password_digest", "$2a$10$Dyqz62B75mC3kCllSDlUmOD82rP5UMK3xHYjqtOe9hNNy65wrdf1W"], ["id", 154], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "yQbuj4-P5mFqXSBlDhCgoQ"], ["updated_at", "2018-03-08 00:15:47.677235"], ["id", 154]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 80ms (Views: 1.0ms | ActiveRecord: 68.6ms)
+
+
+Started POST "/api/session" for 127.0.0.1 at 2018-03-07 19:16:06 -0500
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"email_address"=>"asdf", "username"=>"asdf", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email_address" = $1 LIMIT $2[0m  [["email_address", "asdf"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email_address" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["email_address", "asdf"], ["id", 152], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["username", "asdf"], ["id", 152], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["session_token", "tqTEYu9T5WqXxKSUv65yyg"], ["id", 152], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."password_digest" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["password_digest", "$2a$10$U1lbbl3pbPI5nlo6tgSFtOn0MtA01Iuq1C.wjGCBkuDJwymZKdmrC"], ["id", 152], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "tqTEYu9T5WqXxKSUv65yyg"], ["updated_at", "2018-03-08 00:16:07.013637"], ["id", 152]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  Rendering api/users/show.json.jbuilder
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "tqTEYu9T5WqXxKSUv65yyg"], ["LIMIT", 1]]
+  Rendered api/users/_user.json.jbuilder (0.6ms)
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "chatrooms"."id" FROM "chatrooms" INNER JOIN "participations" ON "chatrooms"."id" = "participations"."chatroom_id" WHERE "participations"."participant_id" = $1[0m  [["participant_id", 152]]
+  [1m[36mChatroom Load (0.8ms)[0m  [1m[34mSELECT "chatrooms".* FROM "chatrooms" INNER JOIN "participations" ON "chatrooms"."id" = "participations"."chatroom_id" WHERE "participations"."participant_id" = $1[0m  [["participant_id", 152]]
+  Rendered api/users/show.json.jbuilder (25.8ms)
+Completed 200 OK in 142ms (Views: 49.5ms | ActiveRecord: 5.5ms)
+
+

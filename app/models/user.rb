@@ -19,7 +19,7 @@ class User < ApplicationRecord
   attr_reader :password
 
   after_initialize :ensure_session_token
-  after_create :subscribe_to_general
+  # after_create :subscribe_to_general
 
   def self.find_by_credentials(email_address, password)
     user = User.find_by(email_address: email_address)
@@ -49,13 +49,13 @@ class User < ApplicationRecord
     self.session_token ||= User.generate_session_token
   end
 
-  def subscribe_to_general
-    general = Chatroom.where('title = ?', 'general')
-    if general
-      Participation.create!({
-        participant_id: self.id,
-        chatroom_id: general.ids[0]
-        })
-    end
-  end
+  # def subscribe_to_general
+  #   general = Chatroom.where('title = ?', 'general')
+  #   if general
+  #     Participation.create!({
+  #       participant_id: self.id,
+  #       chatroom_id: general.ids[0]
+  #       })
+  #   end
+  # end
 end
