@@ -19816,3 +19816,542 @@ Processing by Api::SessionsController#create as JSON
 Completed 200 OK in 142ms (Views: 49.5ms | ActiveRecord: 5.5ms)
 
 
+  [1m[35m (31.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 141]]
+  [1m[35m (25.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 143]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 144]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 145]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 146]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 147]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 148]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 149]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 150]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 151]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 142]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 153]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 154]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 152]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mChatroom Load (0.7ms)[0m  [1m[34mSELECT "chatrooms".* FROM "chatrooms"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[31mDELETE FROM "chatrooms" WHERE "chatrooms"."id" = $1[0m  [["id", 25]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[31mDELETE FROM "chatrooms" WHERE "chatrooms"."id" = $1[0m  [["id", 26]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[31mDELETE FROM "chatrooms" WHERE "chatrooms"."id" = $1[0m  [["id", 27]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[31mDELETE FROM "chatrooms" WHERE "chatrooms"."id" = $1[0m  [["id", 28]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[31mDELETE FROM "chatrooms" WHERE "chatrooms"."id" = $1[0m  [["id", 29]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[31mDELETE FROM "chatrooms" WHERE "chatrooms"."id" = $1[0m  [["id", 30]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mParticipation Load (0.7ms)[0m  [1m[34mSELECT "participations".* FROM "participations"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[31mDELETE FROM "participations" WHERE "participations"."id" = $1[0m  [["id", 31]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[31mDELETE FROM "participations" WHERE "participations"."id" = $1[0m  [["id", 32]]
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[31mDELETE FROM "participations" WHERE "participations"."id" = $1[0m  [["id", 33]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[31mDELETE FROM "participations" WHERE "participations"."id" = $1[0m  [["id", 34]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[31mDELETE FROM "participations" WHERE "participations"."id" = $1[0m  [["id", 35]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[31mDELETE FROM "participations" WHERE "participations"."id" = $1[0m  [["id", 36]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[31mDELETE FROM "participations" WHERE "participations"."id" = $1[0m  [["id", 37]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[31mDELETE FROM "participations" WHERE "participations"."id" = $1[0m  [["id", 38]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[31mDELETE FROM "participations" WHERE "participations"."id" = $1[0m  [["id", 39]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[31mDELETE FROM "participations" WHERE "participations"."id" = $1[0m  [["id", 40]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[31mDELETE FROM "participations" WHERE "participations"."id" = $1[0m  [["id", 41]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[31mDELETE FROM "participations" WHERE "participations"."id" = $1[0m  [["id", 42]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[31mDELETE FROM "participations" WHERE "participations"."id" = $1[0m  [["id", 43]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[31mDELETE FROM "participations" WHERE "participations"."id" = $1[0m  [["id", 44]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[31mDELETE FROM "participations" WHERE "participations"."id" = $1[0m  [["id", 45]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email_address" = $1 LIMIT $2[0m  [["email_address", "laurette@fun.org"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "smeagol92"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "57B4yjzP5799IvuFDhgRoA"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."password_digest" = $1 LIMIT $2[0m  [["password_digest", "$2a$10$DxqM1gr1jaGI1.uh.xhwQufg6OLL6ML35Nvw62CfvWFI6yz9.g7vW"], ["LIMIT", 1]]
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "users" ("email_address", "username", "real_name", "session_token", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["email_address", "laurette@fun.org"], ["username", "smeagol92"], ["real_name", "Laurette"], ["session_token", "57B4yjzP5799IvuFDhgRoA"], ["password_digest", "$2a$10$DxqM1gr1jaGI1.uh.xhwQufg6OLL6ML35Nvw62CfvWFI6yz9.g7vW"], ["created_at", "2018-03-08 00:26:56.170372"], ["updated_at", "2018-03-08 00:26:56.170372"]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "chatrooms"."id" FROM "chatrooms" WHERE (title = 'general')[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 155], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (34.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mChatroom Load (0.6ms)[0m  [1m[34mSELECT "chatrooms".* FROM "chatrooms"[0m
+  [1m[36mParticipation Load (0.6ms)[0m  [1m[34mSELECT "participations".* FROM "participations"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email_address" = $1 LIMIT $2[0m  [["email_address", "laurette@fun.org"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "smeagol92"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "QeLiAXPe91VwRDsfIMQITA"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."password_digest" = $1 LIMIT $2[0m  [["password_digest", "$2a$10$xEtoldY17ANBTLT6DlM64uz6z/RqQWBM5cxK5CIWVCRKlfHDeaeSS"], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "users" ("email_address", "username", "real_name", "session_token", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["email_address", "laurette@fun.org"], ["username", "smeagol92"], ["real_name", "Laurette"], ["session_token", "QeLiAXPe91VwRDsfIMQITA"], ["password_digest", "$2a$10$xEtoldY17ANBTLT6DlM64uz6z/RqQWBM5cxK5CIWVCRKlfHDeaeSS"], ["created_at", "2018-03-08 00:27:29.945596"], ["updated_at", "2018-03-08 00:27:29.945596"]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "chatrooms"."id" FROM "chatrooms" WHERE (title = 'general')[0m
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 156], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mChatroom Load (0.6ms)[0m  [1m[34mSELECT "chatrooms".* FROM "chatrooms"[0m
+  [1m[36mParticipation Load (0.7ms)[0m  [1m[34mSELECT "participations".* FROM "participations"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email_address" = $1 LIMIT $2[0m  [["email_address", "laurette@fun.org"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "smeagol92"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "OHVH0Yujue59D8cTV2GfNA"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."password_digest" = $1 LIMIT $2[0m  [["password_digest", "$2a$10$lCtalczMopLpu3T41teFM.fMzdYITtZAffnj9aW7PMAJKkfK6pjx."], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "users" ("email_address", "username", "real_name", "session_token", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["email_address", "laurette@fun.org"], ["username", "smeagol92"], ["real_name", "Laurette"], ["session_token", "OHVH0Yujue59D8cTV2GfNA"], ["password_digest", "$2a$10$lCtalczMopLpu3T41teFM.fMzdYITtZAffnj9aW7PMAJKkfK6pjx."], ["created_at", "2018-03-08 00:27:51.817912"], ["updated_at", "2018-03-08 00:27:51.817912"]]
+  [1m[36mChatroom Load (0.6ms)[0m  [1m[34mSELECT  "chatrooms".* FROM "chatrooms" WHERE (title = 'general') LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[35m (1.0ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (12.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mChatroom Load (0.7ms)[0m  [1m[34mSELECT "chatrooms".* FROM "chatrooms"[0m
+  [1m[36mParticipation Load (0.6ms)[0m  [1m[34mSELECT "participations".* FROM "participations"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email_address" = $1 LIMIT $2[0m  [["email_address", "laurette@fun.org"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "smeagol92"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "ABwoq51jsTVSJcU6R5C2aQ"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."password_digest" = $1 LIMIT $2[0m  [["password_digest", "$2a$10$JapffrAgNYoZ9ZHSxut6UeM6MLJgtvnMXFWVwDAv2lVLJNJDpcS1a"], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "users" ("email_address", "username", "real_name", "session_token", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["email_address", "laurette@fun.org"], ["username", "smeagol92"], ["real_name", "Laurette"], ["session_token", "ABwoq51jsTVSJcU6R5C2aQ"], ["password_digest", "$2a$10$JapffrAgNYoZ9ZHSxut6UeM6MLJgtvnMXFWVwDAv2lVLJNJDpcS1a"], ["created_at", "2018-03-08 00:29:15.611793"], ["updated_at", "2018-03-08 00:29:15.611793"]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "chatrooms"."id" FROM "chatrooms" WHERE (title = 'general')[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 158], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mChatroom Load (0.6ms)[0m  [1m[34mSELECT "chatrooms".* FROM "chatrooms"[0m
+  [1m[36mParticipation Load (0.6ms)[0m  [1m[34mSELECT "participations".* FROM "participations"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email_address" = $1 LIMIT $2[0m  [["email_address", "laurette@fun.org"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "smeagol92"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "aM329_Qa461EfsLhWc12xw"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."password_digest" = $1 LIMIT $2[0m  [["password_digest", "$2a$10$QTOBQfgrAfA82yqPcJ6bfupAA/ID1avfGRcv1M9NQ2sPJsL5BQzd."], ["LIMIT", 1]]
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "users" ("email_address", "username", "real_name", "session_token", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["email_address", "laurette@fun.org"], ["username", "smeagol92"], ["real_name", "Laurette"], ["session_token", "aM329_Qa461EfsLhWc12xw"], ["password_digest", "$2a$10$QTOBQfgrAfA82yqPcJ6bfupAA/ID1avfGRcv1M9NQ2sPJsL5BQzd."], ["created_at", "2018-03-08 00:30:29.917182"], ["updated_at", "2018-03-08 00:30:29.917182"]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "chatrooms"."id" FROM "chatrooms" WHERE (title = 'general')[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 159], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (35.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mChatroom Load (0.6ms)[0m  [1m[34mSELECT "chatrooms".* FROM "chatrooms"[0m
+  [1m[36mParticipation Load (0.7ms)[0m  [1m[34mSELECT "participations".* FROM "participations"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email_address" = $1 LIMIT $2[0m  [["email_address", "laurette@fun.org"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "smeagol92"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "3QFyhTn9Yh7wKtwX9kChMw"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."password_digest" = $1 LIMIT $2[0m  [["password_digest", "$2a$10$WAGQhhF8QyP6Vx8S0eHbkuVXkDV6kbZk4jSfvbls0GstXt.wXNL2q"], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "users" ("email_address", "username", "real_name", "session_token", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["email_address", "laurette@fun.org"], ["username", "smeagol92"], ["real_name", "Laurette"], ["session_token", "3QFyhTn9Yh7wKtwX9kChMw"], ["password_digest", "$2a$10$WAGQhhF8QyP6Vx8S0eHbkuVXkDV6kbZk4jSfvbls0GstXt.wXNL2q"], ["created_at", "2018-03-08 00:31:15.071107"], ["updated_at", "2018-03-08 00:31:15.071107"]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "chatrooms"."id" FROM "chatrooms" WHERE (title = 'general')[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 160], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mChatroom Load (0.6ms)[0m  [1m[34mSELECT "chatrooms".* FROM "chatrooms"[0m
+  [1m[36mParticipation Load (0.6ms)[0m  [1m[34mSELECT "participations".* FROM "participations"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email_address" = $1 LIMIT $2[0m  [["email_address", "laurette@fun.org"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "smeagol92"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "ijxA5UU4uOavUL_J6nrd-g"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."password_digest" = $1 LIMIT $2[0m  [["password_digest", "$2a$10$K3hRt6Tq7yifqkUJ0WcqMe4yl/RDEEU/d14MxLUNlLtnVOYT.LFZW"], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "users" ("email_address", "username", "real_name", "session_token", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["email_address", "laurette@fun.org"], ["username", "smeagol92"], ["real_name", "Laurette"], ["session_token", "ijxA5UU4uOavUL_J6nrd-g"], ["password_digest", "$2a$10$K3hRt6Tq7yifqkUJ0WcqMe4yl/RDEEU/d14MxLUNlLtnVOYT.LFZW"], ["created_at", "2018-03-08 00:31:45.451126"], ["updated_at", "2018-03-08 00:31:45.451126"]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "chatrooms"."id" FROM "chatrooms" WHERE (title = 'general')[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 161], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+Started GET "/" for 127.0.0.1 at 2018-03-07 19:31:58 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (1.6ms)
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "tqTEYu9T5WqXxKSUv65yyg"], ["LIMIT", 1]]
+Completed 200 OK in 242ms (Views: 225.9ms | ActiveRecord: 1.5ms)
+
+
+Started POST "/api/session" for 127.0.0.1 at 2018-03-07 19:32:04 -0500
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"email_address"=>"asdf", "username"=>"asdf", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email_address" = $1 LIMIT $2[0m  [["email_address", "asdf"], ["LIMIT", 1]]
+Completed 422 Unprocessable Entity in 5ms (Views: 0.7ms | ActiveRecord: 1.3ms)
+
+
+Started POST "/api/users" for 127.0.0.1 at 2018-03-07 19:32:06 -0500
+Processing by Api::UsersController#create as JSON
+  Parameters: {"user"=>{"email_address"=>"13.808973891938138", "username"=>"guest80.43478034889098", "password"=>"[FILTERED]"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email_address" = $1 LIMIT $2[0m  [["email_address", "13.808973891938138"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "guest80.43478034889098"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "Sp2UYL_ewsS7B7uJ3rs5sg"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."password_digest" = $1 LIMIT $2[0m  [["password_digest", "$2a$10$..mWnlStcgQjhvOOgS7tlOf.DAVjQI40GgqPTgfJKcuXrjsILtbDa"], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "users" ("email_address", "username", "session_token", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email_address", "13.808973891938138"], ["username", "guest80.43478034889098"], ["session_token", "Sp2UYL_ewsS7B7uJ3rs5sg"], ["password_digest", "$2a$10$..mWnlStcgQjhvOOgS7tlOf.DAVjQI40GgqPTgfJKcuXrjsILtbDa"], ["created_at", "2018-03-08 00:32:07.105349"], ["updated_at", "2018-03-08 00:32:07.105349"]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "chatrooms"."id" FROM "chatrooms" WHERE (title = 'general')[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 162], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+Completed 422 Unprocessable Entity in 148ms (Views: 0.2ms | ActiveRecord: 20.6ms)
+
+
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mChatroom Load (0.6ms)[0m  [1m[34mSELECT "chatrooms".* FROM "chatrooms"[0m
+  [1m[36mParticipation Load (0.6ms)[0m  [1m[34mSELECT "participations".* FROM "participations"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email_address" = $1 LIMIT $2[0m  [["email_address", "laurette@fun.org"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "smeagol92"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "5xvFmiA_wlAM9rdIgANl8A"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."password_digest" = $1 LIMIT $2[0m  [["password_digest", "$2a$10$9FNtBtz1pW.cqmNoYLF.y.MGyfUP6T8Cl8DeL2D8GNnIHOjN1sUV."], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "users" ("email_address", "username", "real_name", "session_token", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["email_address", "laurette@fun.org"], ["username", "smeagol92"], ["real_name", "Laurette"], ["session_token", "5xvFmiA_wlAM9rdIgANl8A"], ["password_digest", "$2a$10$9FNtBtz1pW.cqmNoYLF.y.MGyfUP6T8Cl8DeL2D8GNnIHOjN1sUV."], ["created_at", "2018-03-08 00:34:13.100691"], ["updated_at", "2018-03-08 00:34:13.100691"]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "chatrooms"."id" FROM "chatrooms" WHERE (title = 'general')[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 163], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mChatroom Load (0.6ms)[0m  [1m[34mSELECT "chatrooms".* FROM "chatrooms"[0m
+  [1m[36mParticipation Load (0.6ms)[0m  [1m[34mSELECT "participations".* FROM "participations"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mChatroom Load (0.6ms)[0m  [1m[34mSELECT "chatrooms".* FROM "chatrooms"[0m
+  [1m[36mParticipation Load (0.6ms)[0m  [1m[34mSELECT "participations".* FROM "participations"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email_address" = $1 LIMIT $2[0m  [["email_address", "laurette@fun.org"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "smeagol92"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "q6SCmlDq6bn_z8MB1wwipA"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."password_digest" = $1 LIMIT $2[0m  [["password_digest", "$2a$10$4eGp9clYvbLh3bJSI0Do5./6zpwAPh49LJ9lpisgojkj5Z4lZ3iJy"], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "users" ("email_address", "username", "real_name", "session_token", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["email_address", "laurette@fun.org"], ["username", "smeagol92"], ["real_name", "Laurette"], ["session_token", "q6SCmlDq6bn_z8MB1wwipA"], ["password_digest", "$2a$10$4eGp9clYvbLh3bJSI0Do5./6zpwAPh49LJ9lpisgojkj5Z4lZ3iJy"], ["created_at", "2018-03-08 00:35:45.698864"], ["updated_at", "2018-03-08 00:35:45.698864"]]
+  [1m[36mChatroom Load (0.6ms)[0m  [1m[34mSELECT  "chatrooms".* FROM "chatrooms" WHERE (title = 'general') LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mChatroom Load (0.6ms)[0m  [1m[34mSELECT  "chatrooms".* FROM "chatrooms" WHERE (title = 'general') LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mChatroom Load (0.5ms)[0m  [1m[34mSELECT  "chatrooms".* FROM "chatrooms" WHERE (title = 'general') LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mChatroom Load (0.9ms)[0m  [1m[34mSELECT  "chatrooms".* FROM "chatrooms" WHERE (title = 'general') ORDER BY "chatrooms"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.8ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mChatroom Load (0.7ms)[0m  [1m[34mSELECT "chatrooms".* FROM "chatrooms"[0m
+  [1m[36mParticipation Load (0.7ms)[0m  [1m[34mSELECT "participations".* FROM "participations"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email_address" = $1 LIMIT $2[0m  [["email_address", "laurette@fun.org"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "smeagol92"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "0_BcN9h0OYPpijlW0lRmsw"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."password_digest" = $1 LIMIT $2[0m  [["password_digest", "$2a$10$95kUNvvfj1FtebIwWBxMouWT.rtNs5tTX7B6p07IDrhKSRvk0Aj6q"], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "users" ("email_address", "username", "real_name", "session_token", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["email_address", "laurette@fun.org"], ["username", "smeagol92"], ["real_name", "Laurette"], ["session_token", "0_BcN9h0OYPpijlW0lRmsw"], ["password_digest", "$2a$10$95kUNvvfj1FtebIwWBxMouWT.rtNs5tTX7B6p07IDrhKSRvk0Aj6q"], ["created_at", "2018-03-08 00:36:46.205185"], ["updated_at", "2018-03-08 00:36:46.205185"]]
+  [1m[36mChatroom Load (0.7ms)[0m  [1m[34mSELECT  "chatrooms".* FROM "chatrooms" WHERE (title = 'general') ORDER BY "chatrooms"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 165]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mChatroom Load (0.6ms)[0m  [1m[34mSELECT "chatrooms".* FROM "chatrooms"[0m
+  [1m[36mParticipation Load (0.8ms)[0m  [1m[34mSELECT "participations".* FROM "participations"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email_address" = $1 LIMIT $2[0m  [["email_address", "laurette@fun.org"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "smeagol92"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "Pm7rQjOfAGP7UR6zFXQPkA"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."password_digest" = $1 LIMIT $2[0m  [["password_digest", "$2a$10$KqxYhDQgSxXuL5YRGYG/Mu9B3rU4SkLIpBDnN34vcvF/SiTvDxt9u"], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "users" ("email_address", "username", "real_name", "session_token", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["email_address", "laurette@fun.org"], ["username", "smeagol92"], ["real_name", "Laurette"], ["session_token", "Pm7rQjOfAGP7UR6zFXQPkA"], ["password_digest", "$2a$10$KqxYhDQgSxXuL5YRGYG/Mu9B3rU4SkLIpBDnN34vcvF/SiTvDxt9u"], ["created_at", "2018-03-08 00:37:02.320225"], ["updated_at", "2018-03-08 00:37:02.320225"]]
+  [1m[36mChatroom Load (0.8ms)[0m  [1m[34mSELECT  "chatrooms".* FROM "chatrooms" WHERE (title = 'general') ORDER BY "chatrooms"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 166], ["LIMIT", 1]]
+  [1m[35mSQL (14.4ms)[0m  [1m[32mINSERT INTO "chatrooms" ("creator_id", "isDM", "title", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["creator_id", 166], ["isDM", "f"], ["title", "general"], ["created_at", "2018-03-08 00:37:02.353227"], ["updated_at", "2018-03-08 00:37:02.353227"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mChatroom Load (0.3ms)[0m  [1m[34mSELECT  "chatrooms".* FROM "chatrooms" WHERE "chatrooms"."id" = $1 LIMIT $2[0m  [["id", 31], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 166], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "participations" ("participant_id", "chatroom_id") VALUES ($1, $2) RETURNING "id"[0m  [["participant_id", 166], ["chatroom_id", 31]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email_address" = $1 LIMIT $2[0m  [["email_address", "jake@fake.com"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "tinynails08"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "XPH3vj_E3KjFi3q014QBfQ"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."password_digest" = $1 LIMIT $2[0m  [["password_digest", "$2a$10$VPc0U51MCAnNMi6Lsq9Ak.ECEyGF7iuFDS160OGXJqJKFxMDfbRoS"], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "users" ("email_address", "username", "session_token", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email_address", "jake@fake.com"], ["username", "tinynails08"], ["session_token", "XPH3vj_E3KjFi3q014QBfQ"], ["password_digest", "$2a$10$VPc0U51MCAnNMi6Lsq9Ak.ECEyGF7iuFDS160OGXJqJKFxMDfbRoS"], ["created_at", "2018-03-08 00:37:02.470412"], ["updated_at", "2018-03-08 00:37:02.470412"]]
+  [1m[36mChatroom Load (0.4ms)[0m  [1m[34mSELECT  "chatrooms".* FROM "chatrooms" WHERE (title = 'general') ORDER BY "chatrooms"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "chatrooms"."id" FROM "chatrooms" WHERE (title = 'general')[0m
+  [1m[36mChatroom Load (0.3ms)[0m  [1m[34mSELECT  "chatrooms".* FROM "chatrooms" WHERE "chatrooms"."id" = $1 LIMIT $2[0m  [["id", 31], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 167], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "participations" ("participant_id", "chatroom_id") VALUES ($1, $2) RETURNING "id"[0m  [["participant_id", 167], ["chatroom_id", 31]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email_address" = $1 LIMIT $2[0m  [["email_address", "maurice@maurice.com"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "maurice00"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "nL3MsSgN-S3w_7oC7qLlXg"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."password_digest" = $1 LIMIT $2[0m  [["password_digest", "$2a$10$pyk34ZebsWGglA3WD37IN.TVoZPbBvnRAAyiDuZcEYXaL.sC8JLHi"], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "users" ("email_address", "username", "session_token", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email_address", "maurice@maurice.com"], ["username", "maurice00"], ["session_token", "nL3MsSgN-S3w_7oC7qLlXg"], ["password_digest", "$2a$10$pyk34ZebsWGglA3WD37IN.TVoZPbBvnRAAyiDuZcEYXaL.sC8JLHi"], ["created_at", "2018-03-08 00:37:02.561233"], ["updated_at", "2018-03-08 00:37:02.561233"]]
+  [1m[36mChatroom Load (0.4ms)[0m  [1m[34mSELECT  "chatrooms".* FROM "chatrooms" WHERE (title = 'general') ORDER BY "chatrooms"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "chatrooms"."id" FROM "chatrooms" WHERE (title = 'general')[0m
+  [1m[36mChatroom Load (0.3ms)[0m  [1m[34mSELECT  "chatrooms".* FROM "chatrooms" WHERE "chatrooms"."id" = $1 LIMIT $2[0m  [["id", 31], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 168], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "participations" ("participant_id", "chatroom_id") VALUES ($1, $2) RETURNING "id"[0m  [["participant_id", 168], ["chatroom_id", 31]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email_address" = $1 LIMIT $2[0m  [["email_address", "elonmusk@spacex.org"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "teslaqueen"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "N37GfpsBv99LmdFTmpkHiw"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."password_digest" = $1 LIMIT $2[0m  [["password_digest", "$2a$10$H3IyOZgxWc8rdyacBkb9vejqVlxxRORTyLedVkLM7dz3zCMW.3cea"], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "users" ("email_address", "username", "real_name", "session_token", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["email_address", "elonmusk@spacex.org"], ["username", "teslaqueen"], ["real_name", "Elon Musk"], ["session_token", "N37GfpsBv99LmdFTmpkHiw"], ["password_digest", "$2a$10$H3IyOZgxWc8rdyacBkb9vejqVlxxRORTyLedVkLM7dz3zCMW.3cea"], ["created_at", "2018-03-08 00:37:02.651608"], ["updated_at", "2018-03-08 00:37:02.651608"]]
+  [1m[36mChatroom Load (0.4ms)[0m  [1m[34mSELECT  "chatrooms".* FROM "chatrooms" WHERE (title = 'general') ORDER BY "chatrooms"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "chatrooms"."id" FROM "chatrooms" WHERE (title = 'general')[0m
+  [1m[36mChatroom Load (0.3ms)[0m  [1m[34mSELECT  "chatrooms".* FROM "chatrooms" WHERE "chatrooms"."id" = $1 LIMIT $2[0m  [["id", 31], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 169], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "participations" ("participant_id", "chatroom_id") VALUES ($1, $2) RETURNING "id"[0m  [["participant_id", 169], ["chatroom_id", 31]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email_address" = $1 LIMIT $2[0m  [["email_address", "dan@bu.edu"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "loophole42"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "TUFbozpFyQTJrzXq97UP_Q"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."password_digest" = $1 LIMIT $2[0m  [["password_digest", "$2a$10$62lXXkTPxfqx69z/W.Behu4OdCrILiBm/2SAUwJndvppi5Irwdch2"], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "users" ("email_address", "username", "session_token", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email_address", "dan@bu.edu"], ["username", "loophole42"], ["session_token", "TUFbozpFyQTJrzXq97UP_Q"], ["password_digest", "$2a$10$62lXXkTPxfqx69z/W.Behu4OdCrILiBm/2SAUwJndvppi5Irwdch2"], ["created_at", "2018-03-08 00:37:02.743736"], ["updated_at", "2018-03-08 00:37:02.743736"]]
+  [1m[36mChatroom Load (0.4ms)[0m  [1m[34mSELECT  "chatrooms".* FROM "chatrooms" WHERE (title = 'general') ORDER BY "chatrooms"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "chatrooms"."id" FROM "chatrooms" WHERE (title = 'general')[0m
+  [1m[36mChatroom Load (0.3ms)[0m  [1m[34mSELECT  "chatrooms".* FROM "chatrooms" WHERE "chatrooms"."id" = $1 LIMIT $2[0m  [["id", 31], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 170], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "participations" ("participant_id", "chatroom_id") VALUES ($1, $2) RETURNING "id"[0m  [["participant_id", 170], ["chatroom_id", 31]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email_address" = $1 LIMIT $2[0m  [["email_address", "charlie@charles.org"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "chunks"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "qEBthSmAgjq2b2i_1NIDnw"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."password_digest" = $1 LIMIT $2[0m  [["password_digest", "$2a$10$iKCwJkg4qstwxj4u7pbWsO0KXWbpb1XMKIXckD0rRrcL8r1/Q8QQK"], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "users" ("email_address", "username", "session_token", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email_address", "charlie@charles.org"], ["username", "chunks"], ["session_token", "qEBthSmAgjq2b2i_1NIDnw"], ["password_digest", "$2a$10$iKCwJkg4qstwxj4u7pbWsO0KXWbpb1XMKIXckD0rRrcL8r1/Q8QQK"], ["created_at", "2018-03-08 00:37:02.834511"], ["updated_at", "2018-03-08 00:37:02.834511"]]
+  [1m[36mChatroom Load (0.5ms)[0m  [1m[34mSELECT  "chatrooms".* FROM "chatrooms" WHERE (title = 'general') ORDER BY "chatrooms"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "chatrooms"."id" FROM "chatrooms" WHERE (title = 'general')[0m
+  [1m[36mChatroom Load (0.3ms)[0m  [1m[34mSELECT  "chatrooms".* FROM "chatrooms" WHERE "chatrooms"."id" = $1 LIMIT $2[0m  [["id", 31], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 171], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "participations" ("participant_id", "chatroom_id") VALUES ($1, $2) RETURNING "id"[0m  [["participant_id", 171], ["chatroom_id", 31]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email_address" = $1 LIMIT $2[0m  [["email_address", "aislinn@hotmail.edu"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "iheartkevin"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "xODTcYnTEvpyURBNSWQLRA"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."password_digest" = $1 LIMIT $2[0m  [["password_digest", "$2a$10$/3BJqXr4R0oo2b8x6ZM/o.cMDl6KHQwj30E1VbpXicD2RHvKVi61K"], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "users" ("email_address", "username", "session_token", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email_address", "aislinn@hotmail.edu"], ["username", "iheartkevin"], ["session_token", "xODTcYnTEvpyURBNSWQLRA"], ["password_digest", "$2a$10$/3BJqXr4R0oo2b8x6ZM/o.cMDl6KHQwj30E1VbpXicD2RHvKVi61K"], ["created_at", "2018-03-08 00:37:02.926502"], ["updated_at", "2018-03-08 00:37:02.926502"]]
+  [1m[36mChatroom Load (0.4ms)[0m  [1m[34mSELECT  "chatrooms".* FROM "chatrooms" WHERE (title = 'general') ORDER BY "chatrooms"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "chatrooms"."id" FROM "chatrooms" WHERE (title = 'general')[0m
+  [1m[36mChatroom Load (0.3ms)[0m  [1m[34mSELECT  "chatrooms".* FROM "chatrooms" WHERE "chatrooms"."id" = $1 LIMIT $2[0m  [["id", 31], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 172], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "participations" ("participant_id", "chatroom_id") VALUES ($1, $2) RETURNING "id"[0m  [["participant_id", 172], ["chatroom_id", 31]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email_address" = $1 LIMIT $2[0m  [["email_address", "tom@illuminati.net"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "gigglemonster93"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "JGX-PVY5WmAceksmiq8I1w"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."password_digest" = $1 LIMIT $2[0m  [["password_digest", "$2a$10$Ph17UNgeBhByFPINjoHfU.asQCE76kVCXmVMfMOi1C4MX9QlCmjXq"], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "users" ("email_address", "username", "session_token", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email_address", "tom@illuminati.net"], ["username", "gigglemonster93"], ["session_token", "JGX-PVY5WmAceksmiq8I1w"], ["password_digest", "$2a$10$Ph17UNgeBhByFPINjoHfU.asQCE76kVCXmVMfMOi1C4MX9QlCmjXq"], ["created_at", "2018-03-08 00:37:03.017144"], ["updated_at", "2018-03-08 00:37:03.017144"]]
+  [1m[36mChatroom Load (0.7ms)[0m  [1m[34mSELECT  "chatrooms".* FROM "chatrooms" WHERE (title = 'general') ORDER BY "chatrooms"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "chatrooms"."id" FROM "chatrooms" WHERE (title = 'general')[0m
+  [1m[36mChatroom Load (0.4ms)[0m  [1m[34mSELECT  "chatrooms".* FROM "chatrooms" WHERE "chatrooms"."id" = $1 LIMIT $2[0m  [["id", 31], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 173], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "participations" ("participant_id", "chatroom_id") VALUES ($1, $2) RETURNING "id"[0m  [["participant_id", 173], ["chatroom_id", 31]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email_address" = $1 LIMIT $2[0m  [["email_address", "mary@mary.com"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "owlgrl39"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "q9iGthFs7wgAbSwTv9Hpaw"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."password_digest" = $1 LIMIT $2[0m  [["password_digest", "$2a$10$9SwiKj6XjTX8qA1BZJosAOk0MufdcNptYBeewcpkqQpI5zwRoMyzi"], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "users" ("email_address", "username", "real_name", "session_token", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["email_address", "mary@mary.com"], ["username", "owlgrl39"], ["real_name", "Mary Seo"], ["session_token", "q9iGthFs7wgAbSwTv9Hpaw"], ["password_digest", "$2a$10$9SwiKj6XjTX8qA1BZJosAOk0MufdcNptYBeewcpkqQpI5zwRoMyzi"], ["created_at", "2018-03-08 00:37:03.110133"], ["updated_at", "2018-03-08 00:37:03.110133"]]
+  [1m[36mChatroom Load (0.4ms)[0m  [1m[34mSELECT  "chatrooms".* FROM "chatrooms" WHERE (title = 'general') ORDER BY "chatrooms"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "chatrooms"."id" FROM "chatrooms" WHERE (title = 'general')[0m
+  [1m[36mChatroom Load (0.3ms)[0m  [1m[34mSELECT  "chatrooms".* FROM "chatrooms" WHERE "chatrooms"."id" = $1 LIMIT $2[0m  [["id", 31], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 174], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "participations" ("participant_id", "chatroom_id") VALUES ($1, $2) RETURNING "id"[0m  [["participant_id", 174], ["chatroom_id", 31]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email_address" = $1 LIMIT $2[0m  [["email_address", "sam@github.edu"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "partyonsaturday"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "TZFPgB4qQVhMnEXLv4arNg"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."password_digest" = $1 LIMIT $2[0m  [["password_digest", "$2a$10$JdIK0mVajJc45AR6pdQ0PuE4UiMiXaURRnHKlBvMdFW2nZmIMsUiy"], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "users" ("email_address", "username", "session_token", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email_address", "sam@github.edu"], ["username", "partyonsaturday"], ["session_token", "TZFPgB4qQVhMnEXLv4arNg"], ["password_digest", "$2a$10$JdIK0mVajJc45AR6pdQ0PuE4UiMiXaURRnHKlBvMdFW2nZmIMsUiy"], ["created_at", "2018-03-08 00:37:03.203195"], ["updated_at", "2018-03-08 00:37:03.203195"]]
+  [1m[36mChatroom Load (0.4ms)[0m  [1m[34mSELECT  "chatrooms".* FROM "chatrooms" WHERE (title = 'general') ORDER BY "chatrooms"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "chatrooms"."id" FROM "chatrooms" WHERE (title = 'general')[0m
+  [1m[36mChatroom Load (0.3ms)[0m  [1m[34mSELECT  "chatrooms".* FROM "chatrooms" WHERE "chatrooms"."id" = $1 LIMIT $2[0m  [["id", 31], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 175], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "participations" ("participant_id", "chatroom_id") VALUES ($1, $2) RETURNING "id"[0m  [["participant_id", 175], ["chatroom_id", 31]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email_address" = $1 LIMIT $2[0m  [["email_address", "whatever@elliot.com"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "ramrod"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "3_Q-7Ru5_Ue2mxPF628Rbg"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."password_digest" = $1 LIMIT $2[0m  [["password_digest", "$2a$10$FyYsuU.ryPu4Rwd9F1wbru0GtZF1fe72tHWKOduJqGAKLVRya..Di"], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "users" ("email_address", "username", "session_token", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email_address", "whatever@elliot.com"], ["username", "ramrod"], ["session_token", "3_Q-7Ru5_Ue2mxPF628Rbg"], ["password_digest", "$2a$10$FyYsuU.ryPu4Rwd9F1wbru0GtZF1fe72tHWKOduJqGAKLVRya..Di"], ["created_at", "2018-03-08 00:37:03.294200"], ["updated_at", "2018-03-08 00:37:03.294200"]]
+  [1m[36mChatroom Load (0.4ms)[0m  [1m[34mSELECT  "chatrooms".* FROM "chatrooms" WHERE (title = 'general') ORDER BY "chatrooms"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "chatrooms"."id" FROM "chatrooms" WHERE (title = 'general')[0m
+  [1m[36mChatroom Load (0.4ms)[0m  [1m[34mSELECT  "chatrooms".* FROM "chatrooms" WHERE "chatrooms"."id" = $1 LIMIT $2[0m  [["id", 31], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 176], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "participations" ("participant_id", "chatroom_id") VALUES ($1, $2) RETURNING "id"[0m  [["participant_id", 176], ["chatroom_id", 31]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email_address" = $1 LIMIT $2[0m  [["email_address", "asdf"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "asdf"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "hTiAwiznOhCpw5hPwfNetA"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."password_digest" = $1 LIMIT $2[0m  [["password_digest", "$2a$10$SiHc8tYjE3TAro.SIH14Ju.z/7GrZo6IlnQQkm650mRHHBvlhaley"], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "users" ("email_address", "username", "session_token", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email_address", "asdf"], ["username", "asdf"], ["session_token", "hTiAwiznOhCpw5hPwfNetA"], ["password_digest", "$2a$10$SiHc8tYjE3TAro.SIH14Ju.z/7GrZo6IlnQQkm650mRHHBvlhaley"], ["created_at", "2018-03-08 00:37:03.387531"], ["updated_at", "2018-03-08 00:37:03.387531"]]
+  [1m[36mChatroom Load (0.4ms)[0m  [1m[34mSELECT  "chatrooms".* FROM "chatrooms" WHERE (title = 'general') ORDER BY "chatrooms"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "chatrooms"."id" FROM "chatrooms" WHERE (title = 'general')[0m
+  [1m[36mChatroom Load (0.6ms)[0m  [1m[34mSELECT  "chatrooms".* FROM "chatrooms" WHERE "chatrooms"."id" = $1 LIMIT $2[0m  [["id", 31], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 177], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "participations" ("participant_id", "chatroom_id") VALUES ($1, $2) RETURNING "id"[0m  [["participant_id", 177], ["chatroom_id", 31]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 166], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "chatrooms" ("creator_id", "isDM", "title", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["creator_id", 166], ["isDM", "f"], ["title", "first ever!"], ["created_at", "2018-03-08 00:37:03.398074"], ["updated_at", "2018-03-08 00:37:03.398074"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 166], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "chatrooms" ("creator_id", "isDM", "title", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["creator_id", 166], ["isDM", "f"], ["title", "second ever!"], ["created_at", "2018-03-08 00:37:03.402716"], ["updated_at", "2018-03-08 00:37:03.402716"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 167], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "chatrooms" ("creator_id", "isDM", "title", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["creator_id", 167], ["isDM", "f"], ["title", "third"], ["created_at", "2018-03-08 00:37:03.406966"], ["updated_at", "2018-03-08 00:37:03.406966"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 169], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "chatrooms" ("creator_id", "isDM", "title", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["creator_id", 169], ["isDM", "f"], ["title", "spaceisgood"], ["created_at", "2018-03-08 00:37:03.410629"], ["updated_at", "2018-03-08 00:37:03.410629"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 173], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "chatrooms" ("creator_id", "isDM", "title", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["creator_id", 173], ["isDM", "f"], ["title", "hot singles"], ["created_at", "2018-03-08 00:37:03.414250"], ["updated_at", "2018-03-08 00:37:03.414250"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mChatroom Load (0.3ms)[0m  [1m[34mSELECT  "chatrooms".* FROM "chatrooms" WHERE "chatrooms"."id" = $1 LIMIT $2[0m  [["id", 32], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 166], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "participations" ("participant_id", "chatroom_id") VALUES ($1, $2) RETURNING "id"[0m  [["participant_id", 166], ["chatroom_id", 32]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mChatroom Load (0.3ms)[0m  [1m[34mSELECT  "chatrooms".* FROM "chatrooms" WHERE "chatrooms"."id" = $1 LIMIT $2[0m  [["id", 31], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 167], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "participations" ("participant_id", "chatroom_id") VALUES ($1, $2) RETURNING "id"[0m  [["participant_id", 167], ["chatroom_id", 31]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mChatroom Load (0.3ms)[0m  [1m[34mSELECT  "chatrooms".* FROM "chatrooms" WHERE "chatrooms"."id" = $1 LIMIT $2[0m  [["id", 31], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 168], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "participations" ("participant_id", "chatroom_id") VALUES ($1, $2) RETURNING "id"[0m  [["participant_id", 168], ["chatroom_id", 31]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mChatroom Load (0.3ms)[0m  [1m[34mSELECT  "chatrooms".* FROM "chatrooms" WHERE "chatrooms"."id" = $1 LIMIT $2[0m  [["id", 31], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 169], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "participations" ("participant_id", "chatroom_id") VALUES ($1, $2) RETURNING "id"[0m  [["participant_id", 169], ["chatroom_id", 31]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mChatroom Load (0.3ms)[0m  [1m[34mSELECT  "chatrooms".* FROM "chatrooms" WHERE "chatrooms"."id" = $1 LIMIT $2[0m  [["id", 31], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 170], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "participations" ("participant_id", "chatroom_id") VALUES ($1, $2) RETURNING "id"[0m  [["participant_id", 170], ["chatroom_id", 31]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mChatroom Load (0.2ms)[0m  [1m[34mSELECT  "chatrooms".* FROM "chatrooms" WHERE "chatrooms"."id" = $1 LIMIT $2[0m  [["id", 31], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 171], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "participations" ("participant_id", "chatroom_id") VALUES ($1, $2) RETURNING "id"[0m  [["participant_id", 171], ["chatroom_id", 31]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mChatroom Load (0.2ms)[0m  [1m[34mSELECT  "chatrooms".* FROM "chatrooms" WHERE "chatrooms"."id" = $1 LIMIT $2[0m  [["id", 31], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 172], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "participations" ("participant_id", "chatroom_id") VALUES ($1, $2) RETURNING "id"[0m  [["participant_id", 172], ["chatroom_id", 31]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mChatroom Load (0.2ms)[0m  [1m[34mSELECT  "chatrooms".* FROM "chatrooms" WHERE "chatrooms"."id" = $1 LIMIT $2[0m  [["id", 31], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 173], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "participations" ("participant_id", "chatroom_id") VALUES ($1, $2) RETURNING "id"[0m  [["participant_id", 173], ["chatroom_id", 31]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mChatroom Load (0.2ms)[0m  [1m[34mSELECT  "chatrooms".* FROM "chatrooms" WHERE "chatrooms"."id" = $1 LIMIT $2[0m  [["id", 31], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 174], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "participations" ("participant_id", "chatroom_id") VALUES ($1, $2) RETURNING "id"[0m  [["participant_id", 174], ["chatroom_id", 31]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mChatroom Load (0.2ms)[0m  [1m[34mSELECT  "chatrooms".* FROM "chatrooms" WHERE "chatrooms"."id" = $1 LIMIT $2[0m  [["id", 31], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 175], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "participations" ("participant_id", "chatroom_id") VALUES ($1, $2) RETURNING "id"[0m  [["participant_id", 175], ["chatroom_id", 31]]
+  [1m[35m (9.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mChatroom Load (0.2ms)[0m  [1m[34mSELECT  "chatrooms".* FROM "chatrooms" WHERE "chatrooms"."id" = $1 LIMIT $2[0m  [["id", 31], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 176], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "participations" ("participant_id", "chatroom_id") VALUES ($1, $2) RETURNING "id"[0m  [["participant_id", 176], ["chatroom_id", 31]]
+  [1m[35m (7.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mChatroom Load (0.2ms)[0m  [1m[34mSELECT  "chatrooms".* FROM "chatrooms" WHERE "chatrooms"."id" = $1 LIMIT $2[0m  [["id", 31], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 177], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "participations" ("participant_id", "chatroom_id") VALUES ($1, $2) RETURNING "id"[0m  [["participant_id", 177], ["chatroom_id", 31]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/" for 127.0.0.1 at 2018-03-07 19:37:13 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.5ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "tqTEYu9T5WqXxKSUv65yyg"], ["LIMIT", 1]]
+Completed 200 OK in 277ms (Views: 248.1ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/api/session" for 127.0.0.1 at 2018-03-07 19:37:19 -0500
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"email_address"=>"asdf", "username"=>"asdf", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email_address" = $1 LIMIT $2[0m  [["email_address", "asdf"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email_address" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["email_address", "asdf"], ["id", 177], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["username", "asdf"], ["id", 177], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["session_token", "mNrnKLbwAMUNST-6fqELBg"], ["id", 177], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."password_digest" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["password_digest", "$2a$10$SiHc8tYjE3TAro.SIH14Ju.z/7GrZo6IlnQQkm650mRHHBvlhaley"], ["id", 177], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "mNrnKLbwAMUNST-6fqELBg"], ["updated_at", "2018-03-08 00:37:19.383047"], ["id", 177]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  Rendering api/users/show.json.jbuilder
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "mNrnKLbwAMUNST-6fqELBg"], ["LIMIT", 1]]
+  Rendered api/users/_user.json.jbuilder (0.8ms)
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "chatrooms"."id" FROM "chatrooms" INNER JOIN "participations" ON "chatrooms"."id" = "participations"."chatroom_id" WHERE "participations"."participant_id" = $1[0m  [["participant_id", 177]]
+  [1m[36mChatroom Load (0.7ms)[0m  [1m[34mSELECT "chatrooms".* FROM "chatrooms" INNER JOIN "participations" ON "chatrooms"."id" = "participations"."chatroom_id" WHERE "participations"."participant_id" = $1[0m  [["participant_id", 177]]
+  Rendered api/users/show.json.jbuilder (66.3ms)
+Completed 200 OK in 193ms (Views: 89.4ms | ActiveRecord: 6.0ms)
+
+

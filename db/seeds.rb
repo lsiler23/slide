@@ -10,8 +10,7 @@ Chatroom.destroy_all
 Participation.destroy_all
 me = User.create!({email_address: 'laurette@fun.org', username: 'smeagol92', real_name: 'Laurette', password: 'hotsauce23'})
 general = Chatroom.create!({creator_id: me.id, isDM: false, title: 'general'})
-# Participation.create!({participant_id: me.id, chatroom_id: general.id})
-
+Participation.create!({participant_id: me.id, chatroom_id: general.id})
 
 jake = User.create!({email_address: 'jake@fake.com', username: 'tinynails08', password: 'christmastime'})
 maurice = User.create!({email_address: 'maurice@maurice.com', username: 'maurice00', password: 'mrkrabs'})
@@ -33,15 +32,15 @@ fourth = Chatroom.create!({creator_id: elon.id, isDM: false, title: 'spaceisgood
 fifth = Chatroom.create!({creator_id: tom.id, isDM: false, title: 'hot singles'})
 
 # Participation associations
-# Participation.create!({participant_id: me.id, chatroom_id: first.id})
-# Participation.create!({participant_id: jake.id, chatroom_id: general.id})
-# Participation.create!({participant_id: maurice.id, chatroom_id: general.id})
-# Participation.create!({participant_id: elon.id, chatroom_id: general.id})
-# Participation.create!({participant_id: dan.id, chatroom_id: general.id})
-# Participation.create!({participant_id: charlie.id, chatroom_id: general.id})
-# Participation.create!({participant_id: aislinn.id, chatroom_id: general.id})
-# Participation.create!({participant_id: tom.id, chatroom_id: general.id})
-# Participation.create!({participant_id: mary.id, chatroom_id: general.id})
-# Participation.create!({participant_id: sam.id, chatroom_id: general.id})
-# Participation.create!({participant_id: elliot.id, chatroom_id: general.id})
-# Participation.create!({participant_id: hanhee.id, chatroom_id: general.id})
+Participation.create!({participant_id: me.id, chatroom_id: first.id})
+Participation.create!({participant_id: jake.id, chatroom_id: general.id})
+Participation.create!({participant_id: maurice.id, chatroom_id: general.id})
+Participation.create!({participant_id: elon.id, chatroom_id: general.id})
+Participation.create!({participant_id: dan.id, chatroom_id: general.id})
+Participation.create!({participant_id: charlie.id, chatroom_id: general.id})
+Participation.create!({participant_id: aislinn.id, chatroom_id: general.id})
+Participation.create!({participant_id: tom.id, chatroom_id: general.id})
+Participation.create!({participant_id: mary.id, chatroom_id: general.id})
+Participation.create!({participant_id: sam.id, chatroom_id: general.id})
+Participation.create!({participant_id: elliot.id, chatroom_id: general.id})
+Participation.create!({participant_id: hanhee.id, chatroom_id: general.id})
