@@ -62,6 +62,10 @@
  	border-spacing: 0;
  }
 
+ * {
+   outline: none;
+ }
+
 .splash-main {
   display: flex;
   justify-content: space-between;

@@ -5,7 +5,7 @@ import React from 'react';
 
 const Auth = ({component: Component, path, loggedIn, exact}) => (
   <Route path={path} exact={exact} render={(props) => {
-      return (!loggedIn ? <Component {...props} /> : <Redirect to='/chatrooms' />)
+      return (!loggedIn ? <Component {...props} /> : <Redirect to='/chatrooms/1' />)
     }
     } />
 );

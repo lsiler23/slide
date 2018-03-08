@@ -2,6 +2,7 @@ import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import SideBar from './sidebar';
 import { logout } from '../../../actions/session_actions';
+import { fetchChannel } from '../../../actions/chatrooms_actions';
 import { currentUserSelector } from '../../../reducers/selectors';
 
 const msp = (state) => {
@@ -13,7 +14,8 @@ const msp = (state) => {
 
 const mdp = (dispatch) => {
   return {
-    logout: () => dispatch(logout())
+    logout: () => dispatch(logout()),
+    fetchChannel: (id) => dispatch(fetchChannel(id))
   };
 };
 

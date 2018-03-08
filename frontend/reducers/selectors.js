@@ -3,5 +3,9 @@ export const currentUserSelector = (state) => {
 };
 
 export const generalChatSelector = (state) => {
-  return Object.values(state.entities.chatrooms)[0];
+  if (Object.values(state.entities.chatrooms)[0]) {
+    return Object.values(state.entities.chatrooms).filter( (chatroom) => chatroom.title === 'general')[0].id;
+  } else {
+    return '';
+  }
 };

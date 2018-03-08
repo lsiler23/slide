@@ -3,7 +3,7 @@ class Api::ChatroomsController < ApplicationController
   before_action :require_login
 
   def index
-    @chatrooms = Chatroom.where('creator_id = ?', current_user.id)
+    @chatrooms = Chatroom.where(:isDM => false)
   end
 
   def show

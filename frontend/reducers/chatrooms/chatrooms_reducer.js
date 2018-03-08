@@ -1,6 +1,7 @@
 import {
   RECEIVE_CURRENT_USER,
   LOGOUT_CURRENT_USER } from '../../actions/session_actions';
+import { FETCH_CHANNEL } from '../../actions/chatrooms_actions';
 import { merge } from 'lodash';
 
 const chatroomsReducer = (oldState = {}, action) => {
@@ -11,6 +12,8 @@ const chatroomsReducer = (oldState = {}, action) => {
       return merge({}, oldState, action.chatrooms);
     case LOGOUT_CURRENT_USER:
       return {};
+    case FETCH_CHANNEL:
+      return merge({}, oldState, action.channel);
     default:
       return oldState;
   }

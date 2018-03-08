@@ -35,7 +35,10 @@ export default class SideBar extends React.Component {
 
           <div className='side-bar channels'>
             <h4>Channels</h4>
-            <ChannelIndex channels={channels}/>
+            <ChannelIndex
+              channels={channels}
+              fetchChannel={this.props.fetchChannel}
+              history={this.props.history}/>
           </div>
         </div>
       );

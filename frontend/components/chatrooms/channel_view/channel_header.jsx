@@ -1,9 +1,9 @@
 import React from 'react';
 
-export const ChannelHeader = () => {
+export const ChannelHeader = (props) => {
   return (
     <div className='channel-header'>
-      I AM CHANNEL HEADER
+      HEADER
     </div>
   );
 };
