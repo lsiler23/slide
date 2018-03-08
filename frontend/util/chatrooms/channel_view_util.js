@@ -3,3 +3,11 @@ export const fetchChannel = (id) => {
     url: `/api/chatrooms/${id}`
   });
 };
+
+export const createChannel = (channel) => {
+  return $.ajax({
+    url: '/api/chatrooms',
+    method: 'POST',
+    data: { channel }
+  });
+};

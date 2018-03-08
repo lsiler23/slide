@@ -4,7 +4,7 @@ import ChannelView from './channel_view';
 
 const msp = (state, ownProps) => {
   return {
-    activeView: Number(ownProps.match.url.slice(-1))
+    activeView: state.entities.chatrooms[Number(ownProps.location.pathname.slice(-1))]
   };
 };
 

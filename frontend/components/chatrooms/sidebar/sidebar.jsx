@@ -1,5 +1,5 @@
 import React from 'react';
-import { ChannelIndex } from './channel_index';
+import ChannelIndex from './channel_index_container';
 
 
 export default class SideBar extends React.Component {
@@ -33,13 +33,10 @@ export default class SideBar extends React.Component {
             </div>
           </div>
 
-          <div className='side-bar channels'>
-            <h4>Channels</h4>
-            <ChannelIndex
-              channels={channels}
-              fetchChannel={this.props.fetchChannel}
-              history={this.props.history}/>
-          </div>
+          <ChannelIndex
+            channels={channels}
+            fetchChannel={this.props.fetchChannel}
+            history={this.props.history}/>
         </div>
       );
     } else {

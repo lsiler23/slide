@@ -50,11 +50,11 @@ class User < ApplicationRecord
   end
 
   def subscribe_to_general
-    general = Chatroom.where('title = ?', 'general')
+    general = Chatroom.find_by(title: 'general')
 
     Participation.create!({
       participant_id: self.id,
-      chatroom_id: general.ids[0]
-      }) if general.first
+      chatroom_id: general.id
+      }) if general
   end
 end

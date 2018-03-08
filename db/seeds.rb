@@ -9,7 +9,7 @@ User.destroy_all
 Chatroom.destroy_all
 Participation.destroy_all
 me = User.create!({email_address: 'laurette@fun.org', username: 'smeagol92', real_name: 'Laurette', password: 'hotsauce23'})
-general = Chatroom.create!({id: 1, creator_id: me.id, isDM: false, title: 'general'})
+general = Chatroom.create!({creator_id: me.id, isDM: false, title: 'general'})
 Participation.create!({participant_id: me.id, chatroom_id: general.id})
 
 jake = User.create!({email_address: 'jake@fake.com', username: 'tinynails08', password: 'christmastime'})

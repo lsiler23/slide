@@ -8,10 +8,15 @@
     <%= javascript_include_tag 'application' %>
     <link href="https://fonts.googleapis.com/css?family=PT+Sans|Source+Serif+Pro:600" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=PT+Sans+Narrow" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Lato:300" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,700,900" rel="stylesheet">
   </head>
 
   <body>
+
+    <script type="text/javascript">
+    <% @chatroom = Chatroom.find_by(title: 'general') %>
+      window.generalChat = <%= (render template: 'api/chatrooms/show.json.jbuilder').html_safe %>
+    </script>
 
     <% if logged_in? %>
       <script type="text/javascript">

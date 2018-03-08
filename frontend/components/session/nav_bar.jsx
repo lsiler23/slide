@@ -6,7 +6,7 @@ export default class NavBar extends React.Component {
     super(props);
     this.state = {
       email_address: `${Math.random(1000) * 100}`,
-      username: `guest${Math.random(1000) * 100}`,
+      username: `guest${Math.floor(Math.random(1000) * 100)}`,
       password: 'password123'
     };
 
@@ -19,7 +19,7 @@ export default class NavBar extends React.Component {
   }
 
   handleDemoClick(e) {
-    this.props.signup(this.state).then(() => this.props.history.push('/chatrooms'));
+    this.props.signup(this.state);
   }
 
   render() {
@@ -33,7 +33,7 @@ export default class NavBar extends React.Component {
         <div className='session-nav right'>
           <button
             onClick={this.handleDemoClick}
-            className='session-nav right-right'>Guest Sign Up</button>
+            className='session-nav right-right'>Guest Log In</button>
         </div>
       </nav>
     );

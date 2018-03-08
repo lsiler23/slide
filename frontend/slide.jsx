@@ -14,16 +14,28 @@ document.addEventListener('DOMContentLoaded', () => {
         currentUser: user.id
       },
       entities: {
-        chatrooms,
+        chatrooms: {
+          [window.generalChat.channel.id]: window.generalChat.channel
+        },
         users: {
-          [user.id]: user
+          [user.id]: user,
+          users: window.generalChat.participants
         }
       }
     };
     store = configureStore(preloadedState);
     delete window.currentUser;
   } else {
-    store = configureStore();
+    const preloadedState = {
+      entities: {
+        chatrooms: {
+          [window.generalChat.channel.id]: window.generalChat.channel
+        },
+        users: window.generalChat.participants
+      }
+    };
+
+    store = configureStore(preloadedState);
   }
   window.store = store;
   window.fetchChannel = fetchChannel;

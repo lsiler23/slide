@@ -2,18 +2,86 @@
   margin-left: 200px;
   height: 100%;
   width: 100%;
-  position: fixed;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  font-family: 'Lato', sans-serif;
+  overflow-y: hidden;
 }
 
 .channel-header {
   height: 60px;
   width: 100%;
-  border-bottom: 1px solid lightgrey;
+  border: 1px solid lightgrey;
+  position: fixed;
+  box-sizing: border-box;
+  z-index: 1;
+  display: list-item;
+  list-style-type: none;
+  list-style-position: inside;
+  background-color: white;
+  color: black;
+  padding: 5px;
+}
+
+.channel-header.num {
+  height: 10px;
+  width: 60px;
+  padding: 5px;
+  font-size: 13px;
+  position: relative;
+  border: none;
+}
+
+.channel-header.title {
+  height: 30px;
+  width: auto;
+  padding: 5px;
+  font-size: 18px;
+  font-weight: 900;
+  position: relative;
+  border: none;
+}
+
+.channel-body {
+  width: 100%;
+  height: 100%;
+  top: 60px;
+  margin-bottom: 60px;
+  margin-left: 0;
+  background-color: lightgrey;
+  box-sizing: border-box;
+  overflow: hidden;
 }
 
 .channel-footer {
-  height: 60px;
-  padding: 6px;
-  margin-top: 765px;
-  border: 1px solid black;
+  height: 65px;
+  // padding: 6px;
+  margin-left: 0;
+  margin-right: 20px;
+  bottom: 0;
+  width: 100%;
+  margin-top: 600px;
+  // border: 1px solid black;
+  position: fixed;
+  // z-index: 1;
+  // box-sizing: border-box;
+  background-color: white;
+}
+
+.chatbox {
+  border: 2px solid lightgrey;
+  position: absolute;
+  width: 80%;
+  margin: 0 20px 20px 20px;
+  height: 40px;
+  overflow-x: auto;
+  overflow-y: auto;
+    &::placeholder {
+      font-size: 15px;
+    }
+
+    &:focus {
+      border: 2px solid grey;
+    }
 }

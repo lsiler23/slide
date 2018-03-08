@@ -3,6 +3,7 @@
   display: table;
   width: 100%;
   height: 100%;
+  overflow-x: hidden;
 }
 
 .side-bar {
@@ -13,6 +14,7 @@
   position: fixed;
   overflow: hidden;
   display: list-item;
+  z-index: 1;
 }
 
 
@@ -26,10 +28,12 @@
   padding: 15px;
   display: inline-block;
   cursor: pointer;
+  font-weight: 700;
   &:hover {
     background-color: #3d2d3b;
     transition: background 0.3s;
     -webkit-transition: background 0.3s;
+    border-radius: 5px;
   }
 
 }
@@ -65,17 +69,33 @@
   margin-left: 5px;
   padding: 10px;
   color: rgb(216, 216, 216);
+  cursor: pointer;
 }
 
 .side-bar.channels h4 {
+  overflow: hidden;
   font-size: 16px;
   font-weight: 400;
   line-height: 24px;
+  width: 170px;
+  &:hover {
+    color: white;
+    transition: background 0.3s;
+    -webkit-transition: background 0.3s;
+    border-radius: 5px;
+  }
 }
 
-.side-bar.channels li {
-  width: auto;
+.side-bar.channel-index-item {
+  width: 160px;
   padding: 3px;
+  height: auto;
+  &:hover {
+    background-color: #3d2d3b;
+    transition: background 0.3s;
+    -webkit-transition: background 0.3s;
+  }
+
 }
 
 .side-bar.channel-index {
