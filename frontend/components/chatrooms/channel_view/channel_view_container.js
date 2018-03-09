@@ -5,7 +5,6 @@ import ChannelView from './channel_view';
 
 
 const msp = (state, ownProps) => {
-  debugger
   return {
     activeView: state.entities.chatrooms[ownProps.match.params.chatroomId]
   };

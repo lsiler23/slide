@@ -4,6 +4,12 @@ export const fetchChannel = (id) => {
   });
 };
 
+export const fetchAllChannels = () => {
+  return $.ajax({
+    url: '/api/chatrooms'
+  });
+};
+
 export const createChannel = (channel) => {
   return $.ajax({
     url: '/api/chatrooms',

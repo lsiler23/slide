@@ -36,12 +36,13 @@ export default class SideBar extends React.Component {
           <ChannelIndex
             channels={channels}
             fetchChannel={this.props.fetchChannel}
-            history={this.props.history}/>
+            history={this.props.history}
+            match={this.props.match}/>
         </div>
       );
     } else {
       return (
-        <div></div>
+        <div>loading...</div>
       );
     }
   }

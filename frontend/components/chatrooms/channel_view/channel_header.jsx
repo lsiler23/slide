@@ -6,7 +6,6 @@ export default class ChannelHeader extends React.Component {
   }
 
   render() {
-    debugger
     const { channel } = this.props;
     const numOfParts = channel.participant_ids.length;
     if (channel) {

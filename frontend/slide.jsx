@@ -15,7 +15,8 @@ document.addEventListener('DOMContentLoaded', () => {
       },
       entities: {
         chatrooms: {
-          [window.generalChat.channel.id]: window.generalChat.channel
+          [window.generalChat.channel.id]: window.generalChat.channel,
+          currentUserChannels: chatrooms
         },
         users: {
           [user.id]: user,
