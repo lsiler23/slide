@@ -3,7 +3,7 @@ import {
   LOGOUT_CURRENT_USER } from '../../actions/session_actions';
 import {
   RECEIVE_CHANNEL,
-  RECEIVE_ALL_CHANNELS } from '../../actions/chatrooms_actions';
+  RECEIVE_SEARCHED_CHANNELS } from '../../actions/chatrooms_actions';
 import { merge } from 'lodash';
 
 const chatroomsReducer = (oldState = {}, action) => {
@@ -16,7 +16,7 @@ const chatroomsReducer = (oldState = {}, action) => {
       return {};
     case RECEIVE_CHANNEL:
       return merge({}, oldState, {[action.channel.id]: action.channel});
-    case RECEIVE_ALL_CHANNELS:
+    case RECEIVE_SEARCHED_CHANNELS:
       return merge({}, oldState, action.channels);
     default:
       return oldState;

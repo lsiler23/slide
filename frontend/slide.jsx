@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import configureStore from './store/store';
 import Root from './components/root';
 import { fetchChannel } from './actions/chatrooms_actions';
+import { fetchAllSearchedChannels } from './actions/chatrooms_actions';
 
 document.addEventListener('DOMContentLoaded', () => {
   let store;
@@ -14,14 +15,8 @@ document.addEventListener('DOMContentLoaded', () => {
         currentUser: user.id
       },
       entities: {
-        chatrooms: {
-          [window.generalChat.channel.id]: window.generalChat.channel,
-          currentUserChannels: chatrooms
-        },
-        users: {
-          [user.id]: user,
-          users: window.generalChat.participants
-        }
+        chatrooms,
+        users: window.generalChat.participants
       }
     };
     store = configureStore(preloadedState);
@@ -40,6 +35,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
   window.store = store;
   window.fetchChannel = fetchChannel;
+  window.fetchAllSearchedChannels = fetchAllSearchedChannels;
   const root = document.getElementById('root');
   ReactDOM.render(<Root store={store} />, root);
 });

@@ -4,9 +4,11 @@ export const fetchChannel = (id) => {
   });
 };
 
-export const fetchAllChannels = () => {
+export const fetchAllSearchedChannels = (query) => {
   return $.ajax({
-    url: '/api/chatrooms'
+    url: '/api/chatrooms',
+    dataType: 'json',
+    data: { query }
   });
 };
 

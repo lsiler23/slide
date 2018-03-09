@@ -4,13 +4,13 @@ import SideBar from './sidebar';
 import { logout } from '../../../actions/session_actions';
 import { merge } from 'lodash';
 import { fetchChannel } from '../../../actions/chatrooms_actions';
-import { currentUserSelector } from '../../../reducers/selectors';
+import { currentUserSelector, userChannelsSelector } from '../../../reducers/selectors';
 
 const msp = (state) => {
-
+  const currentUser = currentUserSelector(state);
   return {
-    currentUser: currentUserSelector(state),
-    channels: Object.values(Object.assign({}, state.entities.chatrooms.currentUserChannels, state.entities.chatrooms))
+    currentUser,
+    channels: userChannelsSelector(state, currentUser.id)
   };
 };
 

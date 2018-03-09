@@ -1,7 +1,8 @@
 import * as ChannelViewUtil from '../util/chatrooms/channel_view_util';
 
 export const RECEIVE_CHANNEL = 'FETCH_CHANNEL';
-export const RECEIVE_ALL_CHANNELS = 'RECEIVE_ALL_CHANNELS';
+export const RECEIVE_SEARCHED_CHANNELS = 'RECEIVE_SEARCHED_CHANNELS';
+export const CLEAR_SEARCH = 'CLEAR_SEARCH';
 
 export const receiveChannel = ({channel, participants}) => {
   return {
@@ -11,12 +12,18 @@ export const receiveChannel = ({channel, participants}) => {
   };
 };
 
-export const receiveAllChannels = (payload) => {
+export const receiveSearchedChannels = (payload) => {
   return {
-    type: RECEIVE_ALL_CHANNELS,
+    type: RECEIVE_SEARCHED_CHANNELS,
     channels: payload
   };
 };
+
+export const clearSearch = () => {
+  return {
+    type: CLEAR_SEARCH
+  }
+}
 
 export const fetchChannel = (id) => {
   return (dispatch) => {
@@ -25,10 +32,10 @@ export const fetchChannel = (id) => {
   };
 };
 
-export const fetchAllChannels = () => {
+export const fetchAllSearchedChannels = (query) => {
   return (dispatch) => {
-    return ChannelViewUtil.fetchAllChannels()
-    .then(payload => dispatch(receiveAllChannels(payload)))
+    return ChannelViewUtil.fetchAllSearchedChannels(query)
+    .then(payload => dispatch(receiveSearchedChannels(payload)))
   };
 };
 
