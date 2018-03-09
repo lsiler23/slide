@@ -7,6 +7,7 @@ export default class CreateChannel extends React.Component {
     this.handleClick = this.handleClick.bind(this);
     this.handleChange = this.handleChange.bind(this);
     this.noMatchToggle = this.noMatchToggle.bind(this);
+    this.handleEscape = this.handleEscape.bind(this);
   }
 
   handleClick() {
@@ -45,11 +46,22 @@ export default class CreateChannel extends React.Component {
     }
   }
 
+  handleEscape() {
+    return (e) => {
+      e.preventDefault();
+      this.props.closeModal();
+    };
+  }
+
 
   render() {
     const { channels, searchIds } = this.props;
     return (
       <div className='create-channel'>
+        <div className='escape' onClick={this.handleEscape()}>
+           <div className='ex'>x</div>
+          <div className='esc'>esc</div>
+        </div>
         <div className='static-top'>
           <h2 className='create-channel header'>Browse Channels</h2>
           <div className='input-container'>

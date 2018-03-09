@@ -27,9 +27,10 @@
 }
 
 .channel-input {
-  width: 560px;
+  width: 590px;
   margin-left: 40px;
   margin-right: 15px;
+  color: #343538;
 }
 
 .create-channel.go {
@@ -45,7 +46,7 @@
   margin-left: 40px;
   margin-top: 20px;
   position: fixed;
-  width: 95%;
+  width: 80%;
 }
 
 .search-dropdown h4 {
@@ -70,4 +71,39 @@
 
 .create-channel.go.ready {
   background-color: #26a868;
+}
+
+.escape {
+  margin-left: 800px;
+  margin-bottom: 20px;
+  width: 50px;
+  height: 50px;
+  color: grey;
+  &:hover {
+    background-color: #e8e8e8;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    color: #343538;
+  }
+}
+
+.escape span {
+  position: relative;
+  &:hover {
+    color: #e8e8e8;
+  }
+}
+
+.ex {
+  margin-left: 20px;
+  font-size: 25px;
+  // color: #e8e8e8;
+}
+
+.esc {
+  margin-left: 15px;
+  font-size: 13px;
+  padding: 2px;
+    // color: #e8e8e8;
 }
