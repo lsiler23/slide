@@ -6,6 +6,7 @@ export default class CreateChannel extends React.Component {
     this.state = {title: '', isDM: false};
     this.handleClick = this.handleClick.bind(this);
     this.handleChange = this.handleChange.bind(this);
+    this.noMatchToggle = this.noMatchToggle.bind(this);
   }
 
   handleClick() {
@@ -25,7 +26,6 @@ export default class CreateChannel extends React.Component {
       .then(payload => this.props.history.push(`/chatrooms/${id}`))
       .then(() => this.props.closeModal());
     };
-    //build participation
   }
 
   handleChange(e) {
@@ -37,28 +37,45 @@ export default class CreateChannel extends React.Component {
     });
   }
 
+  noMatchToggle() {
+    if (this.props.searchIds.length <= 1 && this.state.title.length >= 1) {
+      return 'create-channel go ready';
+    } else {
+      return 'create-channel go';
+    }
+  }
+
 
   render() {
     const { channels, searchIds } = this.props;
     return (
       <div className='create-channel'>
-        <h2 className='create-channel header'>Browse Channels</h2>
-        <input
-          type='text'
-          className='channel-input'
-          onChange={this.handleChange}/>
-        <button
-          className='create-channel go'
-          onClick={this.handleClick()}>Go</button>
-        <ul className='search-results'>
-          {
-            channels && channels.map(channel => {
-              if (searchIds.includes(channel.id)) {
-                return <li onClick={this.handleLIClick(channel.id)} key={channel.id}>{channel.title}</li>;
-              }
-            })
-          }
-        </ul>
+        <div className='static-top'>
+          <h2 className='create-channel header'>Browse Channels</h2>
+          <div className='input-container'>
+            <input
+              type='text'
+              className='channel-input'
+              onChange={this.handleChange}/>
+            <button
+              className={this.noMatchToggle()}
+              onClick={this.handleClick()}>Go</button>
+          </div>
+        </div>
+        <div className='search-dropdown'>
+          <h4>Channels</h4>
+          <div className='scrollbar'>
+            <ul className='search-results'>
+              {
+                channels && channels.map(channel => {
+                  if (searchIds.includes(channel.id)) {
+                    return <li onClick={this.handleLIClick(channel.id)} key={channel.id}>{channel.title}</li>;
+                    }
+                  })
+                }
+              </ul>
+          </div>
+        </div>
       </div>
     );
   }

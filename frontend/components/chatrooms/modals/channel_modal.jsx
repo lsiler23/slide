@@ -11,8 +11,8 @@ function ChannelModal({modal, closeModal}) {
   const component = <CreateChannel />;
 
   return (
-    <div className="channel-modal-background" onClick={closeModal}>
-      <div className="channel-modal-child" onClick={e => e.stopPropagation()}>
+    <div className="channel-modal-background">
+      <div className="channel-modal-child">
         {
           component
         }

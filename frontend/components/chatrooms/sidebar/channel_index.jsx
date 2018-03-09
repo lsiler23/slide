@@ -20,6 +20,7 @@ export default class ChannelIndex extends React.Component {
   handleClick() {
     return (e) => {
       this.props.clearSearch();
+      this.props.searchChannels('')
       this.props.openModal('channel');
     };
   }

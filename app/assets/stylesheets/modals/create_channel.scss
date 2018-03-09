@@ -10,7 +10,64 @@
 
 .channel-modal-child {
   position: absolute;
-  top: 50%;
+  top: 20%;
   left: 50%;
   transform: translate(-50%, -50%);
+  font-family: 'Lato', sans-serif;
+}
+
+.input-container {
+  display: flex;
+}
+
+.create-channel.header {
+  font-size: 30px;
+  font-weight: 700;
+  padding: 40px;
+}
+
+.channel-input {
+  width: 560px;
+  margin-left: 40px;
+  margin-right: 15px;
+}
+
+.create-channel.go {
+  width: 60px;
+  border-top: 5px;
+  background-color: #d4d6d6;
+  color: white;
+  font-size: 18px;
+  border-radius: 5px;
+}
+
+.search-dropdown {
+  margin-left: 40px;
+  margin-top: 20px;
+  position: fixed;
+  width: 95%;
+}
+
+.search-dropdown h4 {
+  font-size: 13px;
+  padding: 10px;
+  color: grey;
+}
+
+.search-results {
+  position: relative;
+  overflow-y: scroll;
+  max-height: 200px;
+}
+
+.search-results li {
+  padding: 5px;
+  border-top: 1px solid lightgrey;
+  &:hover {
+    background-color: #eaf5fc;
+  }
+}
+
+.create-channel.go.ready {
+  background-color: #26a868;
 }
