@@ -1,29 +1,34 @@
 import React from 'react';
+import DMUser from './create_dm_li';
 
 export default class CreateDM extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {title: '', isDM: true};
+    this.state = {title: '', selected: []};
     this.handleClick = this.handleClick.bind(this);
     this.handleChange = this.handleChange.bind(this);
-    // this.noMatchToggle = this.noMatchToggle.bind(this);
     this.handleEscape = this.handleEscape.bind(this);
+    this.handleLiClick = this.handleLiClick.bind(this);
   }
 
   handleClick() {
-
     return (e) => {
       e.preventDefault();
-      this.props.createDM(this.state)
+      const allUsers = this.state.selected.map((sel) => sel.username).join(', ').concat(`, ${this.props.currentUser.username}`);
+      this.props.createDM({title: allUsers, isDM: true})
       .then(payload => this.props.fetchChatroom(payload.channel.id))
       .then(payload => this.props.history.push(`/chatrooms/${payload.channel.id}`))
       .then(() => this.props.closeModal());
     };
   }
 
-  handleLIClick(user) {
-    // this.setState({ input: user });
-    return console.log(user);
+  handleLiClick(user) {
+    return (e) => {
+      e.preventDefault();
+      const newSelected = [user];
+      this.setState({selected: this.state.selected.concat(newSelected)});
+
+    };
   }
 
   handleChange(e) {
@@ -35,13 +40,6 @@ export default class CreateDM extends React.Component {
     });
   }
 
-  // noMatchToggle() {
-  //   if (this.props.searchIds.length <= 1 && this.state.title.length >= 1) {
-  //     return 'create-channel go ready';
-  //   } else {
-  //     return 'create-channel go';
-  //   }
-  // }
 
   handleEscape() {
     return (e) => {
@@ -53,7 +51,7 @@ export default class CreateDM extends React.Component {
 
   render() {
     const { users, searchIds, currentUser } = this.props;
-
+    debugger
     return (
       <div className='create-channel'>
         <div className='escape' onClick={this.handleEscape()}>
@@ -78,28 +76,31 @@ export default class CreateDM extends React.Component {
           <div className='scrollbar'>
             <ul className='search-results'>
               {
-                users && users.map(user => {
-                  if (searchIds.includes(user.id) && user.id !== currentUser) {
-                    return (
-                    <li
-                      onClick={this.handleLIClick(user)}
-                      key={user.id}>
-                      {user.username}
-                    </li>
-                  );
-                } else {
-                  return (
-                  <li
-                    onClick={this.handleLIClick(user.id)}
-                    key={user.id}>
-                    { `${user.username} (you)`}
-                  </li>
-                );
-                }
-                  })
-                }
-              </ul>
+                users && users.map((user) => {
+                    if (searchIds.includes(user.id) && user.id !== currentUser.id && !this.state.selected.includes(user)) {
+                      return (
+                      <li key={user.id} onClick={this.handleLiClick(user)}>
+                        {user.username}
+                      </li>
+                    );
+                  } else if (!this.state.selected.includes(user)) {
+                      return (
+                      <li key={user.id}>
+                        { `${user.username} (you)`}
+                      </li>
+                    );
+                  }
+                })
+              }
+            </ul>
           </div>
+        </div>
+        <div>
+          {
+            this.state.selected.map((sel) => {
+              return sel.username;
+            })
+          }
         </div>
       </div>
     );

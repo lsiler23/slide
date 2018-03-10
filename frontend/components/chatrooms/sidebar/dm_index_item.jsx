@@ -9,9 +9,9 @@ export default class DMIndexItem extends React.Component {
 
   handleClick() {
     return (e) => {
-      this.props.fetchChatroom(this.props.channel.id)
+      this.props.fetchChatroom(this.props.dm.id)
       .then(payload => this.setState(payload.channel))
-      .then(() => this.props.history.push(`/chatrooms/${this.props.channel.id}`));
+      .then(() => this.props.history.push(`/chatrooms/${this.props.dm.id}`));
     };
   }
 

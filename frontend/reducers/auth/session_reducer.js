@@ -5,9 +5,9 @@ const sessionReducer = (oldState = { currentUser: null }, action) => {
   Object.freeze(oldState);
   switch(action.type) {
     case RECEIVE_CURRENT_USER:
-      return merge({}, oldState, { currentUser: action.user.id });
+      return merge({}, oldState, { currentUser: action.user });
     case LOGOUT_CURRENT_USER:
-      return merge({}, oldState, { currentUser: null })
+      return merge({}, oldState, { currentUser: null });
     default:
       return oldState;
   }
