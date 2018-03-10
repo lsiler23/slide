@@ -10,7 +10,6 @@ import { closeModal } from '../../../actions/modal_actions';
 import createDM from './create_dm';
 
   const msp = (state) => {
-    debugger
     const currentUser = state.session.currentUser;
     return {
       currentUser,

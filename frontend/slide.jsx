@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const {user, chatrooms} = window.currentUser;
     const preloadedState = {
       session: {
-        currentUser: user.id
+        currentUser: user
       },
       entities: {
         chatrooms,

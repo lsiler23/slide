@@ -13,7 +13,7 @@ const usersReducer = (oldState = {}, action) => {
     case LOGOUT_CURRENT_USER:
       return {};
     case RECEIVE_SEARCHED_USERS:
-    debugger
+     
       return action.users;
     default:
       return oldState;

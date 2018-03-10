@@ -6,6 +6,7 @@ export const RECEIVE_SEARCHED_USERS = 'RECEIVE_SEARCHED_USERS';
 export const CLEAR_SEARCH = 'CLEAR_SEARCH';
 
 export const receiveChannel = ({channel, participants}) => {
+
   return {
     type: RECEIVE_CHANNEL,
     channel,
@@ -21,7 +22,7 @@ export const receiveSearchedChannels = (payload) => {
 };
 
 export const receiveSearchedUsers = (payload) => {
-debugger
+
   return {
     type: RECEIVE_SEARCHED_USERS,
     users: payload
@@ -36,6 +37,7 @@ export const clearSearch = () => {
 
 
 export const fetchChatroom = (id) => {
+   
   return (dispatch) => {
     return ChannelViewUtil.fetchChatroom(id)
     .then(payload => dispatch(receiveChannel(payload)));
@@ -43,6 +45,7 @@ export const fetchChatroom = (id) => {
 };
 
 export const createChatroom = (channel) => {
+
   return (dispatch) => {
     return ChannelViewUtil.createChannel(channel)
     .then(payload => dispatch(receiveChannel(payload)));

@@ -10,11 +10,11 @@ import {
   userDMSelector } from '../../../reducers/selectors';
 
 const msp = (state) => {
-  const currentUser = currentUserSelector(state);
+  const currentUser = state.session.currentUser;
   return {
     currentUser,
-    channels: userChannelsSelector(state, state.session.currentUser),
-    dms: userDMSelector(state, state.session.currentUser)
+    channels: userChannelsSelector(state, state.session.currentUser.id),
+    dms: userDMSelector(state, state.session.currentUser.id)
   };
 };
 

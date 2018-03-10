@@ -6,11 +6,12 @@ export default class CreateDM extends React.Component {
     this.state = {title: '', isDM: true};
     this.handleClick = this.handleClick.bind(this);
     this.handleChange = this.handleChange.bind(this);
-    this.noMatchToggle = this.noMatchToggle.bind(this);
+    // this.noMatchToggle = this.noMatchToggle.bind(this);
     this.handleEscape = this.handleEscape.bind(this);
   }
 
   handleClick() {
+
     return (e) => {
       e.preventDefault();
       this.props.createDM(this.state)
@@ -20,12 +21,12 @@ export default class CreateDM extends React.Component {
     };
   }
 
-  handleLIClick(id) {
-    return console.log('blerp');
+  handleLIClick(user) {
+    // this.setState({ input: user });
+    return console.log(user);
   }
 
   handleChange(e) {
-    debugger
     if (this.timeOut) {
       clearTimeout(this.timeOut);
     }
@@ -34,13 +35,13 @@ export default class CreateDM extends React.Component {
     });
   }
 
-  noMatchToggle() {
-    if (this.props.searchIds.length <= 1 && this.state.title.length >= 1) {
-      return 'create-channel go ready';
-    } else {
-      return 'create-channel go';
-    }
-  }
+  // noMatchToggle() {
+  //   if (this.props.searchIds.length <= 1 && this.state.title.length >= 1) {
+  //     return 'create-channel go ready';
+  //   } else {
+  //     return 'create-channel go';
+  //   }
+  // }
 
   handleEscape() {
     return (e) => {
@@ -52,7 +53,7 @@ export default class CreateDM extends React.Component {
 
   render() {
     const { users, searchIds, currentUser } = this.props;
-    debugger
+
     return (
       <div className='create-channel'>
         <div className='escape' onClick={this.handleEscape()}>
@@ -65,10 +66,10 @@ export default class CreateDM extends React.Component {
             <input
               type='text'
               className='channel-input'
-              placeholder='Find or start a conversation'
+              placeholder={this.state.input}
               onChange={this.handleChange}/>
             <button
-              className={this.noMatchToggle()}
+              className='create-channel go'
               onClick={this.handleClick()}>Go</button>
           </div>
         </div>

@@ -22,7 +22,7 @@ export const fetchAllSearchedChannels = (query) => {
 
 
 export const fetchAllSearchedUsers = (query) => {
-  debugger
+   
   return $.ajax({
     url: '/api/users',
     dataType: 'json',

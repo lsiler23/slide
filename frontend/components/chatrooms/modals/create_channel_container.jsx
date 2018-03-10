@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import {
-  createChannel,
+  createChatroom,
   fetchChatroom,
   fetchAllSearchedChannels,
   clearSearch } from '../../../actions/chatrooms_actions';
@@ -18,7 +18,7 @@ import CreateChannel from './create_channel';
 
   const mdp = (dispatch) => {
     return {
-      createChannel: (channel) => dispatch(createChannel(channel)),
+      createChannel: (channel) => dispatch(createChatroom(channel)),
       fetchChatroom: (id) => dispatch(fetchChatroom(id)),
       searchChannels: (query) => dispatch(fetchAllSearchedChannels(query)),
       closeModal: () => dispatch(closeModal())
