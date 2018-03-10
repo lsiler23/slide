@@ -40,6 +40,7 @@
   color: white;
   font-size: 18px;
   border-radius: 5px;
+  cursor: pointer;
 }
 
 .search-dropdown {
@@ -64,6 +65,7 @@
 .search-results li {
   padding: 5px;
   border-top: 1px solid lightgrey;
+  cursor: pointer;
   &:hover {
     background-color: #eaf5fc;
   }
@@ -79,6 +81,7 @@
   width: 50px;
   height: 50px;
   color: grey;
+  cursor: pointer;
   &:hover {
     background-color: #e8e8e8;
     border-radius: 50%;

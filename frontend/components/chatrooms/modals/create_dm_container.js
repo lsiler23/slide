@@ -3,13 +3,17 @@ import { withRouter } from 'react-router-dom';
 import {
   createChatroom,
   fetchChatroom,
+  fetchAllSearchedUsers,
   clearSearch } from '../../../actions/chatrooms_actions';
+// import { userDMSelector } from '../../../reducers/selectors';
 import { closeModal } from '../../../actions/modal_actions';
 import createDM from './create_dm';
 
   const msp = (state) => {
+    debugger
+    const currentUser = state.session.currentUser;
     return {
-      currentUser: state.session.currentUser,
+      currentUser,
       users: Object.values(state.entities.users),
       searchIds: Object.values(state.entities.users).map((user) => Number(user.id))
     };
@@ -19,7 +23,7 @@ import createDM from './create_dm';
     return {
       createDM: (channel) => dispatch(createChatroom(channel)),
       fetchChatroom: (id) => dispatch(fetchChatroom(id)),
-      searchChannels: (query) => dispatch(fetchAllSearchedChannels(query)),
+      searchUsers: (query) => dispatch(fetchAllSearchedUsers(query)),
       closeModal: () => dispatch(closeModal())
     };
   };

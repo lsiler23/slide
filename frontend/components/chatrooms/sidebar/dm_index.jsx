@@ -20,13 +20,14 @@ export default class DMIndex extends React.Component {
   handleClick() {
     return (e) => {
       this.props.clearSearch();
+      this.props.searchUsers('');
       this.props.openModal('dm');
     };
   }
 
   render() {
     const { dms } = this.props;
-    debugger
+
     return (
       <div className='side-bar dms'>
         <h4 onClick={this.handleClick()}>Direct Messages</h4>

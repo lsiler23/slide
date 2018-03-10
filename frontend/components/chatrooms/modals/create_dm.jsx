@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default class CreateChannel extends React.Component {
+export default class CreateDM extends React.Component {
   constructor(props) {
     super(props);
     this.state = {title: '', isDM: true};
@@ -21,20 +21,16 @@ export default class CreateChannel extends React.Component {
   }
 
   handleLIClick(id) {
-    return (e) => {
-      e.preventDefault();
-      this.props.createDM(id)
-      .then(payload => this.props.history.push(`/chatrooms/${id}`))
-      .then(() => this.props.closeModal());
-    };
+    return console.log('blerp');
   }
 
   handleChange(e) {
+    debugger
     if (this.timeOut) {
       clearTimeout(this.timeOut);
     }
     this.setState({title: e.currentTarget.value}, () =>  {
-      this.timeOut = setTimeout(() => this.props.searchChannels(this.state.title), 300);
+      this.timeOut = setTimeout(() => this.props.searchUsers(this.state.title), 300);
     });
   }
 
@@ -56,6 +52,7 @@ export default class CreateChannel extends React.Component {
 
   render() {
     const { users, searchIds, currentUser } = this.props;
+    debugger
     return (
       <div className='create-channel'>
         <div className='escape' onClick={this.handleEscape()}>
@@ -84,7 +81,7 @@ export default class CreateChannel extends React.Component {
                   if (searchIds.includes(user.id) && user.id !== currentUser) {
                     return (
                     <li
-                      onClick={this.handleLIClick(user.id)}
+                      onClick={this.handleLIClick(user)}
                       key={user.id}>
                       {user.username}
                     </li>

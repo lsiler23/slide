@@ -1,14 +1,16 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { openModal, closeModal } from '../../../actions/modal_actions';
-import { clearSearch } from '../../../actions/chatrooms_actions';
+import {
+  clearSearch,
+  fetchAllSearchedUsers } from '../../../actions/chatrooms_actions';
 import DMIndex from './dm_index';
 
 
 const mdp = (dispatch) => {
   return {
     openModal: (type) => dispatch(openModal(type)),
-    // searchChannels: (query) => dispatch(fetchAllSearchedChannels(query)),
+    searchUsers: (query) => dispatch(fetchAllSearchedUsers(query)),
     clearSearch: () => dispatch(clearSearch()),
     closeModal: () => dispatch(closeModal())
   };

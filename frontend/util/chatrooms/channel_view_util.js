@@ -4,6 +4,14 @@ export const fetchChatroom = (id) => {
   });
 };
 
+export const createChannel = (channel) => {
+  return $.ajax({
+    url: '/api/chatrooms',
+    method: 'POST',
+    data: { chatroom: channel }
+  });
+};
+
 export const fetchAllSearchedChannels = (query) => {
   return $.ajax({
     url: '/api/chatrooms',
@@ -12,11 +20,12 @@ export const fetchAllSearchedChannels = (query) => {
   });
 };
 
-export const createChannel = (channel) => {
+
+export const fetchAllSearchedUsers = (query) => {
   debugger
   return $.ajax({
-    url: '/api/chatrooms',
-    method: 'POST',
-    data: { chatroom: channel }
+    url: '/api/users',
+    dataType: 'json',
+    data: { query }
   });
 };

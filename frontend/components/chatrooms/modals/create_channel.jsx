@@ -56,7 +56,6 @@ export default class CreateChannel extends React.Component {
 
   render() {
     const { channels, searchIds } = this.props;
-    debugger
     return (
       <div className='create-channel'>
         <div className='escape' onClick={this.handleEscape()}>

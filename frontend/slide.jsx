@@ -16,7 +16,9 @@ document.addEventListener('DOMContentLoaded', () => {
       },
       entities: {
         chatrooms,
-        users: window.generalChat.participants
+        users: {
+          [user.id]: user
+        }
       }
     };
     store = configureStore(preloadedState);
@@ -26,8 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
       entities: {
         chatrooms: {
           [window.generalChat.channel.id]: window.generalChat.channel
-        },
-        users: window.generalChat.participants
+        }
       }
     };
 

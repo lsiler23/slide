@@ -13,8 +13,8 @@ const msp = (state) => {
   const currentUser = currentUserSelector(state);
   return {
     currentUser,
-    channels: userChannelsSelector(state, currentUser.id),
-    dms: userDMSelector(state, currentUser.id)
+    channels: userChannelsSelector(state, state.session.currentUser),
+    dms: userDMSelector(state, state.session.currentUser)
   };
 };
 
