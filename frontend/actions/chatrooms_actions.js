@@ -25,9 +25,10 @@ export const clearSearch = () => {
   }
 }
 
-export const fetchChannel = (id) => {
+
+export const fetchChatroom = (id) => {
   return (dispatch) => {
-    return ChannelViewUtil.fetchChannel(id)
+    return ChannelViewUtil.fetchChatroom(id)
     .then(payload => dispatch(receiveChannel(payload)));
   };
 };

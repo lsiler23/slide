@@ -12,12 +12,24 @@ export const generalChatSelector = (state) => {
 };
 
 export const userChannelsSelector = (state, id) => {
-  const allChannels = Object.values(state.entities.chatrooms);
+  const allChatrooms = Object.values(state.entities.chatrooms);
   const userChannels = [];
-  for (let i = 0; i < allChannels.length; i++) {
-    if (allChannels[i].participant_ids.includes(id)) {
-      userChannels.push(allChannels[i]);
+  for (let i = 0; i < allChatrooms.length; i++) {
+    if (allChatrooms[i].participant_ids.includes(id) && allChatrooms[i].isDM === false) {
+      userChannels.push(allChatrooms[i]);
     }
   }
   return userChannels;
+};
+
+export const userDMSelector = (state, id) => {
+
+  const allChatrooms = Object.values(state.entities.chatrooms);
+  const userDMs = [];
+  for (let i = 0; i < allChatrooms.length; i++) {
+    if (allChatrooms[i].participant_ids.includes(id) && allChatrooms[i].isDM === true) {
+      userDMs.push(allChatrooms[i]);
+    }
+  }
+  return userDMs;
 };

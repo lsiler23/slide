@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
-import { fetchChannel } from '../../../actions/chatrooms_actions';
+import { fetchChatroom } from '../../../actions/chatrooms_actions';
 import ChannelView from './channel_view';
 
 
@@ -12,7 +12,7 @@ const msp = (state, ownProps) => {
 
 const mdp = (dispatch) => {
   return {
-    fetchChannel: (id) => dispatch(fetchChannel(id))
+    fetchChatroom: (id) => dispatch(fetchChatroom(id))
   };
 };
 

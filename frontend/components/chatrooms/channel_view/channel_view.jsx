@@ -9,12 +9,12 @@ export default class ChannelView extends React.Component {
   }
 
   componentDidMount() {
-    this.props.fetchChannel(this.props.match.params.chatroomId);
+    this.props.fetchChatroom(this.props.match.params.chatroomId);
   }
 
   componentWillReceiveProps(nextProps) {
     if (this.props.activeView && (this.props.activeView.id !== Number(nextProps.match.params.chatroomId))) {
-      this.props.fetchChannel(nextProps.match.params.chatroomId);
+      this.props.fetchChatroom(nextProps.match.params.chatroomId);
     }
   }
 

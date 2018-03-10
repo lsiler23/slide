@@ -4,6 +4,7 @@ import { withRouter } from 'react-router-dom';
 import { generalChatSelector } from '../../reducers/selectors';
 import { login, clearErrors } from '../../actions/session_actions';
 
+
 const msp = (state, ownProps) => {
   return {
     errors: state.errors.session,

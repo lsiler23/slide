@@ -1,4 +1,4 @@
-export const fetchChannel = (id) => {
+export const fetchChatroom = (id) => {
   return $.ajax({
     url: `/api/chatrooms/${id}`
   });
@@ -13,6 +13,7 @@ export const fetchAllSearchedChannels = (query) => {
 };
 
 export const createChannel = (channel) => {
+  debugger
   return $.ajax({
     url: '/api/chatrooms',
     method: 'POST',

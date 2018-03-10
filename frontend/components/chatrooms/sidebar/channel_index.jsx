@@ -11,16 +11,16 @@ export default class ChannelIndex extends React.Component {
 
   handleSelection(id) {
     if (id === Number(this.props.match.params.chatroomId)) {
-      return 'side-bar channel-index-item selected';
+      return 'side-bar chatroom-index-item selected';
     } else {
-      return 'side-bar channel-index-item';
+      return 'side-bar chatroom-index-item';
     }
   }
 
   handleClick() {
     return (e) => {
       this.props.clearSearch();
-      this.props.searchChannels('')
+      this.props.searchChannels('');
       this.props.openModal('channel');
     };
   }
@@ -36,7 +36,7 @@ export default class ChannelIndex extends React.Component {
                 return <ChannelIndexItem
                   channel={channel}
                   key={channel.id}
-                  fetchChannel={this.props.fetchChannel}
+                  fetchChatroom={this.props.fetchChatroom}
                   history={this.props.history}
                   match={this.props.match}
                   classType={this.handleSelection(channel.id)} />;

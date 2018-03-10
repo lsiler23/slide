@@ -1,5 +1,6 @@
 import React from 'react';
 import ChannelIndex from './channel_index_container';
+import DMIndex from './dm_index_container';
 
 
 export default class SideBar extends React.Component {
@@ -20,8 +21,8 @@ export default class SideBar extends React.Component {
   }
 
   render () {
-    const { channels } = this.props;
-     
+    const { channels, dms } = this.props;
+
     if (this.props.currentUser) {
       return (
         <div className='side-bar'>
@@ -36,7 +37,13 @@ export default class SideBar extends React.Component {
 
           <ChannelIndex
             channels={channels}
-            fetchChannel={this.props.fetchChannel}
+            fetchChatroom={this.props.fetchChatroom}
+            history={this.props.history}
+            match={this.props.match}/>
+
+          <DMIndex
+            dms={dms}
+            fetchChatroom={this.props.fetchChatroom}
             history={this.props.history}
             match={this.props.match}/>
         </div>

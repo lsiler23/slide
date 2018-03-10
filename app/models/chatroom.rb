@@ -1,7 +1,7 @@
 class Chatroom < ApplicationRecord
 
   validates :creator_id, presence: true
-  validates :title, presence: true, uniqueness: true
+  validates :title, uniqueness: true
   validates :isDM, inclusion: { in: [true, false] }
 
   belongs_to :creator,

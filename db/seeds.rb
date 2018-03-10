@@ -30,6 +30,7 @@ second = Chatroom.create!({creator_id: me.id, isDM: false, title: 'second ever!'
 third = Chatroom.create!({creator_id: jake.id, isDM: false, title: 'third'})
 fourth = Chatroom.create!({creator_id: elon.id, isDM: false, title: 'spaceisgood'})
 fifth = Chatroom.create!({creator_id: tom.id, isDM: false, title: 'hot singles'})
+firstdm = Chatroom.create!({creator_id: me.id, isDM: true, title: "#{sam.username}"})
 
 # Participation associations
 Participation.create!({participant_id: me.id, chatroom_id: first.id})
@@ -44,3 +45,4 @@ Participation.create!({participant_id: mary.id, chatroom_id: general.id})
 Participation.create!({participant_id: sam.id, chatroom_id: general.id})
 Participation.create!({participant_id: elliot.id, chatroom_id: general.id})
 Participation.create!({participant_id: hanhee.id, chatroom_id: general.id})
+Participation.create!({participant_id: sam.id, chatroom_id: firstdm.id})

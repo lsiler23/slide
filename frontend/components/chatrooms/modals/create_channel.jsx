@@ -14,7 +14,7 @@ export default class CreateChannel extends React.Component {
     return (e) => {
       e.preventDefault();
       this.props.createChannel(this.state)
-      .then(payload => this.props.fetchChannel(payload.channel.id))
+      .then(payload => this.props.fetchChatroom(payload.channel.id))
       .then(payload => this.props.history.push(`/chatrooms/${payload.channel.id}`))
       .then(() => this.props.closeModal());
     };
@@ -23,7 +23,7 @@ export default class CreateChannel extends React.Component {
   handleLIClick(id) {
     return (e) => {
       e.preventDefault();
-      this.props.fetchChannel(id)
+      this.props.fetchChatroom(id)
       .then(payload => this.props.history.push(`/chatrooms/${id}`))
       .then(() => this.props.closeModal());
     };
@@ -68,6 +68,7 @@ export default class CreateChannel extends React.Component {
             <input
               type='text'
               className='channel-input'
+              placeholder='Find or start a channel'
               onChange={this.handleChange}/>
             <button
               className={this.noMatchToggle()}
