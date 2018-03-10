@@ -55,7 +55,7 @@ export default class CreateChannel extends React.Component {
 
 
   render() {
-    const { users, searchIds } = this.props;
+    const { users, searchIds, currentUser } = this.props;
     return (
       <div className='create-channel'>
         <div className='escape' onClick={this.handleEscape()}>
@@ -81,9 +81,23 @@ export default class CreateChannel extends React.Component {
             <ul className='search-results'>
               {
                 users && users.map(user => {
-                  if (searchIds.includes(user.id)) {
-                    return <li onClick={this.handleLIClick(user.id)} key={user.id}>{user.username}</li>;
-                    }
+                  if (searchIds.includes(user.id) && user.id !== currentUser) {
+                    return (
+                    <li
+                      onClick={this.handleLIClick(user.id)}
+                      key={user.id}>
+                      {user.username}
+                    </li>
+                  );
+                } else {
+                  return (
+                  <li
+                    onClick={this.handleLIClick(user.id)}
+                    key={user.id}>
+                    { `${user.username} (you)`}
+                  </li>
+                );
+                }
                   })
                 }
               </ul>

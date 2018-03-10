@@ -56,6 +56,7 @@ export default class CreateChannel extends React.Component {
 
   render() {
     const { channels, searchIds } = this.props;
+    debugger
     return (
       <div className='create-channel'>
         <div className='escape' onClick={this.handleEscape()}>
@@ -81,7 +82,9 @@ export default class CreateChannel extends React.Component {
             <ul className='search-results'>
               {
                 channels && channels.map(channel => {
-                  if (searchIds.includes(channel.id)) {
+                  if (searchIds.length < 1 && channel.isDM === false) {
+                    return <li onClick={this.handleLIClick(channel.id)} key={channel.id}>{channel.title}</li>;
+                  } else if (searchIds.includes(channel.id) && channel.isDM === false) {
                     return <li onClick={this.handleLIClick(channel.id)} key={channel.id}>{channel.title}</li>;
                     }
                   })
