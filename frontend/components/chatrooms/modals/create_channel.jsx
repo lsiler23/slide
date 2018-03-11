@@ -81,7 +81,6 @@ export default class CreateChannel extends React.Component {
             <ul className='search-results'>
               {
                 channels && channels.map(channel => {
-                  debugger
                   if (searchIds.length < 1 && this.state.title.length >= 1 && channel.isDM === false) {
                     return '';
                   } else if ((searchIds.length < 1) && channel.isDM === false) {

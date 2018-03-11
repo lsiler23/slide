@@ -22,7 +22,9 @@ export default class ChannelView extends React.Component {
     if (this.props.activeView) {
       return (
         <div className='channel-view'>
-          <ChannelHeader channel={this.props.activeView}/>
+          <ChannelHeader
+            channel={this.props.activeView}
+            selfDM={this.props.selfDM}/>
           <ChannelBody channel={this.props.activeView}/>
           <ChannelFooter
             channel={this.props.activeView}

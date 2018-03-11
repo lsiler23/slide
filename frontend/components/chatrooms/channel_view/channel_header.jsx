@@ -6,9 +6,15 @@ export default class ChannelHeader extends React.Component {
   }
 
   render() {
-    const { channel } = this.props;
+    const { channel, selfDM } = this.props;
     const numOfParts = channel.participant_ids.length;
-    const title = (channel.isDM ? `${channel.title.split(', ').slice(0, -1).join(', ')}` : `# ${channel.title}`);
+    let title;
+    if (channel.isDM && selfDM.id !== channel.id) {
+      const newTitle = channel.title.split(', ').slice(0, -1).join(', ');
+      title = `${newTitle}`;
+    } else {
+      title = `${channel.title}`;
+    }
     if (channel) {
       return (
         <div className='channel-header'>
