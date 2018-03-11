@@ -19,7 +19,7 @@ class User < ApplicationRecord
   attr_reader :password
 
   after_initialize :ensure_session_token
-  after_create :subscribe_to_general
+  after_create :subscribe_to_general, :subscribe_to_self_dm
 
   def self.find_by_credentials(email_address, password)
     user = User.find_by(email_address: email_address)
@@ -56,5 +56,16 @@ class User < ApplicationRecord
       participant_id: self.id,
       chatroom_id: general.id
       }) if general
+  end
+
+  def subscribe_to_self_dm
+    found_chatroom = Chatroom.find_by(title: "#{self.username} (you)")
+    if !found_chatroom
+      debugger
+      self.created_chatrooms.create!({
+        title: "#{self.username} (you)",
+        isDM: true
+        })
+    end
   end
 end

@@ -5,15 +5,18 @@ import {
   fetchChatroom,
   fetchAllSearchedUsers,
   clearSearch } from '../../../actions/chatrooms_actions';
-// import { userDMSelector } from '../../../reducers/selectors';
+import { userDMSelector, selfDMSelector } from '../../../reducers/selectors';
 import { closeModal } from '../../../actions/modal_actions';
 import createDM from './create_dm';
 
   const msp = (state) => {
     const currentUser = state.session.currentUser;
+    const selfDMTitle = `${currentUser.username} (you)`;
     return {
       currentUser,
       users: Object.values(state.entities.users),
+      allDMs: userDMSelector(state, currentUser.id),
+      selfDM: selfDMSelector(state, selfDMTitle),
       searchIds: Object.values(state.entities.users).map((user) => Number(user.id))
     };
   };

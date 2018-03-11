@@ -1,7 +1,7 @@
 import React from 'react';
 import ChannelHeader from './channel_header';
 import { ChannelBody } from './channel_body';
-import { ChannelFooter } from './channel_footer';
+import ChannelFooter from './channel_footer';
 
 export default class ChannelView extends React.Component {
   constructor(props) {

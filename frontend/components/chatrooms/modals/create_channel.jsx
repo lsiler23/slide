@@ -64,10 +64,10 @@ export default class CreateChannel extends React.Component {
         </div>
         <div className='static-top'>
           <h2 className='create-channel header'>Browse Channels</h2>
-          <div className='input-container'>
+          <div className='input-container' placeholder='Find or start a channel'>
             <input
               type='text'
-              className='channel-input'
+              className='channel-input-static'
               placeholder='Find or start a channel'
               onChange={this.handleChange}/>
             <button

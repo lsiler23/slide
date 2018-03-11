@@ -1,6 +1,7 @@
 class Chatroom < ApplicationRecord
 
   validates :creator_id, presence: true
+  validates :title, uniqueness: true
   validates :isDM, inclusion: { in: [true, false] }
 
   belongs_to :creator,
@@ -21,14 +22,13 @@ class Chatroom < ApplicationRecord
 
   def subscribe_user_to_chatroom
     user = User.find(self.creator_id)
-
-    if self.isDM
-      debugger
-      participants = self.title.split(', ')
-      participants.each do |part|
+    all_users = self.title.split(', ')
+    
+    if self.isDM && all_users.length > 1
+      all_users.each do |part|
         current_part = User.where('username ~ ?', part)
         Participation.create!({
-          participant_id: current_part.first.id,
+          participant_id: current_part.first.id || user.id,
           chatroom_id: self.id
           })
       end

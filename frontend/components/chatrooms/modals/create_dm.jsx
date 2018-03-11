@@ -1,14 +1,15 @@
 import React from 'react';
-import DMUser from './create_dm_li';
 
 export default class CreateDM extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {title: '', selected: []};
+    this.state = {title: '', selected: [], goButton: 'create-channel go' };
     this.handleClick = this.handleClick.bind(this);
     this.handleChange = this.handleChange.bind(this);
     this.handleEscape = this.handleEscape.bind(this);
     this.handleLiClick = this.handleLiClick.bind(this);
+    this.handleAlreadySelected = this.handleAlreadySelected.bind(this);
+    // this.handleYouClick = this.handleYouClick.bind(this);
   }
 
   handleClick() {
@@ -26,10 +27,16 @@ export default class CreateDM extends React.Component {
     return (e) => {
       e.preventDefault();
       const newSelected = [user];
-      this.setState({selected: this.state.selected.concat(newSelected)});
-
+      this.setState({selected: this.state.selected.concat(newSelected), goButton: 'create-channel go ready'});
     };
   }
+
+  // handleYouClick(user) {
+  //   return (e) => {
+  //     e.preventDefault();
+  //     return console.log('some stuff');
+  //   };
+  // }
 
   handleChange(e) {
     if (this.timeOut) {
@@ -38,6 +45,15 @@ export default class CreateDM extends React.Component {
     this.setState({title: e.currentTarget.value}, () =>  {
       this.timeOut = setTimeout(() => this.props.searchUsers(this.state.title), 300);
     });
+  }
+
+  handleAlreadySelected(user) {
+    return (e) => {
+      e.preventDefault();
+      const index = this.state.selected.indexOf(user);
+      this.state.selected.splice(index, 1);
+      this.setState({selected: this.state.selected });
+    };
   }
 
 
@@ -51,7 +67,6 @@ export default class CreateDM extends React.Component {
 
   render() {
     const { users, searchIds, currentUser } = this.props;
-    debugger
     return (
       <div className='create-channel'>
         <div className='escape' onClick={this.handleEscape()}>
@@ -61,13 +76,26 @@ export default class CreateDM extends React.Component {
         <div className='static-top'>
           <h2 className='create-channel header'>Direct Messages</h2>
           <div className='input-container'>
+            <div className='bigolbox'>
+              <div className='littleholder'>
+                {
+                  this.state.selected.map((sel) => {
+                    return (
+                      <span key={sel.id} className='selected-user' onClick={this.handleAlreadySelected(sel)}>
+                        {`${sel.username}X`}
+                      </span>
+                    );
+                  })
+                }
+              </div>
             <input
               type='text'
               className='channel-input'
               placeholder={this.state.input}
               onChange={this.handleChange}/>
+          </div>
             <button
-              className='create-channel go'
+              className={this.state.goButton}
               onClick={this.handleClick()}>Go</button>
           </div>
         </div>
@@ -94,13 +122,6 @@ export default class CreateDM extends React.Component {
               }
             </ul>
           </div>
-        </div>
-        <div>
-          {
-            this.state.selected.map((sel) => {
-              return sel.username;
-            })
-          }
         </div>
       </div>
     );

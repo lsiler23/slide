@@ -10,7 +10,7 @@
 
 .channel-modal-child {
   position: absolute;
-  top: 20%;
+  top: 10%;
   left: 50%;
   transform: translate(-50%, -50%);
   font-family: 'Lato', sans-serif;
@@ -26,15 +26,23 @@
   padding: 40px;
 }
 
-.channel-input {
+.channel-input-static {
   width: 590px;
   margin-left: 40px;
   margin-right: 15px;
   color: #343538;
 }
 
+.channel-input {
+  flex-grow: 1;
+  border: none;
+  height: auto;
+  color: black;
+}
+
 .create-channel.go {
   width: 60px;
+  height: 60px;
   border-top: 5px;
   background-color: #d4d6d6;
   color: white;
@@ -77,7 +85,7 @@
 
 .escape {
   margin-left: 800px;
-  margin-bottom: 20px;
+  margin-top: 150px;
   width: 50px;
   height: 50px;
   color: grey;
@@ -109,4 +117,30 @@
   font-size: 13px;
   padding: 2px;
     // color: #e8e8e8;
+}
+
+/// fun input
+.bigolbox {
+  width: 590px;
+  border-radius: 5px;
+  display: flex;
+  flex-wrap: wrap;
+  border: 1px solid lightgrey;
+  margin-left: 40px;
+  margin-right: 15px;
+  color: #343538;
+}
+
+.littleholder {
+  padding: 15px;
+}
+
+.selected-user {
+  box-sizing: border-box;
+  margin: 5px;
+  border-radius: 2px;
+  padding: 5px;
+  font-size: 13px;
+  color: white;
+  background-color: #359ce0;
 }

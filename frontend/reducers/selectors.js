@@ -33,3 +33,14 @@ export const userDMSelector = (state, id) => {
   }
   return userDMs;
 };
+
+
+export const selfDMSelector = (state, title) => {
+  const allChatrooms = Object.values(state.entities.chatrooms);
+
+  for (let i = 0; i < allChatrooms.length; i++) {
+    if (allChatrooms[i].title === title) {
+      return allChatrooms[i];
+    }
+  }
+};

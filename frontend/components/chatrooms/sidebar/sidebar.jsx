@@ -22,7 +22,6 @@ export default class SideBar extends React.Component {
 
   render () {
     const { channels, dms } = this.props;
-    debugger
     if (this.props.currentUser) {
       return (
         <div className='side-bar'>
