@@ -141,12 +141,12 @@
   padding: 3px;
   height: auto;
   position: relative;
+  white-space: nowrap;
+  text-overflow: ellipsis;
   &:hover {
     background-color: #3d2d3b;
   }
-
 }
-
 
 .selected {
   background-color: #4C9689;
