@@ -6,7 +6,7 @@ class Api::ChatroomsController < ApplicationController
     if params[:query].present?
       @channels = Chatroom.where('title ~ ?', params[:query])
     else
-      @channels = Chatroom.where(creator_id: current_user.id)
+      @channels = Chatroom.all
     end
   end
 
