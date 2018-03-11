@@ -13,8 +13,6 @@
   width: 200px;
   position: fixed;
   overflow: hidden;
-  // overflow-y: scroll
-  // display: flex;
   z-index: 1;
 }
 
@@ -92,7 +90,10 @@
 .side-bar.channel-index {
   width: auto;
   max-height: 200px;
-  overflow-y: scroll;
+  &:hover {
+    overflow-y: scroll;
+  }
+
   &::-webkit-scrollbar {
     background-color: #4D394B;
   }

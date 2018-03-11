@@ -3,7 +3,11 @@ import React from 'react';
 export default class CreateDM extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {title: '', selected: [], goButton: 'create-channel go' };
+    this.state = {
+      title: '',
+      selected: [],
+      goButton: 'create-channel go',
+      input: 'Find or start a conversation' };
     this.handleClick = this.handleClick.bind(this);
     this.handleChange = this.handleChange.bind(this);
     this.handleEscape = this.handleEscape.bind(this);
@@ -47,7 +51,7 @@ export default class CreateDM extends React.Component {
     return (e) => {
       e.preventDefault();
       const newSelected = [user];
-      this.setState({selected: this.state.selected.concat(newSelected), goButton: 'create-channel go ready'});
+      this.setState({selected: this.state.selected.concat(newSelected), goButton: 'create-channel go ready', input: ''});
     };
   }
 
@@ -97,8 +101,8 @@ export default class CreateDM extends React.Component {
         <div className='static-top'>
           <h2 className='create-channel header'>Direct Messages</h2>
           <div className='input-container'>
-            <div className='bigolbox'>
-              <div className='littleholder'>
+            <div className='bigolbox' placeholder='Find or start a conversation'>
+              <div className='littleholder' placeholder='Find or start a conversation'>
                 {
                   this.state.selected.map((sel) => {
                     return (

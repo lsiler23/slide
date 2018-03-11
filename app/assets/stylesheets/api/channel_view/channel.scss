@@ -1,14 +1,10 @@
 .channel-view {
-  // margin-left: 200px;
-  // height: 100%;
-  // width: 100%;
   right: 0;
   left: 200px;
   display: flex;
   flex-direction: column;
   position: absolute;
   font-family: 'Lato', sans-serif;
-  // overflow-y: hidden;
 }
 
 .channel-header {
@@ -46,29 +42,30 @@
 }
 
 .channel-body {
-  // width: 100%;
-  height: -webkit-fill-available;
+  height: 750px;
   top: 60px;
   margin-bottom: 60px;
-  // margin-left: 0;
   left: 0;
   background-color: lightgrey;
   box-sizing: border-box;
-  overflow: hidden;
+  overflow-y: scroll;
+  &::-webkit-scrollbar {
+    background-color: #fff;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: lightgrey;
+    border-radius: 5px;
+  }
 }
 
 .channel-footer {
   height: 65px;
-  // padding: 6px;
   margin-left: 0;
   margin-right: 20px;
   bottom: 0;
   width: 100%;
   margin-top: 600px;
-  // border: 1px solid black;
   position: fixed;
-  // z-index: 1;
-  // box-sizing: border-box;
   background-color: white;
 }
 
@@ -78,8 +75,6 @@
   margin: 0 20px 20px 20px;
   height: 40px;
   box-sizing: border-box;
-  // overflow-x: hidden;
-  // overflow-y: hidden;
 }
 
 .chatbox input {
