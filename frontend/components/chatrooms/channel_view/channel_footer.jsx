@@ -6,8 +6,16 @@ export default class ChannelFooter extends React.Component {
   }
 
   render() {
-    const { channel } = this.props;
-    const title = (channel.isDM ? `Message ${channel.title}` : `Message #${channel.title}`);
+    const { channel, selfDM } = this.props;
+    let title;
+    if (channel.isDM && selfDM.id === channel.id) {
+      title = 'Jot something down';
+    } else if (channel.isDM) {
+      const newTitle = channel.title.split(', ').slice(0, -1).join(', ');
+      title = `Message ${newTitle}`;
+    } else {
+      title = `Message #${channel.title}`;
+    }
 
     return (
       <div className='channel-footer'>

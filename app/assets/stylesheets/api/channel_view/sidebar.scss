@@ -159,7 +159,6 @@
 .side-bar.dms {
   width: auto;
   height: 50px;
-  // margin-top: 150px;
   margin-left: 5px;
   top: 160px;
   padding: 10px;
@@ -196,6 +195,8 @@
 
 .side-bar.dm-index {
   width: auto;
+  max-height: 300px;
+  overflow-y: scroll;
   &::-webkit-scrollbar {
     background-color: #4D394B;
   }
@@ -204,6 +205,7 @@
     border-radius: 5px;
   }
 }
+
 
 .selected {
   background-color: #4C9689;

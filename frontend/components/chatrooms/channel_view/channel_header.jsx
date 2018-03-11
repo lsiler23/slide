@@ -8,7 +8,7 @@ export default class ChannelHeader extends React.Component {
   render() {
     const { channel } = this.props;
     const numOfParts = channel.participant_ids.length;
-    const title = (channel.isDM ? `${channel.title}` : `# ${channel.title}`);
+    const title = (channel.isDM ? `${channel.title.split(', ').slice(0, -1).join(', ')}` : `# ${channel.title}`);
     if (channel) {
       return (
         <div className='channel-header'>
