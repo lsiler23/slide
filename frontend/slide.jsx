@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import configureStore from './store/store';
 import Root from './components/root';
 import { fetchChatroom } from './actions/chatrooms_actions';
-import { fetchAllSearchedChannels } from './actions/chatrooms_actions';
+import { deleteParticipation } from './actions/chatrooms_actions';
 
 document.addEventListener('DOMContentLoaded', () => {
   let store;
@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
   window.store = store;
   window.fetchChatroom = fetchChatroom;
-  window.fetchAllSearchedChannels = fetchAllSearchedChannels;
+  window.deleteParticipation = deleteParticipation;
   const root = document.getElementById('root');
   ReactDOM.render(<Root store={store} />, root);
 });

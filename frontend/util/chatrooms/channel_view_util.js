@@ -22,10 +22,16 @@ export const fetchAllSearchedChannels = (query) => {
 
 
 export const fetchAllSearchedUsers = (query) => {
-   
   return $.ajax({
     url: '/api/users',
     dataType: 'json',
     data: { query }
+  });
+};
+
+export const deleteParticipation = (id) => {
+  return $.ajax({
+    url: `/api/chatrooms/${id}`,
+    method: 'PATCH'
   });
 };

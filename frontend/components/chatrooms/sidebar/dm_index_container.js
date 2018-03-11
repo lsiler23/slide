@@ -4,8 +4,17 @@ import { openModal, closeModal } from '../../../actions/modal_actions';
 import {
   clearSearch,
   fetchAllSearchedUsers } from '../../../actions/chatrooms_actions';
+import { selfDMSelector } from '../../../reducers/selectors';
 import DMIndex from './dm_index';
 
+const msp = (state) => {
+  const currentUser = state.session.currentUser;
+  const selfDMTitle = `${currentUser.username} (you)`;
+  return {
+    currentUser,
+    selfDM: selfDMSelector(state, selfDMTitle)
+  };
+};
 
 const mdp = (dispatch) => {
   return {
@@ -16,4 +25,4 @@ const mdp = (dispatch) => {
   };
 };
 
-export default connect(null, mdp)(DMIndex);
+export default connect(msp, mdp)(DMIndex);

@@ -4,6 +4,7 @@ export const RECEIVE_CHANNEL = 'FETCH_CHANNEL';
 export const RECEIVE_SEARCHED_CHANNELS = 'RECEIVE_SEARCHED_CHANNELS';
 export const RECEIVE_SEARCHED_USERS = 'RECEIVE_SEARCHED_USERS';
 export const CLEAR_SEARCH = 'CLEAR_SEARCH';
+export const REMOVE_PARTICIPATION = 'REMOVE_PARTICIPATION';
 
 export const receiveChannel = ({channel, participants}) => {
 
@@ -35,9 +36,16 @@ export const clearSearch = () => {
   };
 };
 
+export const removeParticipation = (payload) => {
+  return {
+    type: REMOVE_PARTICIPATION,
+    channel: payload
+  }
+}
+
 
 export const fetchChatroom = (id) => {
-   
+
   return (dispatch) => {
     return ChannelViewUtil.fetchChatroom(id)
     .then(payload => dispatch(receiveChannel(payload)));
@@ -64,4 +72,11 @@ export const fetchAllSearchedUsers = (query) => {
     return ChannelViewUtil.fetchAllSearchedUsers(query)
     .then(payload => dispatch(receiveSearchedUsers(payload)));
   };
+};
+
+export const deleteParticipation = (id) => {
+  return (dispatch) => {
+    return ChannelViewUtil.deleteParticipation(id)
+    .then(payload => dispatch(removeParticipation(payload)))
+  }
 };

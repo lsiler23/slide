@@ -9,17 +9,37 @@ export default class CreateDM extends React.Component {
     this.handleEscape = this.handleEscape.bind(this);
     this.handleLiClick = this.handleLiClick.bind(this);
     this.handleAlreadySelected = this.handleAlreadySelected.bind(this);
-    // this.handleYouClick = this.handleYouClick.bind(this);
+    this.handleYouClick = this.handleYouClick.bind(this);
+    this.checkForUniqueness = this.checkForUniqueness.bind(this);
+  }
+
+  checkForUniqueness(title) {
+    const { allDMs } = this.props;
+    const sortedTitle = title.split(', ').sort().join(', ');
+
+    for (let i = 0; i < allDMs.length; i++) {
+      let currentTitle = allDMs[i].title.split(', ').sort().join(', ');
+      if (currentTitle === sortedTitle) {
+        return [false, allDMs[i]];
+      }
+    }
+    return [true];
   }
 
   handleClick() {
     return (e) => {
       e.preventDefault();
       const allUsers = this.state.selected.map((sel) => sel.username).join(', ').concat(`, ${this.props.currentUser.username}`);
-      this.props.createDM({title: allUsers, isDM: true})
-      .then(payload => this.props.fetchChatroom(payload.channel.id))
-      .then(payload => this.props.history.push(`/chatrooms/${payload.channel.id}`))
-      .then(() => this.props.closeModal());
+      const isUnique = this.checkForUniqueness(allUsers);
+      if (isUnique[0]) {
+        this.props.createDM({title: allUsers, isDM: true})
+        .then(payload => this.props.fetchChatroom(payload.channel.id))
+        .then(payload => this.props.history.push(`/chatrooms/${payload.channel.id}`))
+        .then(() => this.props.closeModal());
+      } else {
+        this.props.history.push(`/chatrooms/${isUnique[1].id}`);
+        this.props.closeModal();
+      }
     };
   }
 
@@ -31,12 +51,13 @@ export default class CreateDM extends React.Component {
     };
   }
 
-  // handleYouClick(user) {
-  //   return (e) => {
-  //     e.preventDefault();
-  //     return console.log('some stuff');
-  //   };
-  // }
+  handleYouClick() {
+    return (e) => {
+      e.preventDefault();
+      this.props.history.push(`/chatrooms/${this.props.selfDM.id}`);
+      this.props.closeModal();
+    };
+  }
 
   handleChange(e) {
     if (this.timeOut) {
@@ -111,9 +132,9 @@ export default class CreateDM extends React.Component {
                         {user.username}
                       </li>
                     );
-                  } else if (!this.state.selected.includes(user)) {
+                  } else if (!this.state.selected.includes(user) && this.state.selected.length < 1) {
                       return (
-                      <li key={user.id}>
+                      <li key={user.id} onClick={this.handleYouClick()}>
                         { `${user.username} (you)`}
                       </li>
                     );

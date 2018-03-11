@@ -40,7 +40,9 @@ export default class DMIndex extends React.Component {
                   fetchChatroom={this.props.fetchChatroom}
                   history={this.props.history}
                   match={this.props.match}
-                  classType={this.handleSelection(dm.id)} />;
+                  classType={this.handleSelection(dm.id)}
+                  currentUser={this.props.currentUser}
+                  selfDM={this.props.selfDM} />;
               })
             }
         </ul>

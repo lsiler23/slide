@@ -61,7 +61,6 @@ class User < ApplicationRecord
   def subscribe_to_self_dm
     found_chatroom = Chatroom.find_by(title: "#{self.username} (you)")
     if !found_chatroom
-      debugger
       self.created_chatrooms.create!({
         title: "#{self.username} (you)",
         isDM: true

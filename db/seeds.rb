@@ -30,7 +30,20 @@ second = Chatroom.create!({creator_id: me.id, isDM: false, title: 'second ever!'
 third = Chatroom.create!({creator_id: jake.id, isDM: false, title: 'third'})
 fourth = Chatroom.create!({creator_id: elon.id, isDM: false, title: 'spaceisgood'})
 fifth = Chatroom.create!({creator_id: tom.id, isDM: false, title: 'hot singles'})
-firstdm = Chatroom.create!({creator_id: me.id, isDM: true, title: "#{sam.username}"})
+firstdm = Chatroom.create!({creator_id: me.id, isDM: true, title: "#{sam.username}, #{me.username}"})
+jakeself = Chatroom.create!({creator_id: jake.id, isDM: true, title: "#{jake.username} (you)"})
+mauriceself = Chatroom.create!({creator_id: maurice.id, isDM: true, title: "#{maurice.username} (you)"})
+elonself = Chatroom.create!({creator_id: elon.id, isDM: true, title: "#{elon.username} (you)"})
+danself = Chatroom.create!({creator_id: dan.id, isDM: true, title: "#{dan.username} (you)"})
+charlieself = Chatroom.create!({creator_id: charlie.id, isDM: true, title: "#{charlie.username} (you)"})
+aislinnself = Chatroom.create!({creator_id: aislinn.id, isDM: true, title: "#{aislinn.username} (you)"})
+tomself = Chatroom.create!({creator_id: tom.id, isDM: true, title: "#{tom.username} (you)"})
+maryself = Chatroom.create!({creator_id: mary.id, isDM: true, title: "#{mary.username} (you)"})
+samself = Chatroom.create!({creator_id: sam.id, isDM: true, title: "#{sam.username} (you)"})
+elliotself = Chatroom.create!({creator_id: elliot.id, isDM: true, title: "#{elliot.username} (you)"})
+hanheeself = Chatroom.create!({creator_id: hanhee.id, isDM: true, title: "#{hanhee.username} (you)"})
+meself = Chatroom.create!({creator_id: me.id, isDM: true, title: "#{me.username} (you)"})
+
 
 # Participation associations
 Participation.create!({participant_id: me.id, chatroom_id: first.id})

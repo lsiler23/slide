@@ -29,6 +29,18 @@ class Api::ChatroomsController < ApplicationController
     end
   end
 
+  def update
+    chatroompart = Participation.find_by(chatroom_id: params[:id], participant_id: current_user.id)
+    @chatroom = Chatroom.find(params[:id])
+
+    if chatroompart
+      chatroompart.destroy!
+      render 'api/chatrooms/show.json.jbuilder'
+    else
+      render json: { }
+    end
+  end
+
   private
 
   def chatroom_params

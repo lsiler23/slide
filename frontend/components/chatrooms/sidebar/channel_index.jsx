@@ -11,9 +11,9 @@ export default class ChannelIndex extends React.Component {
 
   handleSelection(id) {
     if (id === Number(this.props.match.params.chatroomId)) {
-      return 'side-bar chatroom-index-item selected';
+      return 'side-bar chatroom-index-item-holder selected';
     } else {
-      return 'side-bar chatroom-index-item';
+      return 'side-bar chatroom-index-item-holder';
     }
   }
 
@@ -39,7 +39,9 @@ export default class ChannelIndex extends React.Component {
                   fetchChatroom={this.props.fetchChatroom}
                   history={this.props.history}
                   match={this.props.match}
-                  classType={this.handleSelection(channel.id)} />;
+                  classType={this.handleSelection(channel.id)}
+                  deleteParticipation={this.props.deleteParticipation}
+                  generalChat={this.props.generalChat} />;
               })
             }
         </ul>
