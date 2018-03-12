@@ -15,7 +15,7 @@ end
 json.set! :messages do
   @chatroom.messages.each do |msg|
     json.set! msg.id do
-      json.extract! msg, :id, :author_id, :body, :created_at
+      json.extract! msg, :id, :author_id, :chatroom_id, :body, :created_at
     end
   end
 end
