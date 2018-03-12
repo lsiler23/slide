@@ -12,7 +12,8 @@ class Api::ChatroomsController < ApplicationController
 
   def show
     @chatroom = Chatroom.find(params[:id])
-
+    @message = Message.new
+    
     if !@chatroom.participants.include?(current_user)
       Participation.create!({participant_id: current_user.id, chatroom_id: @chatroom.id})
     end

@@ -16,6 +16,8 @@ class User < ApplicationRecord
     through: :participations,
     source: :chatroom
 
+  has_many :messages
+  
   attr_reader :password
 
   after_initialize :ensure_session_token

@@ -18,12 +18,14 @@ class Chatroom < ApplicationRecord
     through: :participations,
     source: :user
 
+  has_many :messages
+
   after_create :subscribe_user_to_chatroom
 
   def subscribe_user_to_chatroom
     user = User.find(self.creator_id)
     all_users = self.title.split(', ')
-    
+
     if self.isDM && all_users.length > 1
       all_users.each do |part|
         current_part = User.where('username ~ ?', part)
