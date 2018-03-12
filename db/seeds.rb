@@ -23,6 +23,7 @@ mary = User.create!({email_address: 'mary@mary.com', username: 'owlgrl39', real_
 sam = User.create!({email_address: 'sam@github.edu', username: 'partyonsaturday', password: 'iheartbiking'})
 elliot = User.create!({email_address: 'whatever@elliot.com', username: 'ramrod', password: 'password'})
 hanhee = User.create!({email_address: 'asdf', username: 'asdf', password: 'asdfasdf'})
+guest = User.create!({email_address: 'TESTER@TEST.COM', username: 'guest', password: 'password123'})
 
 # Channels
 first = Chatroom.create!({creator_id: me.id, isDM: false, title: 'first ever!'})

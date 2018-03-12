@@ -18,7 +18,8 @@ const msp = (state, ownProps) => {
     activeView,
     selfDM: selfDMSelector(state, selfDMTitle),
     currentUser,
-    currentMessages: currentChatroomMessagesSelector(state, activeView.id)
+    currentMessages: currentChatroomMessagesSelector(state, activeView.id),
+    currentUsers: state.entities.users
   };
 };
 

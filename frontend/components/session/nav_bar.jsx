@@ -5,8 +5,8 @@ export default class NavBar extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      email_address: `${Math.random(1000) * 100}`,
-      username: `guest${Math.floor(Math.random(1000) * 100)}`,
+      email_address: `TESTER@TEST.COM`,
+      username: `guest`,
       password: 'password123'
     };
 
@@ -19,7 +19,7 @@ export default class NavBar extends React.Component {
   }
 
   handleDemoClick(e) {
-    this.props.signup(this.state);
+    this.props.login(this.state);
   }
 
   render() {

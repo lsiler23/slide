@@ -1,5 +1,6 @@
 import React from 'react';
-import { ChannelFooter } from './channel_footer';
+import ChannelFooter from './channel_footer';
+import MessageItem from './message_item';
 
 export default class  ChannelBody extends React.Component {
   constructor(props) {
@@ -14,7 +15,11 @@ export default class  ChannelBody extends React.Component {
           <ul>
             {
               messages.map((msg) => {
-                return <li>{msg.body}</li>;
+                return (
+                  <li className='message'key={msg.id}>
+                    <MessageItem message={msg} currentUsers={this.props.currentUsers}/>
+                  </li>
+                );
               })
             }
           </ul>

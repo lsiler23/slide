@@ -1,0 +1,38 @@
+.channel-view.channel-body {
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.top-line {
+  display: flex;
+}
+
+.whole-message-item {
+  display: flex;
+}
+
+.message {
+  padding: 10px;
+}
+
+.icon {
+  font-size: 25px;
+  padding: 10px;
+}
+
+.msgauthor {
+  font-weight: 700;
+  padding-right: 10px;
+  font-size: 14px;
+}
+
+.msgtime {
+  font-size: 12px;
+  color: grey;
+  padding-top: 2px;
+}
+
+.msgbody {
+  font-size: 14px;
+  padding-top: 5px;
+}
