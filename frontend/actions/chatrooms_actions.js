@@ -53,7 +53,7 @@ export const receiveMessage = (payload) => {
 
 
 export const fetchChatroom = (id) => {
-debugger
+ 
   return (dispatch) => {
     return ChannelViewUtil.fetchChatroom(id)
     .then(payload => dispatch(receiveChannel(payload)));
