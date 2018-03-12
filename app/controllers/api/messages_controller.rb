@@ -4,6 +4,7 @@ class Api::MessagesController < ApplicationController
     @message.author_id = current_user.id
 
     if @message.save
+
       ChatroomChannel.broadcast_to(@message.chatroom, JSON.parse(render('/api/messages/_message.json.jbuilder', locals: { message: @message })))
       head :ok
     else

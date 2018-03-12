@@ -19,6 +19,10 @@ export default class ChannelView extends React.Component {
   componentWillReceiveProps(nextProps) {
     if (this.props.activeView && (this.props.activeView.id !== Number(nextProps.match.params.chatroomId))) {
       this.props.fetchChatroom(nextProps.match.params.chatroomId);
+      App.cable.subscriptions.create(
+        {channel: 'ChatroomChannel', id: nextProps.match.params.chatroomId},
+        {received: (message) => this.props.receiveMessage(message)}
+      );
     }
   }
 

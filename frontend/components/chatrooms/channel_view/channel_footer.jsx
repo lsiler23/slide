@@ -18,7 +18,7 @@ export default class ChannelFooter extends React.Component {
         chatroom_id: chatroomId,
         author_id: authorId
      });
-     this.setState({body: ''})
+     this.setState({body: ''});
     };
   }
 
