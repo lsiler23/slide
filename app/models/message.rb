@@ -8,4 +8,6 @@ class Message < ApplicationRecord
     primary_key: :id
 
   belongs_to :chatroom
+
+  after_create_commit { MessageBroadcastJob.perform_later self}
 end

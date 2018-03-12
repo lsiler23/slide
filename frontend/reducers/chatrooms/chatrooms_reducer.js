@@ -4,11 +4,13 @@ import {
 import {
   RECEIVE_CHANNEL,
   RECEIVE_SEARCHED_CHANNELS,
-  REMOVE_PARTICIPATION } from '../../actions/chatrooms_actions';
+  REMOVE_PARTICIPATION,
+  RECEIVE_MESSAGE} from '../../actions/chatrooms_actions';
 import { merge } from 'lodash';
 
 const chatroomsReducer = (oldState = {}, action) => {
   Object.freeze(oldState);
+  const newState = merge({}, oldState);
 
   switch(action.type) {
     case RECEIVE_CURRENT_USER:
@@ -20,8 +22,10 @@ const chatroomsReducer = (oldState = {}, action) => {
     case RECEIVE_SEARCHED_CHANNELS:
       return merge({}, oldState, action.channels);
     case REMOVE_PARTICIPATION:
-      const newState = merge({}, oldState);
       delete newState[action.channel.channel.id];
+      return newState;
+    case RECEIVE_MESSAGE:
+      newState[action.message.chatroom_id].message_ids.push(action.message.id);
       return newState;
     default:
       return oldState;

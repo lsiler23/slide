@@ -1,6 +1,6 @@
 import React from 'react';
 import ChannelHeader from './channel_header';
-import { ChannelBody } from './channel_body';
+import ChannelBody from './channel_body';
 import ChannelFooter from './channel_footer';
 
 export default class ChannelView extends React.Component {
@@ -10,6 +10,10 @@ export default class ChannelView extends React.Component {
 
   componentDidMount() {
     this.props.fetchChatroom(this.props.match.params.chatroomId);
+    App.cable.subscriptions.create(
+      {channel: 'ChatroomChannel', id: this.props.match.params.chatroomId},
+      {received: (message) => this.props.receiveMessage(message)}
+    );
   }
 
   componentWillReceiveProps(nextProps) {
@@ -25,10 +29,15 @@ export default class ChannelView extends React.Component {
           <ChannelHeader
             channel={this.props.activeView}
             selfDM={this.props.selfDM}/>
-          <ChannelBody channel={this.props.activeView}/>
+          <ChannelBody
+            channel={this.props.activeView}
+            messages={this.props.messages}/>
           <ChannelFooter
             channel={this.props.activeView}
-            selfDM={this.props.selfDM} />
+            selfDM={this.props.selfDM}
+            match={this.props.match}
+            currentUser={this.props.currentUser}
+            createMessage={this.props.createMessage} />
         </div>
       );
     } else {

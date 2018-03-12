@@ -1,13 +1,25 @@
 import React from 'react';
 import { ChannelFooter } from './channel_footer';
 
-export const ChannelBody = (props) => {
-  return (
-    <div className='channel-view channel-body'>
-      <div>
-        I AM CHANNEL BODY
-      </div>
-    </div>
+export default class  ChannelBody extends React.Component {
+  constructor(props) {
+    super(props);
+  }
 
-  );
-};
+  render() {
+    const { messages } = this.props;
+    return (
+      <div className='channel-view channel-body'>
+        <div>
+          <ul>
+            {
+              messages.map((msg) => {
+                return <li>{msg.body}</li>;
+              })
+            }
+          </ul>
+        </div>
+      </div>
+    );
+  }
+}

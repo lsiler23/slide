@@ -3,6 +3,28 @@ import React from 'react';
 export default class ChannelFooter extends React.Component {
   constructor(props) {
     super(props);
+    this.state = { body: '' };
+    this.handleEnter = this.handleEnter.bind(this);
+    this.handleChange = this.handleChange.bind(this);
+  }
+
+  handleEnter() {
+    const chatroomId = Number(this.props.match.params.chatroomId);
+    const authorId = Number(this.props.currentUser.id);
+    return (e) => {
+      e.preventDefault();
+      this.props.createMessage({
+        body: this.state.body,
+        chatroom_id: chatroomId,
+        author_id: authorId
+     });
+    };
+  }
+
+  handleChange() {
+    return (e) => {
+      this.setState({body: e.currentTarget.value});
+    };
   }
 
   render() {
@@ -19,11 +41,12 @@ export default class ChannelFooter extends React.Component {
 
     return (
       <div className='channel-footer'>
-        <div className='chatbox'>
+        <form className='chatbox' onSubmit={this.handleEnter()}>
           <input
             type='text'
-            placeholder={title}/>
-        </div>
+            placeholder={title}
+            onChange={this.handleChange()}/>
+        </form>
       </div>
 
     );
