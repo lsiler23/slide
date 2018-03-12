@@ -31,7 +31,7 @@ export default class ChannelView extends React.Component {
             selfDM={this.props.selfDM}/>
           <ChannelBody
             channel={this.props.activeView}
-            messages={this.props.messages}/>
+            messages={this.props.currentMessages}/>
           <ChannelFooter
             channel={this.props.activeView}
             selfDM={this.props.selfDM}

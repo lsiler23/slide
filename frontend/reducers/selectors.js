@@ -44,3 +44,15 @@ export const selfDMSelector = (state, title) => {
     }
   }
 };
+
+export const currentChatroomMessagesSelector = (state, chatroomId) => {
+  const allMessages = Object.values(state.entities.messages);
+  const currentMessages = [];
+
+  for (let i = 0; i < allMessages.length; i++) {
+    if (allMessages[i].chatroom_id === chatroomId) {
+      currentMessages.push(allMessages[i]);
+    }
+  }
+  return currentMessages;
+};
