@@ -6,5 +6,5 @@ test:
 
 production:
   adapter: redis
-  url: redis://redistogo:2e821f4636dbeb78a651303888310891@soldierfish.redistogo.com:11521/
+  url: <%=ENV['REDISTOGO_URL']%>
   channel_prefix: slide_production

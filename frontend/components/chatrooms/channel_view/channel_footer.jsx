@@ -18,6 +18,7 @@ export default class ChannelFooter extends React.Component {
         chatroom_id: chatroomId,
         author_id: authorId
      });
+     this.setState({body: ''})
     };
   }
 
@@ -45,7 +46,8 @@ export default class ChannelFooter extends React.Component {
           <input
             type='text'
             placeholder={title}
-            onChange={this.handleChange()}/>
+            onChange={this.handleChange()}
+            value={this.state.body}/>
         </form>
       </div>
 
