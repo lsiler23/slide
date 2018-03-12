@@ -133,6 +133,10 @@
 
 .littleholder {
   padding: 15px;
+  width: 590px;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+  display: flex;
 }
 
 .selected-user {
