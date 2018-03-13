@@ -72,7 +72,7 @@ export default class CreateChannel extends React.Component {
   render() {
     const { channels, searchIds } = this.props;
     return (
-      <div className='create-channel' onkeypress={this.handleModalEscape()}>
+      <div className='create-channel'>
         <div className='escape' onClick={this.handleEscape()}>
            <div className='ex'>x</div>
           <div className='esc'>esc</div>

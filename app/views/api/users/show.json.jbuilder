@@ -6,7 +6,7 @@ end
 json.set! :chatrooms do
   current_user.subscribed_chatrooms.each do |cr|
     json.set! cr.id do
-      json.extract! cr, :id, :title, :isDM
+      json.extract! cr, :id, :title, :isDM, :created_at
       json.participant_ids cr.participant_ids
     end
   end
