@@ -17,6 +17,7 @@ export default class CreateDM extends React.Component {
     this.handleYouClick = this.handleYouClick.bind(this);
     this.checkForUniqueness = this.checkForUniqueness.bind(this);
     this.handleModalEscape = this.handleModalEscape.bind(this);
+    this.checkForSelected = this.checkForSelected.bind(this);
   }
 
   handleModalEscape() {
@@ -45,6 +46,15 @@ export default class CreateDM extends React.Component {
     return [true];
   }
 
+  checkForSelected(user) {
+    for (let i = 0; i < this.state.selected.length; i++) {
+      if (this.state.selected[i].id === user.id) {
+        return true;
+      }
+    }
+    return false;
+  }
+
   handleClick() {
     return (e) => {
       e.preventDefault();
@@ -66,7 +76,8 @@ export default class CreateDM extends React.Component {
     return (e) => {
       e.preventDefault();
       const newSelected = [user];
-      this.setState({selected: this.state.selected.concat(newSelected), goButton: 'create-channel go ready', input: ''});
+      this.setState({selected: this.state.selected.concat(newSelected), goButton: 'create-channel go ready', input: '', title: ''});
+      this.props.searchUsers('');
     };
   }
 
@@ -132,7 +143,8 @@ export default class CreateDM extends React.Component {
               type='text'
               className='channel-input'
               placeholder={this.state.input}
-              onChange={this.handleChange}/>
+              onChange={this.handleChange}
+              value={this.state.title}/>
           </div>
             <button
               className={this.state.goButton}
@@ -145,7 +157,7 @@ export default class CreateDM extends React.Component {
             <ul className='search-results'>
               {
                 users && users.map((user) => {
-                    if (searchIds.includes(user.id) && user.id !== currentUser.id && !this.state.selected.includes(user)) {
+                    if (searchIds.includes(user.id) && user.id !== currentUser.id && !this.checkForSelected(user)) {
                       return (
                       <li
                         key={user.id}
@@ -164,7 +176,26 @@ export default class CreateDM extends React.Component {
                         </div>
                       </li>
                     );
-                  } else if (!this.state.selected.includes(user) && this.state.selected.length < 1) {
+                  } else if (!searchIds.includes(user.id) && this.state.title === '') {
+                      return (
+                      <li
+                        key={user.id}
+                        onClick={this.handleLiClick(user)}
+                        className='dm-item-holder'>
+                      <div className='dm-browse-right-side'>
+                        <div className='dm-browse-icon'>
+                          💌
+                        </div>
+                        <div className='username-dm-browse'>
+                          {user.username}
+                        </div>
+                      </div>
+                        <div className='updated-at-dm-browse'>
+                          {moment(user.updated_at).fromNow()}
+                        </div>
+                      </li>
+                    );
+                  } else if (!this.checkForSelected(user) && this.state.selected.length < 1) {
                       return (
                       <li
                         key={user.id}

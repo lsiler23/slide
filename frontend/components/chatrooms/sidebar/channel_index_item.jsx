@@ -15,10 +15,10 @@ export default class ChannelIndexItem extends React.Component {
     };
   }
 
-  handleRemoval(id) {
+  handleRemoval(channel) {
     return (e) => {
       e.preventDefault();
-      this.props.deleteParticipation(id);
+      this.props.deleteParticipation(channel.id);
       this.props.history.push(`/chatrooms/${this.props.generalChat}`);
     };
   }
@@ -38,14 +38,14 @@ export default class ChannelIndexItem extends React.Component {
       );
     } else {
       return (
-        <div className={this.props.classType} onClick={this.handleClick()}>
+        <div className={this.props.classType}>
           <li
             className='channel-lis'
             onClick={this.handleClick()}>
             { `#  ${this.props.channel.title}` }
           </li>
           <div
-            onClick={this.handleRemoval(this.props.channel.id)}
+            onClick={this.handleRemoval(this.props.channel)}
             className='channel-delete'>
             x
           </div>
