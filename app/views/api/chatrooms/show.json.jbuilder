@@ -7,7 +7,7 @@ end
 json.set! :participants do
   @chatroom.participants.each do |part|
     json.set! part.id do
-      json.extract! part, :id, :username, :real_name
+      json.extract! part, :id, :username, :real_name, :updated_at
     end
   end
 end

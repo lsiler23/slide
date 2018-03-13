@@ -1,4 +1,5 @@
 import React from 'react';
+const moment = require('moment');
 
 export default class CreateDM extends React.Component {
   constructor(props) {
@@ -132,14 +133,40 @@ export default class CreateDM extends React.Component {
                 users && users.map((user) => {
                     if (searchIds.includes(user.id) && user.id !== currentUser.id && !this.state.selected.includes(user)) {
                       return (
-                      <li key={user.id} onClick={this.handleLiClick(user)}>
-                        {user.username}
+                      <li
+                        key={user.id}
+                        onClick={this.handleLiClick(user)}
+                        className='dm-item-holder'>
+                      <div className='dm-browse-right-side'>
+                        <div className='dm-browse-icon'>
+                          💌
+                        </div>
+                        <div className='username-dm-browse'>
+                          {user.username}
+                        </div>
+                      </div>
+                        <div className='updated-at-dm-browse'>
+                          {moment(user.updated_at).fromNow()}
+                        </div>
                       </li>
                     );
                   } else if (!this.state.selected.includes(user) && this.state.selected.length < 1) {
                       return (
-                      <li key={user.id} onClick={this.handleYouClick()}>
-                        { `${user.username} (you)`}
+                      <li
+                        key={user.id}
+                        onClick={this.handleYouClick()}
+                        className='dm-item-holder'>
+                        <div className='dm-browse-right-side'>
+                          <div className='dm-browse-icon'>
+                            💌
+                          </div>
+                          <div className='username-dm-browse'>
+                            { `${user.username} (you)`}
+                          </div>
+                        </div>
+                        <div className='updated-at-dm-browse'>
+                          {moment(user.updated_at).fromNow()}
+                        </div>
                       </li>
                     );
                   }
