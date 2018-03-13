@@ -1,4 +1,5 @@
 import React from 'react';
+const dateFormat = require('dateFormat');
 
 export default class MessageItem extends React.Component {
   constructor(props) {
@@ -8,7 +9,7 @@ export default class MessageItem extends React.Component {
   render() {
     const { message: { author_id, created_at, body }, currentUsers } = this.props;
     const msgAuthor = currentUsers[author_id];
-    const newTime = created_at.slice(11).slice(0, 5);
+    const newTime = dateFormat(created_at, 'shortTime');
     return (
       <div className='whole-message-item'>
         <div className='icon'>

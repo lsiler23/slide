@@ -107,7 +107,7 @@ export default class CreateChannel extends React.Component {
                         {`# ${channel.title}`}
                       </div>
                       <div>
-                        Created on {channel.created_at}
+                        Created on {dateFormat(channel.created_at.slice(0, 10), 'fullDate')}
                       </div>
                       <div>
                         {channel.participant_ids.length}
