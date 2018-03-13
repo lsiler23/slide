@@ -1,5 +1,5 @@
 import React from 'react';
-const dateFormat = require('dateFormat');
+import dateFormat from 'dateformat'
 
 export default class MessageItem extends React.Component {
   constructor(props) {
