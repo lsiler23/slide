@@ -12,10 +12,6 @@ export default class SideBar extends React.Component {
     };
   }
 
-  componentWillReceiveProps(newProps) {
-    
-  }
-
   handleLogout(e) {
     this.props.logout().then(() => this.props.history.push('/login'));
   }
