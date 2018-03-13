@@ -115,13 +115,14 @@
     .channel-delete {
       display: block;
       margin-right: 10px;
-      border: 1px solid rgb(216, 216, 216);
-      height: 10px;
+      border: 1px solid #d8d8d8;
+      height: 12px;
       border-radius: 50px;
-      width: 13px;
+      width: 15px;
       font-size: 13px;
       text-align: center;
       padding-bottom: 3px;
+      margin-left: 5px;
         &:hover {
           color: white;
           transition: background 0.3s;
@@ -153,6 +154,14 @@
   &:hover {
     background-color: #4C9689;
   }
+}
+
+.channel-lis {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  padding: 2px;
+  width: 130px;
 }
 
 ////DMS

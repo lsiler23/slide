@@ -16,7 +16,21 @@ export default class CreateDM extends React.Component {
     this.handleAlreadySelected = this.handleAlreadySelected.bind(this);
     this.handleYouClick = this.handleYouClick.bind(this);
     this.checkForUniqueness = this.checkForUniqueness.bind(this);
+    this.handleModalEscape = this.handleModalEscape.bind(this);
   }
+
+  handleModalEscape() {
+    return (e) => {
+      if (e.keyCode === 27) {
+        this.props.closeModal();
+      }
+    };
+  }
+
+  componentDidMount() {
+    document.addEventListener('keydown', this.handleModalEscape(), false);
+  }
+
 
   checkForUniqueness(title) {
     const { allDMs } = this.props;

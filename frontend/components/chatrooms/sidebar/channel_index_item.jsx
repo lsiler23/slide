@@ -30,17 +30,19 @@ export default class ChannelIndexItem extends React.Component {
       return (
         <div className={this.props.classType}>
           <li
+            className='channel-lis'
             onClick={this.handleClick()}>
-            → { this.props.channel.title }
+            { `#  ${this.props.channel.title}` }
           </li>
         </div>
       );
     } else {
       return (
-        <div className={this.props.classType}>
+        <div className={this.props.classType} onClick={this.handleClick()}>
           <li
+            className='channel-lis'
             onClick={this.handleClick()}>
-            → { this.props.channel.title }
+            { `#  ${this.props.channel.title}` }
           </li>
           <div
             onClick={this.handleRemoval(this.props.channel.id)}
