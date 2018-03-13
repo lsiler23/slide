@@ -1,0 +1,22 @@
+.giphy-modal-background {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 10;
+}
+
+.gify-modal {
+  position: absolute;
+  top: 612px;
+  left: -239px;
+  transform: translate(-50%, -50%);
+  font-family: 'Lato', sans-serif;
+}
+
+.actual-gif {
+  height: 200px;
+  width: auto;
+}

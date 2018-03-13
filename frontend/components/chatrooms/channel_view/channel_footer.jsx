@@ -11,13 +11,22 @@ export default class ChannelFooter extends React.Component {
   handleEnter() {
     const chatroomId = Number(this.props.match.params.chatroomId);
     const authorId = Number(this.props.currentUser.id);
+    const thisBody = this.state.body.slice(0, 7);
+    const thisQuery = this.state.body.slice(7);
+    debugger
     return (e) => {
       e.preventDefault();
-      this.props.createMessage({
-        body: this.state.body,
-        chatroom_id: chatroomId,
-        author_id: authorId
-     });
+      if (thisBody === '/giphy ') {
+        this.props.receiveGifQuery(thisQuery, chatroomId);
+        this.props.fetchGif(thisQuery);
+        setTimeout(() => this.props.openModal('giphy'), 1000);
+      } else {
+        this.props.createMessage({
+          body: this.state.body,
+          chatroom_id: chatroomId,
+          author_id: authorId
+        });
+      }
      this.setState({body: ''});
     };
   }

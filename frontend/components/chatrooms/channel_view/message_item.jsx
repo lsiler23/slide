@@ -10,6 +10,14 @@ export default class MessageItem extends React.Component {
     const { message: { author_id, created_at, body }, currentUsers } = this.props;
     const msgAuthor = currentUsers[author_id];
     const newTime = dateFormat(created_at, 'shortTime');
+    let realBody;
+
+    if (body.slice(0, 13) === 'https://media') {
+      realBody = <img width='400' height='300' src={body}/>;
+    } else {
+      realBody = body;
+    }
+
     return (
       <div className='whole-message-item'>
         <div className='icon'>
@@ -20,7 +28,11 @@ export default class MessageItem extends React.Component {
             <div className='msgauthor'>{ msgAuthor && msgAuthor.username}</div>
             <div className='msgtime'>{newTime}</div>
           </div>
-          <div className='msgbody'>{body}</div>
+          <div className='msgbody'>
+            {
+              realBody
+            }
+          </div>
         </div>
       </div>
     );

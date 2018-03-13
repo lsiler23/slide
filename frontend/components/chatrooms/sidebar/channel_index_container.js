@@ -9,7 +9,7 @@ import { generalChatSelector } from '../../../reducers/selectors';
 import ChannelIndex from './channel_index';
 
 const msp = (state) => {
-  debugger
+   
   return {
     generalChat: generalChatSelector(state)
   };

@@ -3,10 +3,13 @@ import { withRouter } from 'react-router-dom';
 import {
   fetchChatroom,
   createMessage,
-  receiveMessage } from '../../../actions/chatrooms_actions';
+  receiveMessage,
+  receiveGifQuery,
+  fetchGif } from '../../../actions/chatrooms_actions';
 import {
   selfDMSelector,
   currentChatroomMessagesSelector } from '../../../reducers/selectors';
+import { openModal, closeModal } from '../../../actions/modal_actions';
 import ChannelView from './channel_view';
 
 
@@ -27,7 +30,11 @@ const mdp = (dispatch) => {
   return {
     fetchChatroom: (id) => dispatch(fetchChatroom(id)),
     createMessage: (message) => dispatch(createMessage(message)),
-    receiveMessage: (message) => dispatch(receiveMessage(message))
+    receiveMessage: (message) => dispatch(receiveMessage(message)),
+    receiveGifQuery: (query, chatroomId) => dispatch(receiveGifQuery(query, chatroomId)),
+    fetchGif: (query) => dispatch(fetchGif(query)),
+    openModal: (modal) => dispatch(openModal(modal)),
+    closeModal: () => dispatch(closeModal())
   };
 };
 

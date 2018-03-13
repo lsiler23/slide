@@ -43,7 +43,10 @@ export default class ChannelView extends React.Component {
             selfDM={this.props.selfDM}
             match={this.props.match}
             currentUser={this.props.currentUser}
-            createMessage={this.props.createMessage} />
+            createMessage={this.props.createMessage}
+            openModal={this.props.openModal}
+            receiveGifQuery={this.props.receiveGifQuery}
+            fetchGif={this.props.fetchGif} />
         </div>
       );
     } else {

@@ -4,6 +4,7 @@ import configureStore from './store/store';
 import Root from './components/root';
 import { fetchChatroom } from './actions/chatrooms_actions';
 import { deleteParticipation } from './actions/chatrooms_actions';
+import { fetchGif } from './util/chatrooms/giphy_util';
 
 document.addEventListener('DOMContentLoaded', () => {
   let store;
@@ -37,6 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
   window.store = store;
   window.fetchChatroom = fetchChatroom;
   window.deleteParticipation = deleteParticipation;
+  window.fetchGif = fetchGif;
   const root = document.getElementById('root');
   ReactDOM.render(<Root store={store} />, root);
 });

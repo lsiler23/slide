@@ -3,6 +3,7 @@ import { closeModal } from '../../../actions/modal_actions';
 import { connect } from 'react-redux';
 import CreateChannel from './create_channel_container';
 import CreateDM from './create_dm_container';
+import SendGif from './send_gif_container';
 
 function ChannelModal({modal, closeModal}) {
   if (!modal) {
@@ -10,15 +11,21 @@ function ChannelModal({modal, closeModal}) {
   }
 
   let component;
+  let className;
 
   if (modal === 'channel') {
     component = <CreateChannel />;
+    className = 'channel-modal-background';
   } else if (modal === 'dm') {
     component = <CreateDM />;
+    className = 'channel-modal-background';
+  } else if (modal === 'giphy') {
+    component = <SendGif />;
+    className = 'giphy-modal-background';
   }
 
   return (
-    <div className="channel-modal-background">
+    <div className={className}>
       <div className="channel-modal-child">
         {
           component
