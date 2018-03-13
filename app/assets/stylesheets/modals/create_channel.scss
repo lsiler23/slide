@@ -22,7 +22,7 @@
 
 .create-channel.header {
   font-size: 30px;
-  font-weight: 700;
+  font-weight: 900;
   padding: 40px;
 }
 
@@ -133,7 +133,7 @@
 
 .littleholder {
   padding: 15px;
-  width: 590px;
+  max-width: 590px;
   flex-wrap: wrap;
   box-sizing: border-box;
   display: flex;
@@ -147,4 +147,27 @@
   font-size: 13px;
   color: white;
   background-color: #359ce0;
+}
+
+.top-parent-channel-browse {
+  display: flex;
+  justify-content: space-between;
+}
+
+.channel-name-browse {
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.num-parts-browse {
+  margin-top: 10px;
+  font-size: 12px;
+  margin-right: 5px;
+  color: grey;
+}
+
+.created-on-browse {
+  width: 300px;
+  font-size: 13px;
+  color: grey;
 }

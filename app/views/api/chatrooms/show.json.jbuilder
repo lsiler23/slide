@@ -1,5 +1,5 @@
 json.channel do
-  json.extract! @chatroom, :id, :title, :isDM
+  json.extract! @chatroom, :id, :title, :isDM, :created_at
   json.participant_ids @chatroom.participant_ids
   json.message_ids @chatroom.message_ids
 end

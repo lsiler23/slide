@@ -1,4 +1,5 @@
 import React from 'react';
+const dateFormat = require('dateFormat');
 
 export default class CreateChannel extends React.Component {
   constructor(props) {
@@ -63,7 +64,7 @@ export default class CreateChannel extends React.Component {
           <div className='esc'>esc</div>
         </div>
         <div className='static-top'>
-          <h2 className='create-channel header'>Browse Channels</h2>
+          <h2 className='create-channel header'>Browse channels</h2>
           <div className='input-container' placeholder='Find or start a channel'>
             <input
               type='text'
@@ -84,10 +85,39 @@ export default class CreateChannel extends React.Component {
                   if (searchIds.length < 1 && this.state.title.length >= 1 && channel.isDM === false) {
                     return '';
                   } else if ((searchIds.length < 1) && channel.isDM === false) {
-                    return <li
-                      onClick={this.handleLIClick(channel.id)} key={channel.id}>{channel.title}</li>;
+                    return (
+                      <li
+                      onClick={this.handleLIClick(channel.id)}
+                      key={channel.id}>
+                      <div>
+                        {`# ${channel.title}`}
+                      </div>
+                      <div>
+                        Created on {channel.created_at}
+                      </div>
+                      <div>
+                        {channel.participant_ids.length}
+                      </div>
+                    </li>
+                  );
                   } else if (searchIds.includes(channel.id) && channel.isDM === false) {
-                    return <li onClick={this.handleLIClick(channel.id)} key={channel.id}>{channel.title}</li>;
+                    return (
+                      <li
+                        onClick={this.handleLIClick(channel.id)}
+                        key={channel.id}>
+                        <div className='top-parent-channel-browse'>
+                          <div className='channel-name-browse'>
+                            {`# ${channel.title}`}
+                          </div>
+                          <div className='num-parts-browse'>
+                            {` 👤   ${channel.participant_ids.length}`}
+                          </div>
+                        </div>
+                        <div className='created-on-browse'>
+                          Created on {dateFormat(channel.created_at.slice(0, 10), 'fullDate')}
+                        </div>
+                      </li>
+                    );
                     }
                   })
                 }

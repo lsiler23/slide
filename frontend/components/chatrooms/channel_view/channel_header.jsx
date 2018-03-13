@@ -13,7 +13,7 @@ export default class ChannelHeader extends React.Component {
       const newTitle = channel.title.split(', ').slice(0, -1).join(', ');
       title = `${newTitle}`;
     } else {
-      title = `${channel.title}`;
+      title = `# ${channel.title}`;
     }
     if (channel) {
       return (
