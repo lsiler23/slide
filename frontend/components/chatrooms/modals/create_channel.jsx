@@ -1,5 +1,6 @@
 import React from 'react';
-const dateFormat = require('dateFormat');
+// const dateFormat = require('dateFormat');
+import dateFormat from 'dateformat';
 
 export default class CreateChannel extends React.Component {
   constructor(props) {
