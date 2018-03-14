@@ -13,7 +13,7 @@ export default class MessageItem extends React.Component {
     let realBody;
 
     if (body.slice(0, 13) === 'https://media') {
-      realBody = <img width='400' height='300' src={body}/>;
+      realBody = <img width='300' height='auto' className='gif-img' src={body}/>;
     } else {
       realBody = body;
     }

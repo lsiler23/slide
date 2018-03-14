@@ -9,9 +9,12 @@
 }
 
 .gify-modal {
-  position: absolute;
-  top: 612px;
-  left: -239px;
+  position: relative;
+  left: 206px;
+  top: 80px;
+  height: 210px;
+  margin-top: 70px;
+  width: 300px;
   transform: translate(-50%, -50%);
   font-family: 'Lato', sans-serif;
 }
@@ -19,4 +22,37 @@
 .actual-gif {
   height: 200px;
   width: auto;
+}
+
+.gify-modal-hidden {
+  display: none;
+}
+
+.send-button {
+  padding: 5px;
+  background-color: white;
+  margin: 5px;
+  color: #26a868;
+  font-size: 13px;
+  border: 1px solid #26a868;
+  border-radius: 5px;
+  font-weight: 700;
+}
+
+.shuffle-button {
+  margin: 5px;
+  padding: 5px;
+  background-color: white;
+  border-radius: 5px;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.cancel-button {
+  margin: 5px;
+  padding: 5px;
+  background-color: white;
+  border-radius: 5px;
+  font-size: 13px;
+  font-weight: 700;
 }

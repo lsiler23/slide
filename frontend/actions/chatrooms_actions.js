@@ -9,6 +9,7 @@ export const REMOVE_PARTICIPATION = 'REMOVE_PARTICIPATION';
 export const RECEIVE_MESSAGE = 'RECEIVE_MESSAGE';
 export const RECEIVE_GIF = 'RECEIVE_GIF';
 export const RECEIVE_GIF_QUERY = 'RECEIVE_GIF_QUERY';
+export const REMOVE_GIF = 'REMOVE_GIF';
 
 export const receiveChannel = ({channel, participants, messages}) => {
   return {
@@ -58,7 +59,8 @@ export const receiveGif = (payload) => {
 
   return {
     type: RECEIVE_GIF,
-    gif: payload
+    gif: payload,
+
   }
 };
 
@@ -68,6 +70,13 @@ export const receiveGifQuery = (query, chatroomId) => {
     query,
     chatroomId
   };
+};
+
+export const removeGif = () => {
+  debugger
+  return {
+    type: REMOVE_GIF
+  }
 };
 
 export const fetchChatroom = (id) => {

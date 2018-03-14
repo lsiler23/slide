@@ -42,13 +42,13 @@
 }
 
 .channel-body {
-  height: 750px;
+  height: 760px;
   top: 60px;
-  margin-bottom: 60px;
   left: 0;
   background-color: white;
   box-sizing: border-box;
   overflow-y: scroll;
+  position: relative;
   &::-webkit-scrollbar {
     background-color: #fff;
   }
@@ -56,6 +56,10 @@
     background-color: lightgrey;
     border-radius: 5px;
   }
+}
+
+.channel-message-list-special {
+  padding-bottom: 40px
 }
 
 .channel-footer {

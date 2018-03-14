@@ -1,4 +1,5 @@
 import React from 'react';
+import SendGif from '../modals/send_gif_container';
 
 export default class ChannelFooter extends React.Component {
   constructor(props) {
@@ -13,13 +14,11 @@ export default class ChannelFooter extends React.Component {
     const authorId = Number(this.props.currentUser.id);
     const thisBody = this.state.body.slice(0, 7);
     const thisQuery = this.state.body.slice(7);
-    debugger
     return (e) => {
       e.preventDefault();
       if (thisBody === '/giphy ') {
         this.props.receiveGifQuery(thisQuery, chatroomId);
         this.props.fetchGif(thisQuery);
-        setTimeout(() => this.props.openModal('giphy'), 1000);
       } else {
         this.props.createMessage({
           body: this.state.body,
@@ -59,7 +58,7 @@ export default class ChannelFooter extends React.Component {
             value={this.state.body}/>
         </form>
       </div>
-
     );
+
   }
 }

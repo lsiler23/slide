@@ -3,7 +3,7 @@ import React from 'react';
 export default class SendGif extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { currentGif: this.props.gif };
+    this.state = { currentGif: this.props.gif, hidden: true, gifClassName: 'gify-modal' };
     this.handleShuffle = this.handleShuffle.bind(this);
     this.closeModal = this.props.closeModal.bind(this);
   }
@@ -25,20 +25,25 @@ export default class SendGif extends React.Component {
         chatroom_id: this.props.chatroomId,
         author_id: authorId
       });
-      this.closeModal();
+      this.props.removeGif();
     };
   }
 
   render() {
     return (
-      <div className='gify-modal'>
+      <div className={this.state.gifClassName}>
         <img className='actual-gif' src={this.state.currentGif} />
-        <button
-          onClick={this.handleSend()}>send</button>
-        <button
-          onClick={this.handleShuffle()}>shuffle</button>
-        <button
-          onClick={() => this.closeModal()}>cancel</button>
+        <div className='gif-buttons'>
+          <button
+            onClick={this.handleSend()}
+            className='send-button'>send</button>
+          <button
+            onClick={this.handleShuffle()}
+            className='shuffle-button'>shuffle</button>
+          <button
+            onClick={() => this.props.removeGif()}
+            className='cancel-button'>cancel</button>
+        </div>
       </div>
     );
   }

@@ -1,8 +1,10 @@
 import { combineReducers } from 'redux';
 import { modalReducer } from './modal_reducer';
 import { searchReducer } from './search_reducer';
+import gifViewReducer from './gif_view';
 
 export default combineReducers({
   modal: modalReducer,
-  search: searchReducer
+  search: searchReducer,
+  gifView: gifViewReducer
 });
