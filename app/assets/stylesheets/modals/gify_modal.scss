@@ -17,11 +17,13 @@
   width: 300px;
   transform: translate(-50%, -50%);
   font-family: 'Lato', sans-serif;
+  border-radius: 5px;
 }
 
 .actual-gif {
   height: 200px;
   width: auto;
+  border-radius: 5px;
 }
 
 .gify-modal-hidden {
@@ -55,4 +57,8 @@
   border-radius: 5px;
   font-size: 13px;
   font-weight: 700;
+}
+
+.gif-img {
+  border-radius: 5px;
 }

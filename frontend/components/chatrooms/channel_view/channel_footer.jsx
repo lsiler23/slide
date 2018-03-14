@@ -4,7 +4,7 @@ import SendGif from '../modals/send_gif_container';
 export default class ChannelFooter extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { body: '' };
+    this.state = { body: '', hidden: true };
     this.handleEnter = this.handleEnter.bind(this);
     this.handleChange = this.handleChange.bind(this);
   }
@@ -25,7 +25,7 @@ export default class ChannelFooter extends React.Component {
           chatroom_id: chatroomId,
           author_id: authorId
         });
-        window.scrollTo(0, 760)
+        window.scrollTo(0, 760);
       }
      this.setState({body: ''});
     };
@@ -34,6 +34,18 @@ export default class ChannelFooter extends React.Component {
   handleChange() {
     return (e) => {
       this.setState({body: e.currentTarget.value});
+    };
+  }
+
+  handleEmojis() {
+    const { emojiMenuStatus, openEmojis, closeEmojis } = this.props;
+    return (e) => {
+      e.preventDefault();
+      if (emojiMenuStatus) {
+        openEmojis();
+      } else {
+        closeEmojis();
+      }
     };
   }
 
@@ -57,6 +69,11 @@ export default class ChannelFooter extends React.Component {
             placeholder={title}
             onChange={this.handleChange()}
             value={this.state.body}/>
+          <img
+            className='emoji-trigger'
+            src='https://cdn3.iconfinder.com/data/icons/emoji/100/Emoji_Sleep-512.png'
+            onClick={this.handleEmojis()}>
+          </img>
         </form>
       </div>
     );

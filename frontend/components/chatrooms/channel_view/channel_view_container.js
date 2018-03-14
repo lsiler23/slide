@@ -5,7 +5,9 @@ import {
   createMessage,
   receiveMessage,
   receiveGifQuery,
-  fetchGif } from '../../../actions/chatrooms_actions';
+  fetchGif,
+  openEmojis,
+  closeEmojis } from '../../../actions/chatrooms_actions';
 import {
   selfDMSelector,
   currentChatroomMessagesSelector } from '../../../reducers/selectors';
@@ -24,7 +26,8 @@ const msp = (state, ownProps) => {
     currentUser,
     currentMessages: currentChatroomMessagesSelector(state, activeView.id),
     currentUsers: state.entities.users,
-    availableGif: state.ui.gifView
+    availableGif: state.ui.gifView,
+    emojiMenuStatus: state.ui.emojiView.hidden
   };
 };
 
@@ -35,6 +38,8 @@ const mdp = (dispatch) => {
     receiveMessage: (message) => dispatch(receiveMessage(message)),
     receiveGifQuery: (query, chatroomId) => dispatch(receiveGifQuery(query, chatroomId)),
     fetchGif: (query) => dispatch(fetchGif(query)),
+    openEmojis: () => dispatch(openEmojis()),
+    closeEmojis: () => dispatch(closeEmojis()),
     openModal: (modal) => dispatch(openModal(modal)),
     closeModal: () => dispatch(closeModal())
   };

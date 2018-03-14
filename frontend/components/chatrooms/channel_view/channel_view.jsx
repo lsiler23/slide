@@ -1,4 +1,5 @@
 import React from 'react';
+import EmojiPicker from 'emoji-picker-react';
 import ChannelHeader from './channel_header';
 import ChannelBody from './channel_body';
 import ChannelFooter from './channel_footer';
@@ -8,7 +9,7 @@ export default class ChannelView extends React.Component {
   constructor(props) {
     super(props);
   }
-  
+
   componentDidMount() {
     this.props.fetchChatroom(this.props.match.params.chatroomId);
     this.subscription = App.cable.subscriptions.create(
@@ -28,8 +29,18 @@ export default class ChannelView extends React.Component {
     }
   }
 
+  handleEmojiClass() {
+
+    if (this.props.emojiMenuStatus) {
+      return 'emoji-menu hidden';
+    } else {
+      return 'emoji-menu';
+    }
+  }
+
   render() {
-    if (this.props.activeView && this.props.availableGif) {
+    debugger
+    if (this.props.activeView) {
       return (
         <div className='channel-view'>
           <ChannelHeader
@@ -40,6 +51,9 @@ export default class ChannelView extends React.Component {
             messages={this.props.currentMessages}
             currentUsers={this.props.currentUsers}
             availableGif={this.props.availableGif}/>
+          <div className={this.handleEmojiClass()}>
+              <EmojiPicker onEmojiClick={() => console.log('hi')}/>
+          </div>
           <ChannelFooter
             channel={this.props.activeView}
             selfDM={this.props.selfDM}
@@ -49,29 +63,9 @@ export default class ChannelView extends React.Component {
             openModal={this.props.openModal}
             receiveGifQuery={this.props.receiveGifQuery}
             fetchGif={this.props.fetchGif}
-            toggleClass={this.toggleClass} />
-        </div>
-      );
-    } else if (this.props.activeView) {
-      return (
-        <div className='channel-view'>
-          <ChannelHeader
-            channel={this.props.activeView}
-            selfDM={this.props.selfDM}/>
-          <ChannelBody
-            channel={this.props.activeView}
-            messages={this.props.currentMessages}
-            currentUsers={this.props.currentUsers}
-            availableGif={this.props.availableGif}/>
-          <ChannelFooter
-            channel={this.props.activeView}
-            selfDM={this.props.selfDM}
-            match={this.props.match}
-            currentUser={this.props.currentUser}
-            createMessage={this.props.createMessage}
-            openModal={this.props.openModal}
-            receiveGifQuery={this.props.receiveGifQuery}
-            fetchGif={this.props.fetchGif} />
+            openEmojis={this.props.openEmojis}
+            closeEmojis={this.props.closeEmojis}
+            emojiMenuStatus={this.props.emojiMenuStatus} />
         </div>
       );
     } else {

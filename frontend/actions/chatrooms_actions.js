@@ -11,6 +11,8 @@ export const RECEIVE_GIF = 'RECEIVE_GIF';
 export const RECEIVE_GIF_QUERY = 'RECEIVE_GIF_QUERY';
 export const REMOVE_GIF = 'REMOVE_GIF';
 export const CLEAR_MESSAGES = 'CLEAR_MESSAGES';
+export const OPEN_EMOJIS = 'OPEN_EMOJIS';
+export const CLOSE_EMOJIS = 'CLOSE_EMOJIS';
 
 export const receiveChannel = ({channel, participants, messages}) => {
   return {
@@ -84,6 +86,18 @@ export const removeGif = () => {
   return {
     type: REMOVE_GIF
   }
+};
+
+export const openEmojis = () => {
+  return {
+    type: OPEN_EMOJIS
+  };
+};
+
+export const closeEmojis = () => {
+  return {
+    type: CLOSE_EMOJIS
+  };
 };
 
 export const fetchChatroom = (id) => {

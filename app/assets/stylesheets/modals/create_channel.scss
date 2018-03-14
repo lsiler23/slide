@@ -18,15 +18,12 @@
 
 .input-container {
   display: flex;
-  // position: relative;
-  // top: 100px;
 }
 
 .create-channel.header {
   font-size: 30px;
   font-weight: 900;
   padding: 40px;
-  // position: absolute;
 }
 
 .channel-input-static {
@@ -60,7 +57,6 @@
   margin-top: 20px;
   position: fixed;
   width: 80%;
-  // top: 139%;
 }
 
 .search-dropdown h4 {
@@ -73,6 +69,9 @@
   position: relative;
   overflow-y: scroll;
   max-height: 300px;
+  &::-webkit-scrollbar {
+    width: 0;
+  }
 }
 
 .search-results li {

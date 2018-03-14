@@ -20,7 +20,7 @@ export default class  ChannelBody extends React.Component {
 
   render() {
     const { messages } = this.props;
-    debugger
+
     if (this.props.availableGif) {
       return (
         <div className='channel-view channel-body'>
