@@ -7,7 +7,11 @@ const SplashPage = (props) => (
     <NavBarContainer />
     <div className='splash-main'>
       <div className='splash-photo'>
-        <img height='450' width='450' src='https://thegraphicsfairy.com/wp-content/uploads/blogger/_CarNcodpCMA/TQjf9_57QwI/AAAAAAAAKH8/Cd6QpiCk8mQ/s1600/penguin-clipart-graphicsfairy007b.jpg' />
+        <img
+          height='450'
+          width='450'
+          src='https://thegraphicsfairy.com/wp-content/uploads/blogger/_CarNcodpCMA/TQjf9_57QwI/AAAAAAAAKH8/Cd6QpiCk8mQ/s1600/penguin-clipart-graphicsfairy007b.jpg'
+          alt='Bird sliding' />
       </div>
       <div className='splash-main text'>
         <h2 className='splash-main header'>Where Stuff Happens</h2>

@@ -26,7 +26,9 @@ export default class DMIndexItem extends React.Component {
     return (
       <li
         onClick={this.handleClick()}
-        className={this.props.classType}>
+        className={this.props.classType}
+        role='button'
+        tabindex='0'>
         → {
             finalTitle
           }

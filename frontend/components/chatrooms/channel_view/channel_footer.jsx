@@ -25,6 +25,7 @@ export default class ChannelFooter extends React.Component {
           chatroom_id: chatroomId,
           author_id: authorId
         });
+        window.scrollTo(0, 760)
       }
      this.setState({body: ''});
     };

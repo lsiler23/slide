@@ -31,7 +31,9 @@ export default class ChannelIndexItem extends React.Component {
         <div className={this.props.classType}>
           <li
             className='channel-lis'
-            onClick={this.handleClick()}>
+            onClick={this.handleClick()}
+            role='button'
+            tabindex='0'>
             { `#  ${this.props.channel.title}` }
           </li>
         </div>
@@ -41,12 +43,16 @@ export default class ChannelIndexItem extends React.Component {
         <div className={this.props.classType}>
           <li
             className='channel-lis'
-            onClick={this.handleClick()}>
+            onClick={this.handleClick()}
+            role='button'
+            tabindex='0'>
             { `#  ${this.props.channel.title}` }
           </li>
           <div
             onClick={this.handleRemoval(this.props.channel)}
-            className='channel-delete'>
+            className='channel-delete'
+            role='button'
+            tabindex='0'>
             x
           </div>
         </div>

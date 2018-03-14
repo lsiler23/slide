@@ -103,7 +103,9 @@ export default class CreateChannel extends React.Component {
                     return (
                       <li
                       onClick={this.handleLIClick(channel.id)}
-                      key={channel.id}>
+                      key={channel.id}
+                      role='button'
+                      tabindex='0'>
                       <div>
                         {`# ${channel.title}`}
                       </div>
@@ -119,7 +121,9 @@ export default class CreateChannel extends React.Component {
                     return (
                       <li
                         onClick={this.handleLIClick(channel.id)}
-                        key={channel.id}>
+                        key={channel.id}
+                        role='button'
+                        tabindex='0'>
                         <div className='top-parent-channel-browse'>
                           <div className='channel-name-browse'>
                             {`# ${channel.title}`}
