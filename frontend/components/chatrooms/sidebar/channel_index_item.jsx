@@ -9,6 +9,7 @@ export default class ChannelIndexItem extends React.Component {
 
   handleClick() {
     return (e) => {
+      this.props.clearMessages();
       this.props.fetchChatroom(this.props.channel.id)
       .then(payload => this.setState(payload.channel))
       .then(() => this.props.history.push(`/chatrooms/${this.props.channel.id}`));
@@ -33,7 +34,7 @@ export default class ChannelIndexItem extends React.Component {
             className='channel-lis'
             onClick={this.handleClick()}
             role='button'
-            tabindex='0'>
+            tabIndex='0'>
             { `#  ${this.props.channel.title}` }
           </li>
         </div>
@@ -45,14 +46,14 @@ export default class ChannelIndexItem extends React.Component {
             className='channel-lis'
             onClick={this.handleClick()}
             role='button'
-            tabindex='0'>
+            tabIndex='0'>
             { `#  ${this.props.channel.title}` }
           </li>
           <div
             onClick={this.handleRemoval(this.props.channel)}
             className='channel-delete'
             role='button'
-            tabindex='0'>
+            tabIndex='0'>
             x
           </div>
         </div>

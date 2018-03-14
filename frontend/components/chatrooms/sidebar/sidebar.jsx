@@ -38,13 +38,15 @@ export default class SideBar extends React.Component {
             channels={channels}
             fetchChatroom={this.props.fetchChatroom}
             history={this.props.history}
-            match={this.props.match}/>
+            match={this.props.match}
+            clearMessages={this.props.clearMessages}/>
 
           <DMIndex
             dms={dms}
             fetchChatroom={this.props.fetchChatroom}
             history={this.props.history}
-            match={this.props.match}/>
+            match={this.props.match}
+            clearMessages={this.props.clearMessages}/>
         </div>
       );
     } else {

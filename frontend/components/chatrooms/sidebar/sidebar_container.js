@@ -3,7 +3,7 @@ import { withRouter } from 'react-router-dom';
 import SideBar from './sidebar';
 import { logout } from '../../../actions/session_actions';
 import { merge } from 'lodash';
-import { fetchChatroom } from '../../../actions/chatrooms_actions';
+import { fetchChatroom, clearMessages } from '../../../actions/chatrooms_actions';
 import {
   currentUserSelector,
   userChannelsSelector,
@@ -21,7 +21,8 @@ const msp = (state) => {
 const mdp = (dispatch) => {
   return {
     logout: () => dispatch(logout()),
-    fetchChatroom: (id) => dispatch(fetchChatroom(id))
+    fetchChatroom: (id) => dispatch(fetchChatroom(id)),
+    clearMessages: () => dispatch(clearMessages())
   };
 };
 

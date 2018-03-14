@@ -9,6 +9,7 @@ export default class DMIndexItem extends React.Component {
 
   handleClick() {
     return (e) => {
+      this.props.clearMessages();
       this.props.fetchChatroom(this.props.dm.id)
       .then(payload => this.setState(payload.channel))
       .then(() => this.props.history.push(`/chatrooms/${this.props.dm.id}`));
@@ -28,7 +29,7 @@ export default class DMIndexItem extends React.Component {
         onClick={this.handleClick()}
         className={this.props.classType}
         role='button'
-        tabindex='0'>
+        tabIndex='0'>
         → {
             finalTitle
           }

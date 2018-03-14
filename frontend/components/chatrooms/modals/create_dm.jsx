@@ -164,7 +164,7 @@ export default class CreateDM extends React.Component {
                         onClick={this.handleLiClick(user)}
                         className='dm-item-holder'
                         role='button'
-                        tabindex='0'>
+                        tabIndex='0'>
                       <div className='dm-browse-right-side'>
                         <div className='dm-browse-icon'>
                           💌
@@ -185,7 +185,7 @@ export default class CreateDM extends React.Component {
                         onClick={this.handleLiClick(user)}
                         className='dm-item-holder'
                         role='button'
-                        tabindex='0'>
+                        tabIndex='0'>
                       <div className='dm-browse-right-side'>
                         <div className='dm-browse-icon'>
                           💌
@@ -206,7 +206,7 @@ export default class CreateDM extends React.Component {
                         onClick={this.handleYouClick()}
                         className='dm-item-holder'
                         role='button'
-                        tabindex='0'>
+                        tabIndex='0'>
                         <div className='dm-browse-right-side'>
                           <div className='dm-browse-icon'>
                             💌

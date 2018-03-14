@@ -41,7 +41,8 @@ export default class ChannelIndex extends React.Component {
                   match={this.props.match}
                   classType={this.handleSelection(channel.id)}
                   deleteParticipation={this.props.deleteParticipation}
-                  generalChat={this.props.generalChat} />;
+                  generalChat={this.props.generalChat}
+                  clearMessages={this.props.clearMessages} />;
               })
             }
         </ul>

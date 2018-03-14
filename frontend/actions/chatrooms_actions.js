@@ -10,6 +10,7 @@ export const RECEIVE_MESSAGE = 'RECEIVE_MESSAGE';
 export const RECEIVE_GIF = 'RECEIVE_GIF';
 export const RECEIVE_GIF_QUERY = 'RECEIVE_GIF_QUERY';
 export const REMOVE_GIF = 'REMOVE_GIF';
+export const CLEAR_MESSAGES = 'CLEAR_MESSAGES';
 
 export const receiveChannel = ({channel, participants, messages}) => {
   return {
@@ -53,6 +54,12 @@ export const receiveMessage = (payload) => {
     type: RECEIVE_MESSAGE,
     message: payload
   };
+};
+
+export const clearMessages = () => {
+  return {
+    type: CLEAR_MESSAGES
+  }
 };
 
 export const receiveGif = (payload) => {

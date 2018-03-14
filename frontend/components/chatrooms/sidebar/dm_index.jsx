@@ -42,7 +42,8 @@ export default class DMIndex extends React.Component {
                   match={this.props.match}
                   classType={this.handleSelection(dm.id)}
                   currentUser={this.props.currentUser}
-                  selfDM={this.props.selfDM} />;
+                  selfDM={this.props.selfDM}
+                  clearMessages={this.props.clearMessages} />;
               })
             }
         </ul>
