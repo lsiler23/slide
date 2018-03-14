@@ -11,9 +11,9 @@ export default class ChannelIndex extends React.Component {
 
   handleSelection(id) {
     if (id === Number(this.props.match.params.chatroomId)) {
-      return 'side-bar chatroom-index-item-holder selected';
+      return 'chatroom-index-item-holder selected';
     } else {
-      return 'side-bar chatroom-index-item-holder';
+      return 'chatroom-index-item-holder';
     }
   }
 

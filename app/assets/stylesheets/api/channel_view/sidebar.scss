@@ -65,8 +65,6 @@
   width: auto;
   height: 50px;
   margin-top: 150px;
-  margin-left: 5px;
-  padding: 10px;
   color: rgb(216, 216, 216);
   cursor: pointer;
   position: relative;
@@ -78,7 +76,8 @@
   font-size: 16px;
   font-weight: 400;
   line-height: 24px;
-  width: 170px;
+  width: 200px;
+  margin-left: 10px;
   &:hover {
     color: white;
     transition: background 0.3s;
@@ -88,65 +87,61 @@
 }
 
 .side-bar.channel-index {
-  width: auto;
+  width: 200px;
   max-height: 200px;
+  overflow-y: scroll;
   &:hover {
-    overflow-y: scroll;
   }
 
   &::-webkit-scrollbar {
-    background-color: #4D394B;
+    background-color: #fff;
+    width: 0;
   }
   &::-webkit-scrollbar-thumb {
-    background-color: #3d2d3b;
+    background-color: #fff;
     border-radius: 5px;
   }
 }
 
-.side-bar.chatroom-index-item-holder {
+.side-bar .chatroom-index-item-holder {
   height: auto;
   display: flex;
-  width: 160px;
-  position: relative;
+  width: 200px;
   justify-content: space-between;
   padding: 2px;
-  &:hover {
-    background-color: #3d2d3b;
-    .channel-delete {
-      display: block;
-      margin-right: 10px;
-      border: 1px solid #d8d8d8;
-      height: 12px;
-      border-radius: 50px;
-      width: 15px;
-      font-size: 13px;
-      text-align: center;
-      padding-bottom: 3px;
-      margin-left: 5px;
+    &:hover {
+      background-color: #3d2d3b;
+      .channel-delete {
+        display: block;
+        margin-right: 25px;
+        border: 1px solid #d8d8d8;
+        height: 12px;
+        border-radius: 50px;
+        width: 15px;
+        font-size: 13px;
+        text-align: center;
+        padding-bottom: 3px;
+        margin-left: 5px;
         &:hover {
           color: white;
           transition: background 0.3s;
           -webkit-transition: background 0.3s;
         }
+      }
     }
   }
 
-}
-
-.channel-delete {
-  display: none;
-}
+  .channel-delete {
+    display: none;
+  }
 
 .side-bar.chatroom-index-item {
-  width: 160px;
+  width: 200px;
   padding: 3px;
   height: auto;
   position: relative;
   white-space: nowrap;
   text-overflow: ellipsis;
-  &:hover {
-    background-color: #3d2d3b;
-  }
 }
 
 .selected {
@@ -162,6 +157,7 @@
   text-overflow: ellipsis;
   padding: 2px;
   width: 110px;
+  margin-left: 10px;
 }
 
 ////DMS
@@ -169,10 +165,8 @@
 .side-bar.dms {
   width: auto;
   height: 50px;
-  margin-left: 5px;
-  top: 180px;
-  padding: 10px;
-  color: rgb(216, 216, 216);
+  top: 199px;
+  color: #d8d8d8;
   cursor: pointer;
   position: relative;
   display: block;
@@ -183,7 +177,8 @@
   font-size: 16px;
   font-weight: 400;
   line-height: 24px;
-  width: 170px;
+  width: 200px;
+  margin-left: 10px;
   &:hover {
     color: white;
     transition: background 0.3s;
@@ -193,7 +188,7 @@
 }
 
 .side-bar.dm-index-item {
-  width: 160px;
+  width: 200px;
   padding: 3px;
   height: auto;
   position: relative;
@@ -204,11 +199,13 @@
 }
 
 .side-bar.dm-index {
-  width: auto;
+  width: 200px;
   max-height: 300px;
   overflow-y: scroll;
+  margin-top: 5px;
   &::-webkit-scrollbar {
-    background-color: #4D394B;
+    background-color: #fff;
+    width: 0;
   }
   &::-webkit-scrollbar-thumb {
     background-color: #3d2d3b;
