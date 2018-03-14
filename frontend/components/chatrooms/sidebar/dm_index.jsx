@@ -26,7 +26,15 @@ export default class DMIndex extends React.Component {
   }
 
   render() {
-    const { dms } = this.props;
+    const {
+      dms,
+      fetchChatroom,
+      history,
+      match,
+      currentUser,
+      selfDM,
+      clearMessages,
+      deleteParticipation } = this.props;
 
     return (
       <div className='side-bar dms'>
@@ -37,13 +45,14 @@ export default class DMIndex extends React.Component {
                 return <DMIndexItem
                   dm={dm}
                   key={dm.id}
-                  fetchChatroom={this.props.fetchChatroom}
-                  history={this.props.history}
-                  match={this.props.match}
+                  fetchChatroom={fetchChatroom}
+                  history={history}
+                  match={match}
                   classType={this.handleSelection(dm.id)}
-                  currentUser={this.props.currentUser}
-                  selfDM={this.props.selfDM}
-                  clearMessages={this.props.clearMessages} />;
+                  currentUser={currentUser}
+                  selfDM={selfDM}
+                  clearMessages={clearMessages}
+                  deleteParticipation={deleteParticipation} />;
               })
             }
         </ul>

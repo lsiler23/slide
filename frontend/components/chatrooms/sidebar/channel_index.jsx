@@ -26,7 +26,17 @@ export default class ChannelIndex extends React.Component {
   }
 
   render() {
-    const { channels } = this.props;
+    const {
+      channels,
+      fetchChatroom,
+      history,
+      match,
+      currentUser,
+      selfDM,
+      clearMessages,
+      generalChat,
+      deleteParticipation } = this.props;
+
     return (
       <div className='side-bar channels'>
         <h4 onClick={this.handleClick()}>Channels</h4>
@@ -36,13 +46,13 @@ export default class ChannelIndex extends React.Component {
                 return <ChannelIndexItem
                   channel={channel}
                   key={channel.id}
-                  fetchChatroom={this.props.fetchChatroom}
-                  history={this.props.history}
-                  match={this.props.match}
+                  fetchChatroom={fetchChatroom}
+                  history={history}
+                  match={match}
                   classType={this.handleSelection(channel.id)}
-                  deleteParticipation={this.props.deleteParticipation}
-                  generalChat={this.props.generalChat}
-                  clearMessages={this.props.clearMessages} />;
+                  deleteParticipation={deleteParticipation}
+                  generalChat={generalChat}
+                  clearMessages={clearMessages} />;
               })
             }
         </ul>
