@@ -15,7 +15,8 @@
   position: fixed;
   box-sizing: border-box;
   z-index: 1;
-  display: list-item;
+  display: flex;
+  justify-content: space-between;
   list-style-type: none;
   list-style-position: inside;
   background-color: white;
@@ -92,4 +93,28 @@
   &:focus {
     border: 2px solid grey;
   }
+}
+
+.contact-icons {
+  display: flex;
+  margin-right: 249px;
+  margin-top: 7px;
+}
+
+.github-icon {
+  padding: 5px;
+}
+
+.github-real {
+  width: 30px;
+  height: 30px;
+}
+
+.linkedin-icon {
+  padding: 10px;
+}
+
+.linkedin-real {
+  width: 25px;
+  height: 25px;
 }

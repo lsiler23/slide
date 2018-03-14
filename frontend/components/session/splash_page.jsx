@@ -16,10 +16,7 @@ const SplashPage = (props) => (
       <div className='splash-main text'>
         <h2 className='splash-main header'>Where Stuff Happens</h2>
         <p className='splash-main p'>
-          Almost heaven, West Virginia Blue ridge mountains, Shenandoah river Life is old there, older than the trees
-          Younger than the mountains, blowing like a breeze Country roads, take me home To the place I belong West Virginia
-          Mountain mamma, take me home Country roads All my memories, gather round her Modest lady, stranger to blue water
-          Dark and dusty, painted on the sky Misty taste of moonshine, teardrop in my eye
+          When you just need to chat it out with a friend, Slide is here for you.
         </p>
           <button
             onClick={() => props.history.push('/signup')}

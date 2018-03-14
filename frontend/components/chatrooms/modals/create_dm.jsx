@@ -133,7 +133,7 @@ export default class CreateDM extends React.Component {
                   this.state.selected.map((sel) => {
                     return (
                       <span key={sel.id} className='selected-user' onClick={this.handleAlreadySelected(sel)}>
-                        {`${sel.username}X`}
+                        {`${sel.username}   X`}
                       </span>
                     );
                   })
