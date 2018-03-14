@@ -33,8 +33,8 @@ export default class DMIndexItem extends React.Component {
     const selfIndex = title.split(', ').indexOf(username);
     titleCopy.splice(selfIndex, 1);
     const finalTitle = (this.props.dm.id === this.props.selfDM.id ? title : titleCopy.join(', '));
-
-    if (finalTitle === 'title') {
+    
+    if (finalTitle === title) {
       return (
         <div className={this.props.classType}>
           <li
