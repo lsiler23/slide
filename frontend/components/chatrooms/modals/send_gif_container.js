@@ -18,7 +18,7 @@ const msp = (state) => {
 };
 
 const mdp = (dispatch) => {
-  debugger
+   
   return {
     fetchGif: (query) => dispatch(fetchGif(query)),
     createMessage: (message) => dispatch(createMessage(message)),

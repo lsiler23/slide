@@ -82,7 +82,7 @@ export const receiveGifQuery = (query, chatroomId) => {
 };
 
 export const removeGif = () => {
-  debugger
+   
   return {
     type: REMOVE_GIF
   }

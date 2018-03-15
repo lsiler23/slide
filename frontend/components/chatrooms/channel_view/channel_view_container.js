@@ -19,7 +19,7 @@ const msp = (state, ownProps) => {
   const currentUser = state.session.currentUser;
   const selfDMTitle = `${currentUser.username} (you)`;
   const activeView = state.entities.chatrooms[ownProps.match.params.chatroomId];
-  debugger
+   
   return {
     activeView,
     selfDM: selfDMSelector(state, selfDMTitle),

@@ -1,4 +1,5 @@
 import React from 'react';
+import EmojiConvertor from 'emoji-js';
 import SendGif from '../modals/send_gif_container';
 
 export default class ChannelFooter extends React.Component {
@@ -7,6 +8,15 @@ export default class ChannelFooter extends React.Component {
     this.state = { body: '', hidden: true };
     this.handleEnter = this.handleEnter.bind(this);
     this.handleChange = this.handleChange.bind(this);
+  }
+
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.currentEmoji) {
+      const jsemoji = new EmojiConvertor();
+      const emojicontent = jsemoji.replace_colons(nextProps.currentEmoji);
+      const newBody = this.state.body + emojicontent;
+      this.setState({body: newBody});
+    }
   }
 
   handleEnter() {

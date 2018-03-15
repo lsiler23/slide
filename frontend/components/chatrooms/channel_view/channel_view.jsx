@@ -1,6 +1,5 @@
 import React from 'react';
 import EmojiPicker from 'emoji-picker-react';
-import EmojiConvertor from 'emoji-js';
 import ChannelHeader from './channel_header';
 import ChannelBody from './channel_body';
 import ChannelFooter from './channel_footer';
@@ -9,7 +8,7 @@ import SendGif from '../modals/send_gif_container';
 export default class ChannelView extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { emojiCode: '', emojiData: '' };
+    this.state = { emojiCode: '', emojiData: null };
     this.handleEmojiClick = this.handleEmojiClick.bind(this);
   }
 
@@ -41,11 +40,9 @@ export default class ChannelView extends React.Component {
   }
 
   handleEmojiClick() {
-    const jsemoji = new EmojiConvertor();
-    return (e) => {
-      const specialCode = `\\u{${e}}`;
-      const emojicontent = jsemoji.replace_unified(specialCode);
-      this.setState({ emojiCode: e, emojiData: emojicontent});
+    return (e, emoji) => {
+      const specialized = `:${emoji.name}:`;
+      this.setState({ emojiCode: e, emojiData: specialized});
     };
   }
 
