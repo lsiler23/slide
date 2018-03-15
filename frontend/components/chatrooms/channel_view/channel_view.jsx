@@ -1,5 +1,6 @@
 import React from 'react';
 import EmojiPicker from 'emoji-picker-react';
+import EmojiConvertor from 'emoji-js';
 import ChannelHeader from './channel_header';
 import ChannelBody from './channel_body';
 import ChannelFooter from './channel_footer';
@@ -8,6 +9,8 @@ import SendGif from '../modals/send_gif_container';
 export default class ChannelView extends React.Component {
   constructor(props) {
     super(props);
+    this.state = { emojiCode: '', emojiData: '' };
+    this.handleEmojiClick = this.handleEmojiClick.bind(this);
   }
 
   componentDidMount() {
@@ -30,7 +33,6 @@ export default class ChannelView extends React.Component {
   }
 
   handleEmojiClass() {
-
     if (this.props.emojiMenuStatus) {
       return 'emoji-menu hidden';
     } else {
@@ -38,8 +40,16 @@ export default class ChannelView extends React.Component {
     }
   }
 
+  handleEmojiClick() {
+    const jsemoji = new EmojiConvertor();
+    return (e) => {
+      const specialCode = `\\u{${e}}`;
+      const emojicontent = jsemoji.replace_unified(specialCode);
+      this.setState({ emojiCode: e, emojiData: emojicontent});
+    };
+  }
+
   render() {
-    debugger
     if (this.props.activeView) {
       return (
         <div className='channel-view'>
@@ -52,7 +62,7 @@ export default class ChannelView extends React.Component {
             currentUsers={this.props.currentUsers}
             availableGif={this.props.availableGif}/>
           <div className={this.handleEmojiClass()}>
-              <EmojiPicker onEmojiClick={() => console.log('hi')}/>
+              <EmojiPicker onEmojiClick={this.handleEmojiClick()}/>
           </div>
           <ChannelFooter
             channel={this.props.activeView}
@@ -65,7 +75,8 @@ export default class ChannelView extends React.Component {
             fetchGif={this.props.fetchGif}
             openEmojis={this.props.openEmojis}
             closeEmojis={this.props.closeEmojis}
-            emojiMenuStatus={this.props.emojiMenuStatus} />
+            emojiMenuStatus={this.props.emojiMenuStatus}
+            currentEmoji={this.state.emojiData} />
         </div>
       );
     } else {
