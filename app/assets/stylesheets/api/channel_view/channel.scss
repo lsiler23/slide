@@ -85,7 +85,7 @@
   border: 2px solid lightgrey;
   border-radius: 5px;
   display: flex;
-  &:focus {
+  &:focus-within {
     border: 2px solid grey;
   }
 }

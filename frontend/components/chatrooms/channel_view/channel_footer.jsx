@@ -11,9 +11,12 @@ export default class ChannelFooter extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    if (nextProps.currentEmoji) {
+    const { emojiCodes } = this.props;
+    const { currentEmoji } = nextProps;
+
+    if (currentEmoji && emojiCodes.length < nextProps.emojiCodes.length) {
       const jsemoji = new EmojiConvertor();
-      const emojicontent = jsemoji.replace_colons(nextProps.currentEmoji);
+      const emojicontent = jsemoji.replace_colons(currentEmoji);
       const newBody = this.state.body + emojicontent;
       this.setState({body: newBody});
     }
@@ -24,6 +27,7 @@ export default class ChannelFooter extends React.Component {
     const authorId = Number(this.props.currentUser.id);
     const thisBody = this.state.body.slice(0, 7);
     const thisQuery = this.state.body.slice(7);
+
     return (e) => {
       e.preventDefault();
       if (thisBody === '/giphy ') {
@@ -35,9 +39,9 @@ export default class ChannelFooter extends React.Component {
           chatroom_id: chatroomId,
           author_id: authorId
         });
+        this.setState({body: ''});
         window.scrollTo(0, 760);
       }
-     this.setState({body: ''});
     };
   }
 
@@ -76,9 +80,11 @@ export default class ChannelFooter extends React.Component {
         <form className='chatbox' onSubmit={this.handleEnter()}>
           <input
             type='text'
+            id='message-input'
             placeholder={title}
             onChange={this.handleChange()}
-            value={this.state.body}/>
+            value={this.state.body}
+            autofocus/>
           <img
             className='emoji-trigger'
             src='https://cdn3.iconfinder.com/data/icons/emoji/100/Emoji_Sleep-512.png'
