@@ -21,6 +21,7 @@ export default class DMIndex extends React.Component {
     return (e) => {
       this.props.clearSearch();
       this.props.searchUsers('');
+      this.props.searchChannels('');
       this.props.openModal('dm');
     };
   }

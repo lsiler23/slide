@@ -60,3 +60,15 @@ export const currentChatroomMessagesSelector = (state, chatroomId) => {
 export const authorSelector = (state, authorId) => {
   return state.entities.users[authorId];
 };
+
+export const allDMsSelector = (state) => {
+  const allChatrooms = Object.values(state.entities.chatrooms);
+  const allDMs = [];
+
+  for (let i = 0; i < allChatrooms.length; i++) {
+    if (allChatrooms[i].isDM) {
+      allDMs.push(allChatrooms[i]);
+    }
+  }
+  return allDMs;
+};

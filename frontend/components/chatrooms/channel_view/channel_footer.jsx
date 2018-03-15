@@ -39,9 +39,9 @@ export default class ChannelFooter extends React.Component {
           chatroom_id: chatroomId,
           author_id: authorId
         });
-        this.setState({body: ''});
         window.scrollTo(0, 760);
       }
+      this.setState({body: ''});
     };
   }
 
@@ -84,7 +84,7 @@ export default class ChannelFooter extends React.Component {
             placeholder={title}
             onChange={this.handleChange()}
             value={this.state.body}
-            autofocus/>
+            autoFocus/>
           <img
             className='emoji-trigger'
             src='https://cdn3.iconfinder.com/data/icons/emoji/100/Emoji_Sleep-512.png'

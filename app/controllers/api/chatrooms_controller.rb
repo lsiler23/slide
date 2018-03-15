@@ -34,11 +34,7 @@ class Api::ChatroomsController < ApplicationController
     chatroompart = Participation.find_by(chatroom_id: params[:id], participant_id: current_user.id)
     @chatroom = Chatroom.find(params[:id])
 
-    if chatroompart && @chatroom.participant_ids.length === 1 && @chatroom.isDM
-      chatroompart.destroy!
-      render 'api/chatrooms/show.json.jbuilder'
-      @chatroom.destroy!
-    elsif chatroompart
+    if chatroompart
       chatroompart.destroy!
       render 'api/chatrooms/show.json.jbuilder'
     else

@@ -4,6 +4,7 @@ import { openModal, closeModal } from '../../../actions/modal_actions';
 import {
   clearSearch,
   fetchAllSearchedUsers,
+  fetchAllSearchedChannels,
   deleteParticipation } from '../../../actions/chatrooms_actions';
 import { selfDMSelector } from '../../../reducers/selectors';
 import DMIndex from './dm_index';
@@ -21,6 +22,7 @@ const mdp = (dispatch) => {
   return {
     openModal: (type) => dispatch(openModal(type)),
     searchUsers: (query) => dispatch(fetchAllSearchedUsers(query)),
+    searchChannels: (query) => dispatch(fetchAllSearchedChannels(query)),
     deleteParticipation: (id)=> dispatch(deleteParticipation(id)),
     clearSearch: () => dispatch(clearSearch()),
     closeModal: () => dispatch(closeModal())

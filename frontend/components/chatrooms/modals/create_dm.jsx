@@ -66,7 +66,9 @@ export default class CreateDM extends React.Component {
         .then(payload => this.props.history.push(`/chatrooms/${payload.channel.id}`))
         .then(() => this.props.closeModal());
       } else {
-        this.props.history.push(`/chatrooms/${isUnique[1].id}`);
+        this.props.fetchChatroom(isUnique[1].id)
+        .then(payload => this.props.history.push(`/chatrooms/${payload.channel.id}`));
+        debugger
         this.props.closeModal();
       }
     };
