@@ -19,9 +19,6 @@ function ChannelModal({modal, closeModal}) {
   } else if (modal === 'dm') {
     component = <CreateDM />;
     className = 'channel-modal-background';
-  } else if (modal === 'giphy') {
-    component = <SendGif />;
-    className = 'giphy-modal-background';
   }
 
   return (

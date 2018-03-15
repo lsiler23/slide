@@ -57,10 +57,6 @@ export const currentChatroomMessagesSelector = (state, chatroomId) => {
   return currentMessages;
 };
 
-export const authorSelector = (state, authorId) => {
-  return state.entities.users[authorId];
-};
-
 export const allDMsSelector = (state) => {
   const allChatrooms = Object.values(state.entities.chatrooms);
   const allDMs = [];

@@ -10,25 +10,31 @@ export default class ChannelView extends React.Component {
     super(props);
     this.state = { emojiCodes: [], emojiData: null };
     this.handleEmojiClick = this.handleEmojiClick.bind(this);
+    this.createSubscriptionAndFocus = this.createSubscriptionAndFocus.bind(this);
   }
 
-  componentDidMount() {
-    this.props.fetchChatroom(this.props.match.params.chatroomId);
+  createSubscriptionAndFocus() {
+    const { match, receiveMessage } = this.props;
+
     this.subscription = App.cable.subscriptions.create(
-      {channel: 'ChatroomChannel', id: this.props.match.params.chatroomId},
-      {received: (message) => this.props.receiveMessage(message)}
+      {channel: 'ChatroomChannel', id: match.params.chatroomId},
+      {received: (message) => receiveMessage(message)}
     );
     document.getElementById('message-input').focus();
   }
 
+  componentDidMount() {
+    const { fetchChatroom, match } = this.props;
+    fetchChatroom(match.params.chatroomId);
+    this.createSubscriptionAndFocus();
+  }
+
   componentWillReceiveProps(nextProps) {
-    if (this.props.activeView && (this.props.activeView.id !== Number(nextProps.match.params.chatroomId))) {
+    const { activeView, receiveMessage, match } = this.props;
+
+    if (activeView && (activeView.id !== Number(nextProps.match.params.chatroomId))) {
       this.subscription.unsubscribe();
-      this.subscription = App.cable.subscriptions.create(
-        {channel: 'ChatroomChannel', id: nextProps.match.params.chatroomId},
-        {received: (message) => this.props.receiveMessage(message)}
-      );
-      document.getElementById('message-input').focus();
+      this.createSubscriptionAndFocus();
     }
   }
 
@@ -42,38 +48,49 @@ export default class ChannelView extends React.Component {
 
   handleEmojiClick() {
     return (e, emoji) => {
-      const specialized = `:${emoji.name}:`;
-      this.setState({ emojiCodes: this.state.emojiCodes.concat([e]), emojiData: specialized });
+      const special = `:${emoji.name}:`;
+      this.setState({
+        emojiCodes: this.state.emojiCodes.concat([e]),
+        emojiData: special
+      });
     };
   }
 
   render() {
-    if (this.props.activeView) {
+    const {
+      activeView, selfDM, currentMessages,
+      currentUsers, availableGif, match,
+      currentUser, createMessage, openModal,
+      receiveGifQuery, fetchGif, openEmojis,
+      closeEmojis, emojiMenuStatus
+    } = this.props;
+
+    if (activeView) {
       return (
         <div className='channel-view'>
           <ChannelHeader
-            channel={this.props.activeView}
-            selfDM={this.props.selfDM}/>
+            channel={activeView}
+            selfDM={selfDM}/>
           <ChannelBody
-            channel={this.props.activeView}
-            messages={this.props.currentMessages}
-            currentUsers={this.props.currentUsers}
-            availableGif={this.props.availableGif}/>
+            channel={activeView}
+            messages={currentMessages}
+            currentUsers={currentUsers}
+            availableGif={availableGif}/>
           <div className={this.handleEmojiClass()}>
               <EmojiPicker onEmojiClick={this.handleEmojiClick()}/>
           </div>
           <ChannelFooter
-            channel={this.props.activeView}
-            selfDM={this.props.selfDM}
-            match={this.props.match}
-            currentUser={this.props.currentUser}
-            createMessage={this.props.createMessage}
-            openModal={this.props.openModal}
-            receiveGifQuery={this.props.receiveGifQuery}
-            fetchGif={this.props.fetchGif}
-            openEmojis={this.props.openEmojis}
-            closeEmojis={this.props.closeEmojis}
-            emojiMenuStatus={this.props.emojiMenuStatus}
+            channel={activeView}
+            selfDM={selfDM}
+            match={match}
+            currentUser={currentUser}
+            createMessage={createMessage}
+            openModal={openModal}
+            receiveGifQuery={receiveGifQuery}
+            fetchGif={fetchGif}
+            openEmojis={openEmojis}
+            closeEmojis={closeEmojis}
+            emojiMenuStatus={emojiMenuStatus}
             currentEmoji={this.state.emojiData}
             emojiCodes={this.state.emojiCodes} />
         </div>

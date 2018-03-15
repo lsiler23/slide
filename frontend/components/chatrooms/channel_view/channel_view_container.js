@@ -1,16 +1,12 @@
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import {
-  fetchChatroom,
-  createMessage,
-  receiveMessage,
-  receiveGifQuery,
-  fetchGif,
-  openEmojis,
-  closeEmojis } from '../../../actions/chatrooms_actions';
+  fetchChatroom, createMessage, receiveMessage,
+  receiveGifQuery, fetchGif, openEmojis, closeEmojis
+} from '../../../actions/chatrooms_actions';
 import {
-  selfDMSelector,
-  currentChatroomMessagesSelector } from '../../../reducers/selectors';
+  selfDMSelector, currentChatroomMessagesSelector
+} from '../../../reducers/selectors';
 import { openModal, closeModal } from '../../../actions/modal_actions';
 import ChannelView from './channel_view';
 
@@ -19,7 +15,7 @@ const msp = (state, ownProps) => {
   const currentUser = state.session.currentUser;
   const selfDMTitle = `${currentUser.username} (you)`;
   const activeView = state.entities.chatrooms[ownProps.match.params.chatroomId];
-   
+
   return {
     activeView,
     selfDM: selfDMSelector(state, selfDMTitle),
