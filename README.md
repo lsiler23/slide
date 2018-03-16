@@ -15,7 +15,7 @@ Gifs and emojis are available for that extra messaging flair.
 
 ## Features
 
-#### Live Chat
+### Live Chat
 Messages are broadcasted using Action Cable, so users can chat live in any number of chatrooms (broken down into channels and direct messages).
 
  When you first login...
@@ -38,9 +38,10 @@ Messages are broadcasted using Action Cable, so users can chat live in any numbe
  }
  ```
 
- - Direct Message Verification
-  Users can leave direct messages without having to worry about losing access to any past conversations. A simple search for the other
-  users involved will bring the direct message back to life.
+### Direct Message Verification
+Users can leave direct messages without having to worry about losing access to any past conversations. A simple search for the other users involved will bring the direct message back to life.
+
+```
   checkForUniqueness(title) {
     const { allDMs } = this.props;
     const sortedTitle = title.split(', ').sort().join(', ');
@@ -72,11 +73,12 @@ Messages are broadcasted using Action Cable, so users can chat live in any numbe
       }
     };
   }
+  ```
 
- - Giphy shuffle messaging
-  By far the most loved Slack easter egg! Users can search for the perfect gif by
-  entering '/giphy [enter amazing search]' in any channel input bar.
+### Giphy shuffle messaging
+By far the most loved Slack easter egg! Users can search for the perfect gif by entering '/giphy [enter amazing search]' in any channel input bar.
 
+```
   handleEnter() {
     const {
       match, currentUser, receiveGifQuery,
@@ -103,8 +105,9 @@ Messages are broadcasted using Action Cable, so users can chat live in any numbe
       this.setState({body: ''});
     };
   }
+```
 
-Upcoming Features
+## Upcoming Features
 
-Live notifications
-Searchable messages
+* Live notifications
+* Searchable messages
