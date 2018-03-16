@@ -9,9 +9,9 @@ Gifs and emojis are available for that extra messaging flair.
 
 ## Technologies Used
 
-Rails
-React/Redux
-Websockets/Action Cable
+* Rails
+* React/Redux
+* Websockets/Action Cable
 
 ## Features
 
