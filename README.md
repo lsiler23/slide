@@ -41,6 +41,8 @@ Messages are broadcasted using Action Cable, so users can chat live in any numbe
 ### Direct Message Verification
 Users can leave direct messages without having to worry about losing access to any past conversations. A simple search for the other users involved will bring the direct message back to life.
 
+This feature was a little tricky because searching through all direct messages' participating users can become very inefficient, very quickly. To cut down on that level of querying, I used sorted titles based on usernames.
+
 ```
   checkForUniqueness(title) {
     const { allDMs } = this.props;
@@ -54,26 +56,8 @@ Users can leave direct messages without having to worry about losing access to a
     }
     return [true];
   }
-
-  handleClick() {
-    const { currentUser, fetchChatroom, history, closeModal } = this.props;
-    return (e) => {
-      e.preventDefault();
-      const allUsers = this.state.selected.map((sel) => sel.username).join(', ').concat(`, ${currentUser.username}`);
-      const isUnique = this.checkForUniqueness(allUsers);
-      if (isUnique[0]) {
-        createDM({title: allUsers, isDM: true})
-        .then(payload => fetchChatroom(payload.channel.id))
-        .then(payload => history.push(`/chatrooms/${payload.channel.id}`))
-        .then(() => closeModal());
-      } else {
-        fetchChatroom(isUnique[1].id)
-        .then(payload => history.push(`/chatrooms/${payload.channel.id}`));
-        closeModal();
-      }
-    };
-  }
   ```
+  ![dmgif](https://media.giphy.com/media/1oETSPiB1ZTNlnRwEc/giphy.gif)
 
 ### Giphy shuffle messaging
 By far the most beloved Slack easter egg! Users can search for the perfect gif by entering '/giphy [enter amazing search]' in any channel input bar.
