@@ -1,4 +1,4 @@
-Slide
+# Slide
 
 [Click here](https://slide-chat-app.herokuapp.com/#/) to view the live app!
 
@@ -7,19 +7,20 @@ Slide is a messaging app cloned from Slack.
 Users can log in and join channels, create them, or chat with their friends individually or in groups.
 Gifs and emojis are available for that extra messaging flair.
 
-Technologies Used
+## Technologies Used
 
-Rails
-React/Redux
-Websockets/Action Cable
+* Rails
+* React/Redux
+* Websockets/Action Cable
 
-Features
+## Features
 
- - Live Chat
-  Messages are broadcasted using Action Cable, so users can chat live in any number of chatrooms (broken down into channels and direct messages).
+### Live Chat
+Messages are broadcasted using Action Cable, so users can chat live in any number of chatrooms (broken down into channels and direct messages).
 
  When you first login...
 
+ ```
  createSubscriptionAndFocus() {
    const { match, receiveMessage } = this.props;
 
@@ -35,10 +36,12 @@ Features
    fetchChatroom(match.params.chatroomId);
    this.createSubscriptionAndFocus();
  }
+ ```
 
- - Direct Message Verification
-  Users can leave direct messages without having to worry about losing access to any past conversations. A simple search for the other
-  users involved will bring the direct message back to life.
+### Direct Message Verification
+Users can leave direct messages without having to worry about losing access to any past conversations. A simple search for the other users involved will bring the direct message back to life.
+
+```
   checkForUniqueness(title) {
     const { allDMs } = this.props;
     const sortedTitle = title.split(', ').sort().join(', ');
@@ -70,11 +73,12 @@ Features
       }
     };
   }
+  ```
 
- - Giphy shuffle messaging
-  By far the most loved Slack easter egg! Users can search for the perfect gif by
-  entering '/giphy [enter amazing search]' in any channel input bar.
+### Giphy shuffle messaging
+By far the most beloved Slack easter egg! Users can search for the perfect gif by entering '/giphy [enter amazing search]' in any channel input bar.
 
+```
   handleEnter() {
     const {
       match, currentUser, receiveGifQuery,
@@ -101,8 +105,9 @@ Features
       this.setState({body: ''});
     };
   }
+```
 
-Upcoming Features
+## Upcoming Features
 
-Live notifications
-Searchable messages
+* Live notifications
+* Searchable messages
