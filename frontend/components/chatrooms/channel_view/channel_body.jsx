@@ -17,47 +17,46 @@ export default class  ChannelBody extends React.Component {
     }
   }
 
+  handleClick() {
+    const { emojiMenuStatus, closeEmojis } = this.props;
+    return (e) => {
+      if (!emojiMenuStatus) {
+        closeEmojis();
+      }
+    };
+  }
 
   render() {
-    const { messages } = this.props;
+    const { messages, availableGif } = this.props;
+    let renderGif;
 
-    if (this.props.availableGif) {
-      return (
-        <div className='channel-view channel-body'>
-          <div>
-            <ul className={this.state.ulClassName}>
-              {
-                messages.map((msg) => {
-                  return (
-                    <li className='message'key={msg.id}>
-                      <MessageItem message={msg} currentUsers={this.props.currentUsers}/>
-                    </li>
-                  );
-                })
-              }
-            </ul>
-            <SendGif />
-          </div>
-        </div>
-      );
+    if (availableGif) {
+      renderGif = <SendGif />;
     } else {
-      return (
-        <div className='channel-view channel-body'>
-          <div>
-            <ul className='channel-message-list'>
-              {
-                messages.map((msg) => {
-                  return (
-                    <li className='message'key={msg.id}>
-                      <MessageItem message={msg} currentUsers={this.props.currentUsers}/>
-                    </li>
-                  );
-                })
-              }
-            </ul>
-          </div>
-        </div>
-      );
+      renderGif = <div></div>;
     }
+
+    return (
+      <div
+        className='channel-view channel-body'
+        onClick={this.handleClick()}>
+        <div>
+          <ul className={this.state.ulClassName}>
+            {
+              messages.map((msg) => {
+                return (
+                  <li className='message'key={msg.id}>
+                    <MessageItem message={msg} currentUsers={this.props.currentUsers}/>
+                  </li>
+                );
+              })
+            }
+          </ul>
+          {
+            renderGif
+          }
+        </div>
+      </div>
+    );
   }
 }

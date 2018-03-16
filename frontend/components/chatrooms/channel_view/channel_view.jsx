@@ -58,7 +58,9 @@ export default class ChannelView extends React.Component {
             channel={this.props.activeView}
             messages={this.props.currentMessages}
             currentUsers={this.props.currentUsers}
-            availableGif={this.props.availableGif}/>
+            availableGif={this.props.availableGif}
+            closeEmojis={this.props.closeEmojis}
+            emojiMenuStatus={this.props.emojiMenuStatus}/>
           <div className={this.handleEmojiClass()}>
               <EmojiPicker onEmojiClick={this.handleEmojiClick()}/>
           </div>

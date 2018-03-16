@@ -20,7 +20,10 @@ Messages are broadcasted using Action Cable, so users can chat live in any numbe
 
  When you first login...
 
- ```
+ ```javascript
+
+ // channel_view
+
  createSubscriptionAndFocus() {
    const { match, receiveMessage } = this.props;
 
@@ -38,12 +41,21 @@ Messages are broadcasted using Action Cable, so users can chat live in any numbe
  }
  ```
 
+ ``` ruby
+ 
+ # messages#create
+
+ if @message.save
+   ChatroomChannel.broadcast_to(@message.chatroom, JSON.parse(render('/api/messages/_message.json.jbuilder', locals: { message: @message })))
+   head :ok
+ ```
+
 ### Direct Message Verification
 Users can leave direct messages without having to worry about losing access to any past conversations. A simple search for the other users involved will bring the direct message back to life.
 
 This feature was a little tricky because searching through all direct messages' participating users can become very inefficient, very quickly. To cut down on that level of querying, I used sorted titles based on usernames.
 
-```
+```javascript
   checkForUniqueness(title) {
     const { allDMs } = this.props;
     const sortedTitle = title.split(', ').sort().join(', ');
@@ -62,7 +74,7 @@ This feature was a little tricky because searching through all direct messages' 
 ### Giphy shuffle messaging
 By far the most beloved Slack easter egg! Users can search for the perfect gif by entering '/giphy [enter amazing search]' in any channel input bar.
 
-```
+```javascript
   handleEnter() {
     const {
       match, currentUser, receiveGifQuery,
@@ -93,5 +105,6 @@ By far the most beloved Slack easter egg! Users can search for the perfect gif b
 
 ## Upcoming Features
 
+* Searchable mentions
 * Live notifications
 * Searchable messages
