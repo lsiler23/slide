@@ -19,34 +19,45 @@ export default class  ChannelBody extends React.Component {
 
 
   render() {
-    const { messages, availableGif, currentUsers } = this.props;
-    let gifRender;
+    const { messages } = this.props;
 
-    if (availableGif) {
-      gifRender = <SendGif />;
-    } else {
-      gifRender = <div></div>;
-    }
-
-    return (
-      <div className='channel-view channel-body'>
-        <div>
-          <ul className={this.state.ulClassName}>
-            {
-              messages.map((msg) => {
-                return (
-                  <li className='message'key={msg.id}>
-                    <MessageItem message={msg} currentUsers={currentUsers}/>
-                  </li>
-                );
-              })
-            }
-          </ul>
-          {
-            gifRender
-          }
+    if (this.props.availableGif) {
+      return (
+        <div className='channel-view channel-body'>
+          <div>
+            <ul className={this.state.ulClassName}>
+              {
+                messages.map((msg) => {
+                  return (
+                    <li className='message'key={msg.id}>
+                      <MessageItem message={msg} currentUsers={this.props.currentUsers}/>
+                    </li>
+                  );
+                })
+              }
+            </ul>
+            <SendGif />
+          </div>
         </div>
-      </div>
-    );
+      );
+    } else {
+      return (
+        <div className='channel-view channel-body'>
+          <div>
+            <ul className='channel-message-list'>
+              {
+                messages.map((msg) => {
+                  return (
+                    <li className='message'key={msg.id}>
+                      <MessageItem message={msg} currentUsers={this.props.currentUsers}/>
+                    </li>
+                  );
+                })
+              }
+            </ul>
+          </div>
+        </div>
+      );
+    }
   }
 }

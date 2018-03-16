@@ -23,23 +23,18 @@ export default class ChannelFooter extends React.Component {
   }
 
   handleEnter() {
-    const {
-      match, currentUser, receiveGifQuery,
-      fetchGif, createMessage
-    } = this.props;
-    
-    const chatroomId = Number(match.params.chatroomId);
-    const authorId = Number(currentUser.id);
+    const chatroomId = Number(this.props.match.params.chatroomId);
+    const authorId = Number(this.props.currentUser.id);
     const thisBody = this.state.body.slice(0, 7);
     const thisQuery = this.state.body.slice(7);
 
     return (e) => {
       e.preventDefault();
       if (thisBody === '/giphy ') {
-        receiveGifQuery(thisQuery, chatroomId);
-        fetchGif(thisQuery);
+        this.props.receiveGifQuery(thisQuery, chatroomId);
+        this.props.fetchGif(thisQuery);
       } else {
-        createMessage({
+        this.props.createMessage({
           body: this.state.body,
           chatroom_id: chatroomId,
           author_id: authorId
