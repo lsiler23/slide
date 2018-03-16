@@ -56,20 +56,20 @@ export default class CreateDM extends React.Component {
   }
 
   handleClick() {
+    const { currentUser, fetchChatroom, history, closeModal } = this.props;
     return (e) => {
       e.preventDefault();
-      const allUsers = this.state.selected.map((sel) => sel.username).join(', ').concat(`, ${this.props.currentUser.username}`);
+      const allUsers = this.state.selected.map((sel) => sel.username).join(', ').concat(`, ${currentUser.username}`);
       const isUnique = this.checkForUniqueness(allUsers);
       if (isUnique[0]) {
-        this.props.createDM({title: allUsers, isDM: true})
-        .then(payload => this.props.fetchChatroom(payload.channel.id))
-        .then(payload => this.props.history.push(`/chatrooms/${payload.channel.id}`))
-        .then(() => this.props.closeModal());
+        createDM({title: allUsers, isDM: true})
+        .then(payload => fetchChatroom(payload.channel.id))
+        .then(payload => history.push(`/chatrooms/${payload.channel.id}`))
+        .then(() => closeModal());
       } else {
-        this.props.fetchChatroom(isUnique[1].id)
-        .then(payload => this.props.history.push(`/chatrooms/${payload.channel.id}`));
-        debugger
-        this.props.closeModal();
+        fetchChatroom(isUnique[1].id)
+        .then(payload => history.push(`/chatrooms/${payload.channel.id}`));
+        closeModal();
       }
     };
   }
