@@ -1,5 +1,4 @@
 import React from 'react';
-// const dateFormat = require('dateFormat');
 import dateFormat from 'dateformat';
 
 export default class CreateChannel extends React.Component {
@@ -57,7 +56,7 @@ export default class CreateChannel extends React.Component {
   }
 
   noMatchToggle() {
-    if (this.props.searchIds.length <= 1 && this.state.title.length >= 1) {
+    if (this.props.searchIds.length < 1 && this.state.title.length >= 1) {
       return 'create-channel go ready';
     } else {
       return 'create-channel go';
