@@ -22,11 +22,12 @@ export default class ChannelView extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    if (this.props.activeView && (this.props.activeView.id !== Number(nextProps.match.params.chatroomId))) {
+    const { activeView, receiveMessage } = this.props;
+    if (activeView && (activeView.id !== Number(nextProps.match.params.chatroomId))) {
       this.subscription.unsubscribe();
       this.subscription = App.cable.subscriptions.create(
         {channel: 'ChatroomChannel', id: nextProps.match.params.chatroomId},
-        {received: (message) => this.props.receiveMessage(message)}
+        {received: (message) => receiveMessage(message)}
       );
       document.getElementById('message-input').focus();
     }
