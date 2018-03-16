@@ -56,7 +56,7 @@ export default class CreateDM extends React.Component {
   }
 
   handleClick() {
-    const { currentUser, fetchChatroom, history, closeModal } = this.props;
+    const { currentUser, fetchChatroom, history, closeModal, createDM } = this.props;
     return (e) => {
       e.preventDefault();
       const allUsers = this.state.selected.map((sel) => sel.username).join(', ').concat(`, ${currentUser.username}`);
