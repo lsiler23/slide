@@ -1,7 +1,7 @@
 .channel-view {
   right: 0;
   left: 200px;
-  height: 96%;
+  height: 100%;
   display: flex;
   flex-direction: column;
   position: absolute;
@@ -13,7 +13,6 @@
   height: 60px;
   width: 100%;
   border: 1px solid lightgrey;
-  position: fixed;
   box-sizing: border-box;
   z-index: 1;
   display: flex;
@@ -45,8 +44,7 @@
 }
 
 .channel-body {
-  height: 88%;
-  top: 50px;
+  height: calc(100% - 132px);
   left: 0;
   background-color: white;
   box-sizing: border-box;
@@ -66,22 +64,21 @@
 }
 
 .channel-footer {
-  height: 9%;
+  height: 72px;
   margin-left: 0;
   margin-right: 20px;
   bottom: 0;
-  width: 100%;
+  width: calc(100% - 200px);
   position: fixed;
   background-color: white;
 }
 
 .chatbox {
   position: absolute;
-  width: 82%;
+  width: calc(100% - 40px);
   margin: 0 20px 20px 20px;
-  height: 40px;
+  // height: 60px;
   box-sizing: border-box;
-  height: 69%;
   border: 2px solid lightgrey;
   border-radius: 5px;
   display: flex;
@@ -93,7 +90,6 @@
 .chatbox input {
   border: none;
   width: 100%;
-  height: 69%;
   &::placeholder {
     font-size: 15px;
   }
@@ -101,7 +97,7 @@
 
 .contact-icons {
   display: flex;
-  margin-right: 249px;
+  margin-right: 20px;
   margin-top: 7px;
 }
 

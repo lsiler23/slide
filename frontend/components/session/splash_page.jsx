@@ -16,7 +16,7 @@ const SplashPage = (props) => (
       <div className='splash-main text'>
         <h2 className='splash-main header'>Where Stuff Happens</h2>
         <p className='splash-main p'>
-          When you just need to chat it out with a friend, Slide is here for you.
+          When you just need to chat it out with a friend, make nice with a coworker, or send your parents a dm on their anniversary, Slide is here for you.
         </p>
           <button
             onClick={() => props.history.push('/signup')}
