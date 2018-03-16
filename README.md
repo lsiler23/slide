@@ -76,7 +76,7 @@ Users can leave direct messages without having to worry about losing access to a
   ```
 
 ### Giphy shuffle messaging
-By far the most loved Slack easter egg! Users can search for the perfect gif by entering '/giphy [enter amazing search]' in any channel input bar.
+By far the most beloved Slack easter egg! Users can search for the perfect gif by entering '/giphy [enter amazing search]' in any channel input bar.
 
 ```
   handleEnter() {
