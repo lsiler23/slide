@@ -42,7 +42,7 @@ Messages are broadcasted using Action Cable, so users can chat live in any numbe
  ```
 
  ``` ruby
- 
+
  # messages#create
 
  if @message.save
@@ -72,7 +72,7 @@ This feature was a little tricky because searching through all direct messages' 
   ![dmgif](https://media.giphy.com/media/1oETSPiB1ZTNlnRwEc/giphy.gif)
 
 ### Giphy shuffle messaging
-By far the most beloved Slack easter egg! Users can search for the perfect gif by entering '/giphy [enter amazing search]' in any channel input bar.
+By far the most beloved Slack easter egg! Users can search for the perfect gif by entering '/giphy [amazing search]' in any channel input bar.
 
 ```javascript
   handleEnter() {
