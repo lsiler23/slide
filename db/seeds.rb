@@ -44,6 +44,7 @@ samself = Chatroom.create!({creator_id: sam.id, isDM: true, title: "#{sam.userna
 elliotself = Chatroom.create!({creator_id: elliot.id, isDM: true, title: "#{elliot.username} (you)"})
 hanheeself = Chatroom.create!({creator_id: hanhee.id, isDM: true, title: "#{hanhee.username} (you)"})
 meself = Chatroom.create!({creator_id: me.id, isDM: true, title: "#{me.username} (you)"})
+guestself = Chatroom.create!({creator_id: guest.id, isDM: true, title: "#{guest.username} (you)"})
 
 
 # Participation associations
@@ -60,3 +61,12 @@ Participation.create!({participant_id: sam.id, chatroom_id: general.id})
 Participation.create!({participant_id: elliot.id, chatroom_id: general.id})
 Participation.create!({participant_id: hanhee.id, chatroom_id: general.id})
 Participation.create!({participant_id: sam.id, chatroom_id: firstdm.id})
+
+Message.create!({author_id: me.id, chatroom_id: general.id, body: 'wooooo love the general channel'})
+Message.create!({author_id: me.id, chatroom_id: general.id, body: 'is anyone here?'})
+Message.create!({author_id: me.id, chatroom_id: general.id, body: 'hellooooo'})
+Message.create!({author_id: me.id, chatroom_id: general.id, body: 'hi?'})
+Message.create!({author_id: jake.id, chatroom_id: general.id, body: 'hey!!!!'})
+Message.create!({author_id: charlie.id, chatroom_id: general.id, body: 'whats goin on?'})
+Message.create!({author_id: tom.id, chatroom_id: general.id, body: 'tommy here!'})
+Message.create!({author_id: aislinn.id, chatroom_id: general.id, body: 'lol tommy...'})
