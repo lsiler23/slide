@@ -35,10 +35,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     store = configureStore(preloadedState);
   }
-  window.store = store;
-  window.fetchChatroom = fetchChatroom;
-  window.deleteParticipation = deleteParticipation;
-  window.fetchGif = fetchGif;
   const root = document.getElementById('root');
   ReactDOM.render(<Root store={store} />, root);
 });
